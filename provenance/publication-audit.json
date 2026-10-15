@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "text_files_checked": 65,
+  "rules": [
+    "absolute_private_path",
+    "key_material",
+    "token_literal",
+    "email",
+    "local_dependency"
+  ],
+  "findings": [],
+  "safetensors_headers_checked": 2,
+  "weight_tensor_file_excluded_from_git": true,
+  "no_base_optimizer_resume_raw_system_logs": true,
+  "synthetic_scores_crosschecked_rows": 360,
+  "raw_experiment_archive": "Preserved separately, not published",
+  "required_documents": [
+    "README.md",
+    "MODEL_CARD.md",
+    "DATA_CARD.md",
+    "REPRODUCE.md",
+    "PROTOCOL_AMENDMENT.md",
+    "LICENSE",
+    "NOTICE",
+    "CHANGELOG.md"
+  ],
+  "python_tests": "9 tests passed, including valid/invalid HTTP contract and manual fail-closed behavior"
+}

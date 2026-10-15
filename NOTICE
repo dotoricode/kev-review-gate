@@ -1,0 +1,20 @@
+Kev Review Gate — experimental derivative
+Copyright 2026 dotoricode (new packaging, synthetic task adaptation and dataset).
+Includes selected code from Kev by Jared Palmer, copyright 2026 Jared Palmer,
+Apache License 2.0, revision dd375f27fd61486c52204205e10a0d2e10f3b34a.
+https://github.com/jaredpalmer/kev
+
+The released LoRA adapter and pointer head continue training jaredpalmer/kev-4b
+at revision 6cfce5c2fa4b4bd64026336ab649c5ca78857d52, Apache-2.0.
+https://huggingface.co/jaredpalmer/kev-4b
+Required external backbone/tokenizer: Qwen Team, Qwen/Qwen3.5-4B-Base, revision
+1001bb4d826a52d1f399e183466143f4da7b741b, Apache-2.0. Base weights are not included.
+https://huggingface.co/Qwen/Qwen3.5-4B-Base
+
+Changes: 50 task-specific optimizer updates to the existing LoRA and pointer
+head; no backbone updates. Public packaging replaces pickle head storage with
+safetensors plus JSON, sanitizes configuration, pins the evaluated base
+tokenizer, adds offline inference and a loopback-only manual-review API.
+Vendored upstream source files match the pinned commit except a marked suite docstring path redaction; portability edits to experiment
+scripts are identified in their headers and provenance/source-files.json.
+No upstream endorsement or affiliation is claimed.

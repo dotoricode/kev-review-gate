@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "method": "New isolated Python process imports only the new public package/vendor paths; safe public adapter/head/config plus exact locked external base; no private checkpoint or original head.pt loaded.",
+  "head_roundtrip_all_tensors_bitwise_equal": true,
+  "adapter_bytes_unchanged": true,
+  "final_synthetic_inputs": 120,
+  "rounded_answer_objects_exactly_equal": 120,
+  "input_hashes_exactly_equal": 120,
+  "maximum_serialized_probability_difference": 0,
+  "probability_serialization_decimals": 4,
+  "temperature": 2.406050072164233,
+  "backend": "mlx",
+  "backbone_dtype": "bfloat16",
+  "head_dtype": "float32",
+  "automatic_skip_enabled": false,
+  "no_training_or_selection_during_packaging": true,
+  "public_download_verification": "Performed after publication; see Release attachment/notes for independent download hash and reload."
+}

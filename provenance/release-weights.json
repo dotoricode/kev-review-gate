@@ -1,0 +1,20 @@
+{
+  "original_selected_checkpoint_artifact_sha256": "e42761df4d1f32572a4052924700c58f79d89f96161e4a551716749c589be259",
+  "original_selection_file_sha256": "fd03a4dd20f8af4ebc94772ca4cab02d5bd2beeab7a625a1e95b85aaea9fe23a",
+  "original_adapter_sha256": "d2634d72e193f896ef44b46c747be1220a9ede3d457537c6569891ec6f68f63f",
+  "public_files": {
+    "adapter_model.safetensors": "d2634d72e193f896ef44b46c747be1220a9ede3d457537c6569891ec6f68f63f",
+    "head.safetensors": "e7a4950e89f731331eafb39321df438b9a9be0076669e0d187614d6fb0273fc5",
+    "LICENSE": "6b08bb37982c233aa12bcbdf19106da12f3f4fcf800773ea42e28ebeddd34fb8",
+    "NOTICE": "26b90ad3bccb4b857b7bcf623be1a6ee47f6ebefb83d7774607e55d477bd1386",
+    "adapter_config.json": "eb856804a12ae8949b99dc26d3bb0c3254cc6e59a9d339224c8431ab2c7b88ac",
+    "model_config.json": "c12ae0f6a1dc6ff60358e37b3594c9e7e97236bb46298f21da266e54efa09aec"
+  },
+  "head_conversion": {
+    "source_format": "torch.save state-dict plus metadata",
+    "public_format": "safetensors tensors plus explicit JSON metadata",
+    "tensor_count": 4,
+    "bitwise_equal_all_head_tensors": true
+  },
+  "configuration_edits": "adapter_config base path replaced by public model ID and exact revision; tokenizer copy deliberately omitted, runtime pins and hashes exact base tokenizer; metadata whitelist excludes local/run paths."
+}

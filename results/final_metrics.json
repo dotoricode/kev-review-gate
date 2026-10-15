@@ -1,0 +1,1566 @@
+{
+  "Kev4B-original": {
+    "rows": {
+      "n": 120,
+      "confusion": {
+        "review": {
+          "review": 32,
+          "skip": 0,
+          "unknown": 8,
+          "invalid": 0
+        },
+        "skip": {
+          "review": 0,
+          "skip": 40,
+          "unknown": 0,
+          "invalid": 0
+        },
+        "unknown": {
+          "review": 0,
+          "skip": 1,
+          "unknown": 39,
+          "invalid": 0
+        }
+      },
+      "per_class": {
+        "review": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.888888888888889,
+          "support": 40
+        },
+        "skip": {
+          "precision": 0.975609756097561,
+          "recall": 1.0,
+          "f1": 0.9876543209876543,
+          "support": 40
+        },
+        "unknown": {
+          "precision": 0.8297872340425532,
+          "recall": 0.975,
+          "f1": 0.896551724137931,
+          "support": 40
+        }
+      },
+      "macro_f1": 0.9243649780048248,
+      "balanced_accuracy": 0.9249999999999999,
+      "accuracy": 0.925,
+      "review_to_skip": 0,
+      "unknown_to_skip": 1,
+      "review_to_unknown": 8,
+      "abstention_rate": 0.39166666666666666,
+      "invalid_count": 0,
+      "invalid_rate": 0.0
+    },
+    "scenarios": {
+      "n": 15,
+      "confusion": {
+        "review": {
+          "review": 4,
+          "skip": 0,
+          "unknown": 1,
+          "invalid": 0
+        },
+        "skip": {
+          "review": 0,
+          "skip": 5,
+          "unknown": 0,
+          "invalid": 0
+        },
+        "unknown": {
+          "review": 0,
+          "skip": 0,
+          "unknown": 5,
+          "invalid": 0
+        }
+      },
+      "per_class": {
+        "review": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.888888888888889,
+          "support": 5
+        },
+        "skip": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "unknown": {
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1": 0.9090909090909091,
+          "support": 5
+        }
+      },
+      "macro_f1": 0.9326599326599326,
+      "balanced_accuracy": 0.9333333333333332,
+      "accuracy": 0.9333333333333333,
+      "review_to_skip": 0,
+      "unknown_to_skip": 0,
+      "review_to_unknown": 1,
+      "abstention_rate": 0.4,
+      "invalid_count": 0,
+      "invalid_rate": 0.0
+    },
+    "scenario_predictions": [
+      {
+        "scenario_id": "disk_permission-s1",
+        "family": "disk_permission",
+        "expected": "review",
+        "predicted": "review",
+        "variant_counts": {
+          "review": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "regex_anchor-s2",
+        "family": "regex_anchor",
+        "expected": "skip",
+        "predicted": "skip",
+        "variant_counts": {
+          "skip": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "image_alpha-s2",
+        "family": "image_alpha",
+        "expected": "skip",
+        "predicted": "skip",
+        "variant_counts": {
+          "skip": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "regex_anchor-s1",
+        "family": "regex_anchor",
+        "expected": "review",
+        "predicted": "review",
+        "variant_counts": {
+          "review": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "binary_endianness-s3",
+        "family": "binary_endianness",
+        "expected": "unknown",
+        "predicted": "unknown",
+        "variant_counts": {
+          "unknown": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "binary_endianness-s1",
+        "family": "binary_endianness",
+        "expected": "review",
+        "predicted": "review",
+        "variant_counts": {
+          "review": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "disk_permission-s3",
+        "family": "disk_permission",
+        "expected": "unknown",
+        "predicted": "unknown",
+        "variant_counts": {
+          "unknown": 7,
+          "skip": 1
+        },
+        "variant_disagreement": true
+      },
+      {
+        "scenario_id": "image_alpha-s1",
+        "family": "image_alpha",
+        "expected": "review",
+        "predicted": "review",
+        "variant_counts": {
+          "review": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "disk_permission-s2",
+        "family": "disk_permission",
+        "expected": "skip",
+        "predicted": "skip",
+        "variant_counts": {
+          "skip": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "binary_endianness-s2",
+        "family": "binary_endianness",
+        "expected": "skip",
+        "predicted": "skip",
+        "variant_counts": {
+          "skip": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "image_alpha-s3",
+        "family": "image_alpha",
+        "expected": "unknown",
+        "predicted": "unknown",
+        "variant_counts": {
+          "unknown": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "http_redirect_code-s2",
+        "family": "http_redirect_code",
+        "expected": "skip",
+        "predicted": "skip",
+        "variant_counts": {
+          "skip": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "regex_anchor-s3",
+        "family": "regex_anchor",
+        "expected": "unknown",
+        "predicted": "unknown",
+        "variant_counts": {
+          "unknown": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "http_redirect_code-s3",
+        "family": "http_redirect_code",
+        "expected": "unknown",
+        "predicted": "unknown",
+        "variant_counts": {
+          "unknown": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "http_redirect_code-s1",
+        "family": "http_redirect_code",
+        "expected": "review",
+        "predicted": "unknown",
+        "variant_counts": {
+          "unknown": 8
+        },
+        "variant_disagreement": false
+      }
+    ],
+    "variant_disagreement_scenarios": 1,
+    "per_family": {
+      "binary_endianness": {
+        "n": 3,
+        "confusion": {
+          "review": {
+            "review": 1,
+            "skip": 0,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 1,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 1,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "accuracy": 1.0,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 0,
+        "abstention_rate": 0.3333333333333333,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      },
+      "disk_permission": {
+        "n": 3,
+        "confusion": {
+          "review": {
+            "review": 1,
+            "skip": 0,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 1,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 1,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "accuracy": 1.0,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 0,
+        "abstention_rate": 0.3333333333333333,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      },
+      "http_redirect_code": {
+        "n": 3,
+        "confusion": {
+          "review": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 1,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 1,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 1,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "unknown": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 1
+          }
+        },
+        "macro_f1": 0.5555555555555555,
+        "balanced_accuracy": 0.6666666666666666,
+        "accuracy": 0.6666666666666666,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 1,
+        "abstention_rate": 0.6666666666666666,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      },
+      "image_alpha": {
+        "n": 3,
+        "confusion": {
+          "review": {
+            "review": 1,
+            "skip": 0,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 1,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 1,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "accuracy": 1.0,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 0,
+        "abstention_rate": 0.3333333333333333,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      },
+      "regex_anchor": {
+        "n": 3,
+        "confusion": {
+          "review": {
+            "review": 1,
+            "skip": 0,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 1,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 1,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "accuracy": 1.0,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 0,
+        "abstention_rate": 0.3333333333333333,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      }
+    }
+  },
+  "Kev4B-pilot-step50": {
+    "rows": {
+      "n": 120,
+      "confusion": {
+        "review": {
+          "review": 40,
+          "skip": 0,
+          "unknown": 0,
+          "invalid": 0
+        },
+        "skip": {
+          "review": 0,
+          "skip": 40,
+          "unknown": 0,
+          "invalid": 0
+        },
+        "unknown": {
+          "review": 0,
+          "skip": 0,
+          "unknown": 40,
+          "invalid": 0
+        }
+      },
+      "per_class": {
+        "review": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 40
+        },
+        "skip": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 40
+        },
+        "unknown": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 40
+        }
+      },
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "accuracy": 1.0,
+      "review_to_skip": 0,
+      "unknown_to_skip": 0,
+      "review_to_unknown": 0,
+      "abstention_rate": 0.3333333333333333,
+      "invalid_count": 0,
+      "invalid_rate": 0.0
+    },
+    "scenarios": {
+      "n": 15,
+      "confusion": {
+        "review": {
+          "review": 5,
+          "skip": 0,
+          "unknown": 0,
+          "invalid": 0
+        },
+        "skip": {
+          "review": 0,
+          "skip": 5,
+          "unknown": 0,
+          "invalid": 0
+        },
+        "unknown": {
+          "review": 0,
+          "skip": 0,
+          "unknown": 5,
+          "invalid": 0
+        }
+      },
+      "per_class": {
+        "review": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "skip": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "unknown": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "accuracy": 1.0,
+      "review_to_skip": 0,
+      "unknown_to_skip": 0,
+      "review_to_unknown": 0,
+      "abstention_rate": 0.3333333333333333,
+      "invalid_count": 0,
+      "invalid_rate": 0.0
+    },
+    "scenario_predictions": [
+      {
+        "scenario_id": "disk_permission-s1",
+        "family": "disk_permission",
+        "expected": "review",
+        "predicted": "review",
+        "variant_counts": {
+          "review": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "regex_anchor-s2",
+        "family": "regex_anchor",
+        "expected": "skip",
+        "predicted": "skip",
+        "variant_counts": {
+          "skip": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "image_alpha-s2",
+        "family": "image_alpha",
+        "expected": "skip",
+        "predicted": "skip",
+        "variant_counts": {
+          "skip": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "regex_anchor-s1",
+        "family": "regex_anchor",
+        "expected": "review",
+        "predicted": "review",
+        "variant_counts": {
+          "review": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "binary_endianness-s3",
+        "family": "binary_endianness",
+        "expected": "unknown",
+        "predicted": "unknown",
+        "variant_counts": {
+          "unknown": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "binary_endianness-s1",
+        "family": "binary_endianness",
+        "expected": "review",
+        "predicted": "review",
+        "variant_counts": {
+          "review": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "disk_permission-s3",
+        "family": "disk_permission",
+        "expected": "unknown",
+        "predicted": "unknown",
+        "variant_counts": {
+          "unknown": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "image_alpha-s1",
+        "family": "image_alpha",
+        "expected": "review",
+        "predicted": "review",
+        "variant_counts": {
+          "review": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "disk_permission-s2",
+        "family": "disk_permission",
+        "expected": "skip",
+        "predicted": "skip",
+        "variant_counts": {
+          "skip": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "binary_endianness-s2",
+        "family": "binary_endianness",
+        "expected": "skip",
+        "predicted": "skip",
+        "variant_counts": {
+          "skip": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "image_alpha-s3",
+        "family": "image_alpha",
+        "expected": "unknown",
+        "predicted": "unknown",
+        "variant_counts": {
+          "unknown": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "http_redirect_code-s2",
+        "family": "http_redirect_code",
+        "expected": "skip",
+        "predicted": "skip",
+        "variant_counts": {
+          "skip": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "regex_anchor-s3",
+        "family": "regex_anchor",
+        "expected": "unknown",
+        "predicted": "unknown",
+        "variant_counts": {
+          "unknown": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "http_redirect_code-s3",
+        "family": "http_redirect_code",
+        "expected": "unknown",
+        "predicted": "unknown",
+        "variant_counts": {
+          "unknown": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "http_redirect_code-s1",
+        "family": "http_redirect_code",
+        "expected": "review",
+        "predicted": "review",
+        "variant_counts": {
+          "review": 8
+        },
+        "variant_disagreement": false
+      }
+    ],
+    "variant_disagreement_scenarios": 0,
+    "per_family": {
+      "binary_endianness": {
+        "n": 3,
+        "confusion": {
+          "review": {
+            "review": 1,
+            "skip": 0,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 1,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 1,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "accuracy": 1.0,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 0,
+        "abstention_rate": 0.3333333333333333,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      },
+      "disk_permission": {
+        "n": 3,
+        "confusion": {
+          "review": {
+            "review": 1,
+            "skip": 0,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 1,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 1,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "accuracy": 1.0,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 0,
+        "abstention_rate": 0.3333333333333333,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      },
+      "http_redirect_code": {
+        "n": 3,
+        "confusion": {
+          "review": {
+            "review": 1,
+            "skip": 0,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 1,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 1,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "accuracy": 1.0,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 0,
+        "abstention_rate": 0.3333333333333333,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      },
+      "image_alpha": {
+        "n": 3,
+        "confusion": {
+          "review": {
+            "review": 1,
+            "skip": 0,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 1,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 1,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "accuracy": 1.0,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 0,
+        "abstention_rate": 0.3333333333333333,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      },
+      "regex_anchor": {
+        "n": 3,
+        "confusion": {
+          "review": {
+            "review": 1,
+            "skip": 0,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 1,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 1,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "accuracy": 1.0,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 0,
+        "abstention_rate": 0.3333333333333333,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      }
+    }
+  },
+  "jev-1.13.0": {
+    "rows": {
+      "n": 120,
+      "confusion": {
+        "review": {
+          "review": 40,
+          "skip": 0,
+          "unknown": 0,
+          "invalid": 0
+        },
+        "skip": {
+          "review": 0,
+          "skip": 40,
+          "unknown": 0,
+          "invalid": 0
+        },
+        "unknown": {
+          "review": 0,
+          "skip": 0,
+          "unknown": 40,
+          "invalid": 0
+        }
+      },
+      "per_class": {
+        "review": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 40
+        },
+        "skip": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 40
+        },
+        "unknown": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 40
+        }
+      },
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "accuracy": 1.0,
+      "review_to_skip": 0,
+      "unknown_to_skip": 0,
+      "review_to_unknown": 0,
+      "abstention_rate": 0.3333333333333333,
+      "invalid_count": 0,
+      "invalid_rate": 0.0
+    },
+    "scenarios": {
+      "n": 15,
+      "confusion": {
+        "review": {
+          "review": 5,
+          "skip": 0,
+          "unknown": 0,
+          "invalid": 0
+        },
+        "skip": {
+          "review": 0,
+          "skip": 5,
+          "unknown": 0,
+          "invalid": 0
+        },
+        "unknown": {
+          "review": 0,
+          "skip": 0,
+          "unknown": 5,
+          "invalid": 0
+        }
+      },
+      "per_class": {
+        "review": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "skip": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "unknown": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        }
+      },
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "accuracy": 1.0,
+      "review_to_skip": 0,
+      "unknown_to_skip": 0,
+      "review_to_unknown": 0,
+      "abstention_rate": 0.3333333333333333,
+      "invalid_count": 0,
+      "invalid_rate": 0.0
+    },
+    "scenario_predictions": [
+      {
+        "scenario_id": "disk_permission-s1",
+        "family": "disk_permission",
+        "expected": "review",
+        "predicted": "review",
+        "variant_counts": {
+          "review": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "regex_anchor-s2",
+        "family": "regex_anchor",
+        "expected": "skip",
+        "predicted": "skip",
+        "variant_counts": {
+          "skip": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "image_alpha-s2",
+        "family": "image_alpha",
+        "expected": "skip",
+        "predicted": "skip",
+        "variant_counts": {
+          "skip": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "regex_anchor-s1",
+        "family": "regex_anchor",
+        "expected": "review",
+        "predicted": "review",
+        "variant_counts": {
+          "review": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "binary_endianness-s3",
+        "family": "binary_endianness",
+        "expected": "unknown",
+        "predicted": "unknown",
+        "variant_counts": {
+          "unknown": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "binary_endianness-s1",
+        "family": "binary_endianness",
+        "expected": "review",
+        "predicted": "review",
+        "variant_counts": {
+          "review": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "disk_permission-s3",
+        "family": "disk_permission",
+        "expected": "unknown",
+        "predicted": "unknown",
+        "variant_counts": {
+          "unknown": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "image_alpha-s1",
+        "family": "image_alpha",
+        "expected": "review",
+        "predicted": "review",
+        "variant_counts": {
+          "review": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "disk_permission-s2",
+        "family": "disk_permission",
+        "expected": "skip",
+        "predicted": "skip",
+        "variant_counts": {
+          "skip": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "binary_endianness-s2",
+        "family": "binary_endianness",
+        "expected": "skip",
+        "predicted": "skip",
+        "variant_counts": {
+          "skip": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "image_alpha-s3",
+        "family": "image_alpha",
+        "expected": "unknown",
+        "predicted": "unknown",
+        "variant_counts": {
+          "unknown": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "http_redirect_code-s2",
+        "family": "http_redirect_code",
+        "expected": "skip",
+        "predicted": "skip",
+        "variant_counts": {
+          "skip": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "regex_anchor-s3",
+        "family": "regex_anchor",
+        "expected": "unknown",
+        "predicted": "unknown",
+        "variant_counts": {
+          "unknown": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "http_redirect_code-s3",
+        "family": "http_redirect_code",
+        "expected": "unknown",
+        "predicted": "unknown",
+        "variant_counts": {
+          "unknown": 8
+        },
+        "variant_disagreement": false
+      },
+      {
+        "scenario_id": "http_redirect_code-s1",
+        "family": "http_redirect_code",
+        "expected": "review",
+        "predicted": "review",
+        "variant_counts": {
+          "review": 8
+        },
+        "variant_disagreement": false
+      }
+    ],
+    "variant_disagreement_scenarios": 0,
+    "per_family": {
+      "binary_endianness": {
+        "n": 3,
+        "confusion": {
+          "review": {
+            "review": 1,
+            "skip": 0,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 1,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 1,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "accuracy": 1.0,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 0,
+        "abstention_rate": 0.3333333333333333,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      },
+      "disk_permission": {
+        "n": 3,
+        "confusion": {
+          "review": {
+            "review": 1,
+            "skip": 0,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 1,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 1,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "accuracy": 1.0,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 0,
+        "abstention_rate": 0.3333333333333333,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      },
+      "http_redirect_code": {
+        "n": 3,
+        "confusion": {
+          "review": {
+            "review": 1,
+            "skip": 0,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 1,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 1,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "accuracy": 1.0,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 0,
+        "abstention_rate": 0.3333333333333333,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      },
+      "image_alpha": {
+        "n": 3,
+        "confusion": {
+          "review": {
+            "review": 1,
+            "skip": 0,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 1,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 1,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "accuracy": 1.0,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 0,
+        "abstention_rate": 0.3333333333333333,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      },
+      "regex_anchor": {
+        "n": 3,
+        "confusion": {
+          "review": {
+            "review": 1,
+            "skip": 0,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 1,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 1,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 1
+          }
+        },
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "accuracy": 1.0,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 0,
+        "abstention_rate": 0.3333333333333333,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      }
+    }
+  }
+}

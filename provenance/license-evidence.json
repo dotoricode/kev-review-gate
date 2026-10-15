@@ -1,0 +1,21 @@
+{
+  "kev_source": {
+    "revision": "dd375f27fd61486c52204205e10a0d2e10f3b34a",
+    "license": "Apache-2.0",
+    "license_sha256": "6b08bb37982c233aa12bcbdf19106da12f3f4fcf800773ea42e28ebeddd34fb8",
+    "notice_file_at_revision": false
+  },
+  "kev_weights": {
+    "revision": "6cfce5c2fa4b4bd64026336ab649c5ca78857d52",
+    "license": "Apache-2.0",
+    "evidence": "Pinned model card frontmatter and model-details license row; no LICENSE or NOTICE file in pinned model tree",
+    "model_card_sha256": "e423ce0e3caf0a1e6ff996a58522946a97711e0439c5fea332a8861b02498435"
+  },
+  "base": {
+    "revision": "1001bb4d826a52d1f399e183466143f4da7b741b",
+    "license": "Apache-2.0",
+    "license_sha256": "50cbab8a892c5f2993b8c7351a99182507472def3b1374558308605d99b86b32",
+    "notice_file_at_revision": false
+  },
+  "checks": "Exact revision model trees and tracked source tree inspected; source and weight licenses permit derivative redistribution with notices. No claim concerning upstream training-dataset rights beyond upstream declared model license."
+}

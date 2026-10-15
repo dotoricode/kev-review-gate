@@ -1,0 +1,58 @@
+{
+  "upstream_repo": "https://github.com/jaredpalmer/kev",
+  "revision": "dd375f27fd61486c52204205e10a0d2e10f3b34a",
+  "unmodified_vendor_files": {
+    "vendor/kev/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "vendor/kev/api.py": "a6f53af5354f8ea17915abc78360fdf291a5108ce39a53a2d9135d48c603ae58",
+    "vendor/kev/model.py": "2ff3b2e67c048e3bc5a0d1a32aafe50804ed315a5564fce06bb4b95697c5271c",
+    "vendor/kev/mlx_model.py": "49c4a3de3952429e8a4b3945c33b0697a1cd84c41c945709ce6619af2c15842c",
+    "vendor/kev/checkpoint.py": "02062399977ee0da316dd52e03a79fa5e10134aa49c0b5ed801598c52042dc32",
+    "vendor/kev/data.py": "e77a2fffeb8ee7e05b118893be8e38b8358aef97c3ca2e143cdce208201b92f9",
+    "vendor/kev/train.py": "73b76371a002d04c98b3ff80f493615f9518990ba2d39cfdb55c3095d6a17731",
+    "vendor/kev/full_ft.py": "c3abef39cd9d486b3c075a37286afbcd1aa42a04c78a1b7b9b2e77b5a3963929",
+    "vendor/kev/device.py": "bb882f59df46eae633d3b29ff0a939c000aa60a7d6d04ae73829b336f9bc9711",
+    "vendor/kev/composition.py": "f335ed17e18e0a544893db5e22b9a059e6ce1b2e14dbb863ac7d7bbf8f3e0536",
+    "vendor/kev/contrastive.py": "cbb979aa5d40265ad0e64695f94b281d91751fa405811ddfa8212fede111edcf",
+    "vendor/kev/metrics.py": "167a586334cfcced4adcc197758535c3bcda832b855c151095ef2d1968cf8983",
+    "vendor/kev/budget.py": "246b5ca6450567a61b881308c9482cf1af6ecba599ca161af1febb23d6dc28a7"
+  },
+  "experiment_script_portability_edits": {
+    "pilot_train.py": {
+      "original_sha256": "d3cb64dca23b1f5744f0709e3596c44971dbfbb830a614c55ff04cd128fe4c9b",
+      "public_sha256": "9fbe1d7a1344320fa9253b2f941bb9b797ab2134355001e9628f0be2d77b0187",
+      "changes": "Relative data/support/vendor paths; replace private integration helpers with self-contained equivalents; interpreter uses current Python; generic error path redaction; header. No training math/settings changes."
+    },
+    "pilot_eval.py": {
+      "original_sha256": "a3111be22a294b55cf2e6f2ccb65db661f36c66d4d7fbe5487dc4f04199d850e",
+      "public_sha256": "6df7e53cf4de6cc1781e92f2eb1e152f1323687f015e2bf9b3685c734e38fb18",
+      "changes": "Relative data/support/vendor paths; replace private integration helpers with self-contained equivalents; interpreter uses current Python; generic error path redaction; header. No training math/settings changes."
+    },
+    "run_pilot.py": {
+      "original_sha256": "5a7fa04e455a748f87e879fe6a641bdee85305c2e95f46e1819236bf9355b79b",
+      "public_sha256": "b64202dac976c1ca7cd12c0a5f34b75dbb8e027b5e24004f627050ce0b7e2f94",
+      "changes": "Relative data/support/vendor paths; replace private integration helpers with self-contained equivalents; interpreter uses current Python; generic error path redaction; header. No training math/settings changes."
+    },
+    "pilot_metrics.py": {
+      "original_sha256": "035c402077306877a469ac434237e15b2945fedafee04d76e07d8a568af25245",
+      "public_sha256": "b12cd79f7c5ed753386590fd8215a94be8134e2728ed2375a9ff3b1da9cf8bda",
+      "changes": "Relative data/support/vendor paths; replace private integration helpers with self-contained equivalents; interpreter uses current Python; generic error path redaction; header. No training math/settings changes."
+    },
+    "tests/test_pilot_metrics.py": {
+      "original_sha256": "cdc59caafe124a206fd1cb545c4722bb4c3e75e207ebdd78c03ddc83aaf88bb2",
+      "public_sha256": "edc232a9f1634ddef25bc0d954992eaea7eb122e0154f9ed0f629835ab64ec3d",
+      "changes": "Relative data/support/vendor paths; replace private integration helpers with self-contained equivalents; interpreter uses current Python; generic error path redaction; header. No training math/settings changes."
+    },
+    "training_support/smoke_runner.py": {
+      "original_sha256": "9d3b98efe5d749dea447b0d886b5a8c012136640d6b48aaff765fe215a10b447",
+      "public_sha256": "e0969ab6da2437f3c6ae6594d7e4ac5828541638cf9ceb65fabe54b71b1d5284",
+      "changes": "Relative data/support/vendor paths; replace private integration helpers with self-contained equivalents; interpreter uses current Python; generic error path redaction; header. No training math/settings changes."
+    }
+  },
+  "modified_vendor_files": {
+    "vendor/kev/suite.py": {
+      "original_sha256": "8e7d257a10b4704d7bf4f8ec2c74dddf26aa5a2a610ea78610360e6baf43eff5",
+      "public_sha256": "0ea51a60444639b411f9461e46a7fdd7b907e08d466b20af272095bd58cd7923",
+      "change": "Redact one example container path in a docstring; behavior unchanged."
+    }
+  }
+}

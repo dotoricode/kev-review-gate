@@ -1,0 +1,106 @@
+{
+  "status": "FROZEN after independent AI consistency audit; conditional pass for a limited synthetic proof-of-learning pilot, not human ground truth",
+  "seed": 321,
+  "contract": {
+    "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+    "type": "choice",
+    "criteria": [
+      {
+        "value": "review",
+        "description": "Behavior, interfaces, or security change"
+      },
+      {
+        "value": "skip",
+        "description": "Only wording or formatting, no behavior effect"
+      },
+      {
+        "value": "unknown",
+        "description": "Insufficient evidence"
+      }
+    ]
+  },
+  "splits": {
+    "train": {
+      "file": "train.json",
+      "sha256": "4846650b80021fa5ddd0826802b7b0ff35942bc8fb2eea7f783d47a01276c7c1",
+      "count": 576,
+      "label_counts": {
+        "skip": 192,
+        "review": 192,
+        "unknown": 192
+      },
+      "family_count": 24,
+      "base_scenario_count": 72,
+      "language_counts": {
+        "Python": 504,
+        "JavaScript": 24,
+        "HTTP configuration": 24,
+        "SQL": 24
+      }
+    },
+    "dev": {
+      "file": "dev.json",
+      "sha256": "9bd95e439323aaa2ae308963eed373c87e0cbe80c7f0450a4b8fef1d43a927de",
+      "count": 120,
+      "label_counts": {
+        "review": 40,
+        "skip": 40,
+        "unknown": 40
+      },
+      "family_count": 5,
+      "base_scenario_count": 15,
+      "language_counts": {
+        "HTTP configuration": 24,
+        "Python": 24,
+        "CSS": 24,
+        "JavaScript": 24,
+        "SQL": 24
+      }
+    },
+    "final_test": {
+      "file": "final_test.json",
+      "sha256": "6000d0272ad57b7fdee7f2e64795b58997cc373fd5e98f8167976d26b26bfab0",
+      "count": 120,
+      "label_counts": {
+        "review": 40,
+        "skip": 40,
+        "unknown": 40
+      },
+      "family_count": 5,
+      "base_scenario_count": 15,
+      "language_counts": {
+        "Shell": 24,
+        "Python": 48,
+        "Image pipeline pseudocode": 24,
+        "HTTP configuration": 24
+      }
+    }
+  },
+  "leakage_controls": [
+    "semantic/source families disjoint across new splits",
+    "Original 120-case suite excluded from all new files and model selection; regression only",
+    "Eight variants within a scenario differ only in neutral file context, not independently authored cases",
+    "Same general decision concepts and formatting proofs occur across families; this is family-heldout transfer, not unseen-concept generalization"
+  ],
+  "provenance_limits": "Fully synthetic, English evidence, primarily Python; dev and final deliberately have greater language/config diversity. Balanced labels do not estimate deployment prevalence. Explicit missing-helper evidence and formatting proofs are construction artifacts; this suite cannot demonstrate production competence.",
+  "protocol_sha256": "99b9084d3d92300eb5c16b2be73f78233efe54ee1d94fe3b7832f65b94d0ad4f",
+  "audit_file": "audit.md",
+  "input_whitelist": [
+    "state",
+    "question",
+    "type",
+    "criteria"
+  ],
+  "metadata_excluded_from_model_input": [
+    "id",
+    "scenario_id",
+    "family",
+    "semantic_group",
+    "variant_id",
+    "split",
+    "language",
+    "expected",
+    "rationale"
+  ],
+  "freeze_note": "Do not rerun generator after freeze. Model input filenames are neutral and have no label/family information. Eight variants per scenario add no independent semantic evidence."
+}

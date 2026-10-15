@@ -1,0 +1,2098 @@
+[
+  {
+    "step": 0,
+    "metrics": {
+      "rows": {
+        "n": 120,
+        "confusion": {
+          "review": {
+            "review": 8,
+            "skip": 0,
+            "unknown": 32,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 40,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 40,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 0.2,
+            "f1": 0.33333333333333337,
+            "support": 40
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 40
+          },
+          "unknown": {
+            "precision": 0.5555555555555556,
+            "recall": 1.0,
+            "f1": 0.7142857142857143,
+            "support": 40
+          }
+        },
+        "macro_f1": 0.6825396825396824,
+        "balanced_accuracy": 0.7333333333333334,
+        "accuracy": 0.7333333333333333,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 32,
+        "abstention_rate": 0.6,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      },
+      "scenarios": {
+        "n": 15,
+        "confusion": {
+          "review": {
+            "review": 1,
+            "skip": 0,
+            "unknown": 4,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 5,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 5,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 0.2,
+            "f1": 0.33333333333333337,
+            "support": 5
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 5
+          },
+          "unknown": {
+            "precision": 0.5555555555555556,
+            "recall": 1.0,
+            "f1": 0.7142857142857143,
+            "support": 5
+          }
+        },
+        "macro_f1": 0.6825396825396824,
+        "balanced_accuracy": 0.7333333333333334,
+        "accuracy": 0.7333333333333333,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 4,
+        "abstention_rate": 0.6,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      },
+      "scenario_predictions": [
+        {
+          "scenario_id": "gzip_response-s1",
+          "family": "gzip_response",
+          "expected": "review",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "mutex_scope-s2",
+          "family": "mutex_scope",
+          "expected": "skip",
+          "predicted": "skip",
+          "variant_counts": {
+            "skip": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "css_hit_testing-s2",
+          "family": "css_hit_testing",
+          "expected": "skip",
+          "predicted": "skip",
+          "variant_counts": {
+            "skip": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "mutex_scope-s1",
+          "family": "mutex_scope",
+          "expected": "review",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "locale_case-s3",
+          "family": "locale_case",
+          "expected": "unknown",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "locale_case-s1",
+          "family": "locale_case",
+          "expected": "review",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "gzip_response-s3",
+          "family": "gzip_response",
+          "expected": "unknown",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "css_hit_testing-s1",
+          "family": "css_hit_testing",
+          "expected": "review",
+          "predicted": "review",
+          "variant_counts": {
+            "review": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "gzip_response-s2",
+          "family": "gzip_response",
+          "expected": "skip",
+          "predicted": "skip",
+          "variant_counts": {
+            "skip": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "locale_case-s2",
+          "family": "locale_case",
+          "expected": "skip",
+          "predicted": "skip",
+          "variant_counts": {
+            "skip": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "css_hit_testing-s3",
+          "family": "css_hit_testing",
+          "expected": "unknown",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "database_unique-s2",
+          "family": "database_unique",
+          "expected": "skip",
+          "predicted": "skip",
+          "variant_counts": {
+            "skip": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "mutex_scope-s3",
+          "family": "mutex_scope",
+          "expected": "unknown",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "database_unique-s3",
+          "family": "database_unique",
+          "expected": "unknown",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "database_unique-s1",
+          "family": "database_unique",
+          "expected": "review",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        }
+      ],
+      "variant_disagreement_scenarios": 0,
+      "per_family": {
+        "css_hit_testing": {
+          "n": 3,
+          "confusion": {
+            "review": {
+              "review": 1,
+              "skip": 0,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "skip": {
+              "review": 0,
+              "skip": 1,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "unknown": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            }
+          },
+          "per_class": {
+            "review": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "skip": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "unknown": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            }
+          },
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "accuracy": 1.0,
+          "review_to_skip": 0,
+          "unknown_to_skip": 0,
+          "review_to_unknown": 0,
+          "abstention_rate": 0.3333333333333333,
+          "invalid_count": 0,
+          "invalid_rate": 0.0
+        },
+        "database_unique": {
+          "n": 3,
+          "confusion": {
+            "review": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            },
+            "skip": {
+              "review": 0,
+              "skip": 1,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "unknown": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            }
+          },
+          "per_class": {
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 1
+            },
+            "skip": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "unknown": {
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666,
+              "support": 1
+            }
+          },
+          "macro_f1": 0.5555555555555555,
+          "balanced_accuracy": 0.6666666666666666,
+          "accuracy": 0.6666666666666666,
+          "review_to_skip": 0,
+          "unknown_to_skip": 0,
+          "review_to_unknown": 1,
+          "abstention_rate": 0.6666666666666666,
+          "invalid_count": 0,
+          "invalid_rate": 0.0
+        },
+        "gzip_response": {
+          "n": 3,
+          "confusion": {
+            "review": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            },
+            "skip": {
+              "review": 0,
+              "skip": 1,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "unknown": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            }
+          },
+          "per_class": {
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 1
+            },
+            "skip": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "unknown": {
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666,
+              "support": 1
+            }
+          },
+          "macro_f1": 0.5555555555555555,
+          "balanced_accuracy": 0.6666666666666666,
+          "accuracy": 0.6666666666666666,
+          "review_to_skip": 0,
+          "unknown_to_skip": 0,
+          "review_to_unknown": 1,
+          "abstention_rate": 0.6666666666666666,
+          "invalid_count": 0,
+          "invalid_rate": 0.0
+        },
+        "locale_case": {
+          "n": 3,
+          "confusion": {
+            "review": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            },
+            "skip": {
+              "review": 0,
+              "skip": 1,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "unknown": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            }
+          },
+          "per_class": {
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 1
+            },
+            "skip": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "unknown": {
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666,
+              "support": 1
+            }
+          },
+          "macro_f1": 0.5555555555555555,
+          "balanced_accuracy": 0.6666666666666666,
+          "accuracy": 0.6666666666666666,
+          "review_to_skip": 0,
+          "unknown_to_skip": 0,
+          "review_to_unknown": 1,
+          "abstention_rate": 0.6666666666666666,
+          "invalid_count": 0,
+          "invalid_rate": 0.0
+        },
+        "mutex_scope": {
+          "n": 3,
+          "confusion": {
+            "review": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            },
+            "skip": {
+              "review": 0,
+              "skip": 1,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "unknown": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            }
+          },
+          "per_class": {
+            "review": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 1
+            },
+            "skip": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "unknown": {
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666,
+              "support": 1
+            }
+          },
+          "macro_f1": 0.5555555555555555,
+          "balanced_accuracy": 0.6666666666666666,
+          "accuracy": 0.6666666666666666,
+          "review_to_skip": 0,
+          "unknown_to_skip": 0,
+          "review_to_unknown": 1,
+          "abstention_rate": 0.6666666666666666,
+          "invalid_count": 0,
+          "invalid_rate": 0.0
+        }
+      }
+    }
+  },
+  {
+    "step": 50,
+    "metrics": {
+      "rows": {
+        "n": 120,
+        "confusion": {
+          "review": {
+            "review": 40,
+            "skip": 0,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 40,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 40,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 40
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 40
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 40
+          }
+        },
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "accuracy": 1.0,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 0,
+        "abstention_rate": 0.3333333333333333,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      },
+      "scenarios": {
+        "n": 15,
+        "confusion": {
+          "review": {
+            "review": 5,
+            "skip": 0,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 5,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 5,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 5
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 5
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 5
+          }
+        },
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "accuracy": 1.0,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 0,
+        "abstention_rate": 0.3333333333333333,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      },
+      "scenario_predictions": [
+        {
+          "scenario_id": "gzip_response-s1",
+          "family": "gzip_response",
+          "expected": "review",
+          "predicted": "review",
+          "variant_counts": {
+            "review": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "mutex_scope-s2",
+          "family": "mutex_scope",
+          "expected": "skip",
+          "predicted": "skip",
+          "variant_counts": {
+            "skip": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "css_hit_testing-s2",
+          "family": "css_hit_testing",
+          "expected": "skip",
+          "predicted": "skip",
+          "variant_counts": {
+            "skip": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "mutex_scope-s1",
+          "family": "mutex_scope",
+          "expected": "review",
+          "predicted": "review",
+          "variant_counts": {
+            "review": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "locale_case-s3",
+          "family": "locale_case",
+          "expected": "unknown",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "locale_case-s1",
+          "family": "locale_case",
+          "expected": "review",
+          "predicted": "review",
+          "variant_counts": {
+            "review": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "gzip_response-s3",
+          "family": "gzip_response",
+          "expected": "unknown",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "css_hit_testing-s1",
+          "family": "css_hit_testing",
+          "expected": "review",
+          "predicted": "review",
+          "variant_counts": {
+            "review": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "gzip_response-s2",
+          "family": "gzip_response",
+          "expected": "skip",
+          "predicted": "skip",
+          "variant_counts": {
+            "skip": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "locale_case-s2",
+          "family": "locale_case",
+          "expected": "skip",
+          "predicted": "skip",
+          "variant_counts": {
+            "skip": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "css_hit_testing-s3",
+          "family": "css_hit_testing",
+          "expected": "unknown",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "database_unique-s2",
+          "family": "database_unique",
+          "expected": "skip",
+          "predicted": "skip",
+          "variant_counts": {
+            "skip": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "mutex_scope-s3",
+          "family": "mutex_scope",
+          "expected": "unknown",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "database_unique-s3",
+          "family": "database_unique",
+          "expected": "unknown",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "database_unique-s1",
+          "family": "database_unique",
+          "expected": "review",
+          "predicted": "review",
+          "variant_counts": {
+            "review": 8
+          },
+          "variant_disagreement": false
+        }
+      ],
+      "variant_disagreement_scenarios": 0,
+      "per_family": {
+        "css_hit_testing": {
+          "n": 3,
+          "confusion": {
+            "review": {
+              "review": 1,
+              "skip": 0,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "skip": {
+              "review": 0,
+              "skip": 1,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "unknown": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            }
+          },
+          "per_class": {
+            "review": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "skip": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "unknown": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            }
+          },
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "accuracy": 1.0,
+          "review_to_skip": 0,
+          "unknown_to_skip": 0,
+          "review_to_unknown": 0,
+          "abstention_rate": 0.3333333333333333,
+          "invalid_count": 0,
+          "invalid_rate": 0.0
+        },
+        "database_unique": {
+          "n": 3,
+          "confusion": {
+            "review": {
+              "review": 1,
+              "skip": 0,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "skip": {
+              "review": 0,
+              "skip": 1,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "unknown": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            }
+          },
+          "per_class": {
+            "review": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "skip": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "unknown": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            }
+          },
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "accuracy": 1.0,
+          "review_to_skip": 0,
+          "unknown_to_skip": 0,
+          "review_to_unknown": 0,
+          "abstention_rate": 0.3333333333333333,
+          "invalid_count": 0,
+          "invalid_rate": 0.0
+        },
+        "gzip_response": {
+          "n": 3,
+          "confusion": {
+            "review": {
+              "review": 1,
+              "skip": 0,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "skip": {
+              "review": 0,
+              "skip": 1,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "unknown": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            }
+          },
+          "per_class": {
+            "review": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "skip": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "unknown": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            }
+          },
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "accuracy": 1.0,
+          "review_to_skip": 0,
+          "unknown_to_skip": 0,
+          "review_to_unknown": 0,
+          "abstention_rate": 0.3333333333333333,
+          "invalid_count": 0,
+          "invalid_rate": 0.0
+        },
+        "locale_case": {
+          "n": 3,
+          "confusion": {
+            "review": {
+              "review": 1,
+              "skip": 0,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "skip": {
+              "review": 0,
+              "skip": 1,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "unknown": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            }
+          },
+          "per_class": {
+            "review": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "skip": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "unknown": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            }
+          },
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "accuracy": 1.0,
+          "review_to_skip": 0,
+          "unknown_to_skip": 0,
+          "review_to_unknown": 0,
+          "abstention_rate": 0.3333333333333333,
+          "invalid_count": 0,
+          "invalid_rate": 0.0
+        },
+        "mutex_scope": {
+          "n": 3,
+          "confusion": {
+            "review": {
+              "review": 1,
+              "skip": 0,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "skip": {
+              "review": 0,
+              "skip": 1,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "unknown": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            }
+          },
+          "per_class": {
+            "review": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "skip": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "unknown": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            }
+          },
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "accuracy": 1.0,
+          "review_to_skip": 0,
+          "unknown_to_skip": 0,
+          "review_to_unknown": 0,
+          "abstention_rate": 0.3333333333333333,
+          "invalid_count": 0,
+          "invalid_rate": 0.0
+        }
+      }
+    }
+  },
+  {
+    "step": 100,
+    "metrics": {
+      "rows": {
+        "n": 120,
+        "confusion": {
+          "review": {
+            "review": 40,
+            "skip": 0,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 40,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 40,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 40
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 40
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 40
+          }
+        },
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "accuracy": 1.0,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 0,
+        "abstention_rate": 0.3333333333333333,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      },
+      "scenarios": {
+        "n": 15,
+        "confusion": {
+          "review": {
+            "review": 5,
+            "skip": 0,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 5,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 5,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 5
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 5
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 5
+          }
+        },
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "accuracy": 1.0,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 0,
+        "abstention_rate": 0.3333333333333333,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      },
+      "scenario_predictions": [
+        {
+          "scenario_id": "gzip_response-s1",
+          "family": "gzip_response",
+          "expected": "review",
+          "predicted": "review",
+          "variant_counts": {
+            "review": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "mutex_scope-s2",
+          "family": "mutex_scope",
+          "expected": "skip",
+          "predicted": "skip",
+          "variant_counts": {
+            "skip": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "css_hit_testing-s2",
+          "family": "css_hit_testing",
+          "expected": "skip",
+          "predicted": "skip",
+          "variant_counts": {
+            "skip": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "mutex_scope-s1",
+          "family": "mutex_scope",
+          "expected": "review",
+          "predicted": "review",
+          "variant_counts": {
+            "review": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "locale_case-s3",
+          "family": "locale_case",
+          "expected": "unknown",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "locale_case-s1",
+          "family": "locale_case",
+          "expected": "review",
+          "predicted": "review",
+          "variant_counts": {
+            "review": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "gzip_response-s3",
+          "family": "gzip_response",
+          "expected": "unknown",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "css_hit_testing-s1",
+          "family": "css_hit_testing",
+          "expected": "review",
+          "predicted": "review",
+          "variant_counts": {
+            "review": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "gzip_response-s2",
+          "family": "gzip_response",
+          "expected": "skip",
+          "predicted": "skip",
+          "variant_counts": {
+            "skip": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "locale_case-s2",
+          "family": "locale_case",
+          "expected": "skip",
+          "predicted": "skip",
+          "variant_counts": {
+            "skip": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "css_hit_testing-s3",
+          "family": "css_hit_testing",
+          "expected": "unknown",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "database_unique-s2",
+          "family": "database_unique",
+          "expected": "skip",
+          "predicted": "skip",
+          "variant_counts": {
+            "skip": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "mutex_scope-s3",
+          "family": "mutex_scope",
+          "expected": "unknown",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "database_unique-s3",
+          "family": "database_unique",
+          "expected": "unknown",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "database_unique-s1",
+          "family": "database_unique",
+          "expected": "review",
+          "predicted": "review",
+          "variant_counts": {
+            "review": 8
+          },
+          "variant_disagreement": false
+        }
+      ],
+      "variant_disagreement_scenarios": 0,
+      "per_family": {
+        "css_hit_testing": {
+          "n": 3,
+          "confusion": {
+            "review": {
+              "review": 1,
+              "skip": 0,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "skip": {
+              "review": 0,
+              "skip": 1,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "unknown": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            }
+          },
+          "per_class": {
+            "review": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "skip": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "unknown": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            }
+          },
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "accuracy": 1.0,
+          "review_to_skip": 0,
+          "unknown_to_skip": 0,
+          "review_to_unknown": 0,
+          "abstention_rate": 0.3333333333333333,
+          "invalid_count": 0,
+          "invalid_rate": 0.0
+        },
+        "database_unique": {
+          "n": 3,
+          "confusion": {
+            "review": {
+              "review": 1,
+              "skip": 0,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "skip": {
+              "review": 0,
+              "skip": 1,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "unknown": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            }
+          },
+          "per_class": {
+            "review": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "skip": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "unknown": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            }
+          },
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "accuracy": 1.0,
+          "review_to_skip": 0,
+          "unknown_to_skip": 0,
+          "review_to_unknown": 0,
+          "abstention_rate": 0.3333333333333333,
+          "invalid_count": 0,
+          "invalid_rate": 0.0
+        },
+        "gzip_response": {
+          "n": 3,
+          "confusion": {
+            "review": {
+              "review": 1,
+              "skip": 0,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "skip": {
+              "review": 0,
+              "skip": 1,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "unknown": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            }
+          },
+          "per_class": {
+            "review": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "skip": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "unknown": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            }
+          },
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "accuracy": 1.0,
+          "review_to_skip": 0,
+          "unknown_to_skip": 0,
+          "review_to_unknown": 0,
+          "abstention_rate": 0.3333333333333333,
+          "invalid_count": 0,
+          "invalid_rate": 0.0
+        },
+        "locale_case": {
+          "n": 3,
+          "confusion": {
+            "review": {
+              "review": 1,
+              "skip": 0,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "skip": {
+              "review": 0,
+              "skip": 1,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "unknown": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            }
+          },
+          "per_class": {
+            "review": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "skip": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "unknown": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            }
+          },
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "accuracy": 1.0,
+          "review_to_skip": 0,
+          "unknown_to_skip": 0,
+          "review_to_unknown": 0,
+          "abstention_rate": 0.3333333333333333,
+          "invalid_count": 0,
+          "invalid_rate": 0.0
+        },
+        "mutex_scope": {
+          "n": 3,
+          "confusion": {
+            "review": {
+              "review": 1,
+              "skip": 0,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "skip": {
+              "review": 0,
+              "skip": 1,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "unknown": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            }
+          },
+          "per_class": {
+            "review": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "skip": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "unknown": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            }
+          },
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "accuracy": 1.0,
+          "review_to_skip": 0,
+          "unknown_to_skip": 0,
+          "review_to_unknown": 0,
+          "abstention_rate": 0.3333333333333333,
+          "invalid_count": 0,
+          "invalid_rate": 0.0
+        }
+      }
+    }
+  },
+  {
+    "step": 200,
+    "metrics": {
+      "rows": {
+        "n": 120,
+        "confusion": {
+          "review": {
+            "review": 40,
+            "skip": 0,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 40,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 40,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 40
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 40
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 40
+          }
+        },
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "accuracy": 1.0,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 0,
+        "abstention_rate": 0.3333333333333333,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      },
+      "scenarios": {
+        "n": 15,
+        "confusion": {
+          "review": {
+            "review": 5,
+            "skip": 0,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "skip": {
+            "review": 0,
+            "skip": 5,
+            "unknown": 0,
+            "invalid": 0
+          },
+          "unknown": {
+            "review": 0,
+            "skip": 0,
+            "unknown": 5,
+            "invalid": 0
+          }
+        },
+        "per_class": {
+          "review": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 5
+          },
+          "skip": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 5
+          },
+          "unknown": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 5
+          }
+        },
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "accuracy": 1.0,
+        "review_to_skip": 0,
+        "unknown_to_skip": 0,
+        "review_to_unknown": 0,
+        "abstention_rate": 0.3333333333333333,
+        "invalid_count": 0,
+        "invalid_rate": 0.0
+      },
+      "scenario_predictions": [
+        {
+          "scenario_id": "gzip_response-s1",
+          "family": "gzip_response",
+          "expected": "review",
+          "predicted": "review",
+          "variant_counts": {
+            "review": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "mutex_scope-s2",
+          "family": "mutex_scope",
+          "expected": "skip",
+          "predicted": "skip",
+          "variant_counts": {
+            "skip": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "css_hit_testing-s2",
+          "family": "css_hit_testing",
+          "expected": "skip",
+          "predicted": "skip",
+          "variant_counts": {
+            "skip": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "mutex_scope-s1",
+          "family": "mutex_scope",
+          "expected": "review",
+          "predicted": "review",
+          "variant_counts": {
+            "review": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "locale_case-s3",
+          "family": "locale_case",
+          "expected": "unknown",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "locale_case-s1",
+          "family": "locale_case",
+          "expected": "review",
+          "predicted": "review",
+          "variant_counts": {
+            "review": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "gzip_response-s3",
+          "family": "gzip_response",
+          "expected": "unknown",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "css_hit_testing-s1",
+          "family": "css_hit_testing",
+          "expected": "review",
+          "predicted": "review",
+          "variant_counts": {
+            "review": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "gzip_response-s2",
+          "family": "gzip_response",
+          "expected": "skip",
+          "predicted": "skip",
+          "variant_counts": {
+            "skip": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "locale_case-s2",
+          "family": "locale_case",
+          "expected": "skip",
+          "predicted": "skip",
+          "variant_counts": {
+            "skip": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "css_hit_testing-s3",
+          "family": "css_hit_testing",
+          "expected": "unknown",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "database_unique-s2",
+          "family": "database_unique",
+          "expected": "skip",
+          "predicted": "skip",
+          "variant_counts": {
+            "skip": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "mutex_scope-s3",
+          "family": "mutex_scope",
+          "expected": "unknown",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "database_unique-s3",
+          "family": "database_unique",
+          "expected": "unknown",
+          "predicted": "unknown",
+          "variant_counts": {
+            "unknown": 8
+          },
+          "variant_disagreement": false
+        },
+        {
+          "scenario_id": "database_unique-s1",
+          "family": "database_unique",
+          "expected": "review",
+          "predicted": "review",
+          "variant_counts": {
+            "review": 8
+          },
+          "variant_disagreement": false
+        }
+      ],
+      "variant_disagreement_scenarios": 0,
+      "per_family": {
+        "css_hit_testing": {
+          "n": 3,
+          "confusion": {
+            "review": {
+              "review": 1,
+              "skip": 0,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "skip": {
+              "review": 0,
+              "skip": 1,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "unknown": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            }
+          },
+          "per_class": {
+            "review": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "skip": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "unknown": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            }
+          },
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "accuracy": 1.0,
+          "review_to_skip": 0,
+          "unknown_to_skip": 0,
+          "review_to_unknown": 0,
+          "abstention_rate": 0.3333333333333333,
+          "invalid_count": 0,
+          "invalid_rate": 0.0
+        },
+        "database_unique": {
+          "n": 3,
+          "confusion": {
+            "review": {
+              "review": 1,
+              "skip": 0,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "skip": {
+              "review": 0,
+              "skip": 1,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "unknown": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            }
+          },
+          "per_class": {
+            "review": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "skip": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "unknown": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            }
+          },
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "accuracy": 1.0,
+          "review_to_skip": 0,
+          "unknown_to_skip": 0,
+          "review_to_unknown": 0,
+          "abstention_rate": 0.3333333333333333,
+          "invalid_count": 0,
+          "invalid_rate": 0.0
+        },
+        "gzip_response": {
+          "n": 3,
+          "confusion": {
+            "review": {
+              "review": 1,
+              "skip": 0,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "skip": {
+              "review": 0,
+              "skip": 1,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "unknown": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            }
+          },
+          "per_class": {
+            "review": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "skip": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "unknown": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            }
+          },
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "accuracy": 1.0,
+          "review_to_skip": 0,
+          "unknown_to_skip": 0,
+          "review_to_unknown": 0,
+          "abstention_rate": 0.3333333333333333,
+          "invalid_count": 0,
+          "invalid_rate": 0.0
+        },
+        "locale_case": {
+          "n": 3,
+          "confusion": {
+            "review": {
+              "review": 1,
+              "skip": 0,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "skip": {
+              "review": 0,
+              "skip": 1,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "unknown": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            }
+          },
+          "per_class": {
+            "review": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "skip": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "unknown": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            }
+          },
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "accuracy": 1.0,
+          "review_to_skip": 0,
+          "unknown_to_skip": 0,
+          "review_to_unknown": 0,
+          "abstention_rate": 0.3333333333333333,
+          "invalid_count": 0,
+          "invalid_rate": 0.0
+        },
+        "mutex_scope": {
+          "n": 3,
+          "confusion": {
+            "review": {
+              "review": 1,
+              "skip": 0,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "skip": {
+              "review": 0,
+              "skip": 1,
+              "unknown": 0,
+              "invalid": 0
+            },
+            "unknown": {
+              "review": 0,
+              "skip": 0,
+              "unknown": 1,
+              "invalid": 0
+            }
+          },
+          "per_class": {
+            "review": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "skip": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            },
+            "unknown": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1
+            }
+          },
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "accuracy": 1.0,
+          "review_to_skip": 0,
+          "unknown_to_skip": 0,
+          "review_to_unknown": 0,
+          "abstention_rate": 0.3333333333333333,
+          "invalid_count": 0,
+          "invalid_rate": 0.0
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "status": "frozen_before_any_dev_evaluation",
+  "frozen_utc": "2026-10-15T06:03:33.246060+00:00",
+  "schedule": [
+    0,
+    50,
+    100,
+    200
+  ],
+  "protocol_smoke_step_seconds": [
+    3.551,
+    1.951
+  ],
+  "branch_threshold_seconds": 4.5,
+  "rule": "Predeclared warm second optimizer step timing only, no dev scores observed",
+  "execution_config_sha256": "1b0c839d2cc6fc945bc52f27d58a988b50475ff988bdef14c8330aada2989275",
+  "mlx_buffer_cache_limit_bytes": 268435456,
+  "execution_lifecycle": "One training run segmented only to release MPS before MLX evaluation; optimizer, CPU/MPS RNG and fixed sampler position restored between segments",
+  "no_semantic_inference_changes": true,
+  "venue": "Direct human authorization selects local Mac; no cloud service",
+  "earlier_technical_smoke_weights_not_used": true
+}

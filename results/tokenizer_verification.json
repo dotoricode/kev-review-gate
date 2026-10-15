@@ -1,0 +1,217 @@
+{
+  "status": "verified_equal_on_all_inputs",
+  "runtime_loader_fact": "Checkpoint.load calls load_tokenizer(meta.base), not checkpoint path; both evaluations override meta.base to the same locked local base. Saved tokenizers checked independently as well.",
+  "tokenizers": {
+    "original_saved": {
+      "files": {
+        "tokenizer.json": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523",
+        "tokenizer_config.json": "8671bed7c852ce9e661be94f179a7b4ffd091c2a65aea0363e5501c20318ee45"
+      },
+      "backend_semantic_sha256": "537fdfe1168e1c78d55cc922b74633986d27aa8aac96cdbe3529523a0963368e",
+      "backend_component_hashes": {
+        "normalizer": "5628358406a1a2864e0f9e853618fc4d47d359acf10253558d0c18886de3f06e",
+        "pre_tokenizer": "d730489d91319a99960af82e8fed44be8533ca92615198807b41c29dda5556fc",
+        "post_processor": "4942970eeb62af80cf8c4eb5d864699b914996b14b6a5e083528e3eed7dfc44d",
+        "decoder": "1d64d97add535d9ad91561aabea254849cf7f2ea4b924cc61c17152f1dd6e672",
+        "model": "028a8aa14a411ea601bbc7c9a88b232f3eeab0d4f6b0702a746b10e5cc45c365",
+        "added_tokens": "b9a3adcc43f7f0d345f3fc2a59353df0a1fb4c228ca845a2b094ebe13ff52d3f"
+      },
+      "special_tokens_map_sha256": "db272d85d5fca8ea1c70fcc27a2b878ee715de2dd2a82b145fcc2640d8bfed0f",
+      "all_special_ids": [
+        248044,
+        248070,
+        248071,
+        248076,
+        248056,
+        248057,
+        248053,
+        248054,
+        248045,
+        248046,
+        248047,
+        248048,
+        248049,
+        248050,
+        248051,
+        248052,
+        248055
+      ],
+      "kev_special_ids": {
+        "<|fim_prefix|>": 248060,
+        "<|fim_middle|>": 248061,
+        "<|box_start|>": 248049,
+        "<|box_end|>": 248050,
+        "<|fim_suffix|>": 248062
+      },
+      "bos_token_id": null,
+      "eos_token_id": 248044,
+      "pad_token_id": 248044
+    },
+    "selected_saved": {
+      "files": {
+        "tokenizer.json": "a5cd9732badce41de57e6efce8302930ded1c1188c5f81feb2bd6c24c4a1941f",
+        "tokenizer_config.json": "014b0ff7a3716bdc8329a8337ed3e0ef5bc295803182d42cdc6387e90e81de62"
+      },
+      "backend_semantic_sha256": "d1a021dabae4cae884037ec064efcb8c5005d46307cafd8ab7924717e8e800a9",
+      "backend_component_hashes": {
+        "normalizer": "5628358406a1a2864e0f9e853618fc4d47d359acf10253558d0c18886de3f06e",
+        "pre_tokenizer": "4cba7e5c03fddf4af78a44f283740fd19687522c60cc36ee271b655f634a7af3",
+        "post_processor": "4942970eeb62af80cf8c4eb5d864699b914996b14b6a5e083528e3eed7dfc44d",
+        "decoder": "1d64d97add535d9ad91561aabea254849cf7f2ea4b924cc61c17152f1dd6e672",
+        "model": "028a8aa14a411ea601bbc7c9a88b232f3eeab0d4f6b0702a746b10e5cc45c365",
+        "added_tokens": "b9a3adcc43f7f0d345f3fc2a59353df0a1fb4c228ca845a2b094ebe13ff52d3f"
+      },
+      "special_tokens_map_sha256": "db272d85d5fca8ea1c70fcc27a2b878ee715de2dd2a82b145fcc2640d8bfed0f",
+      "all_special_ids": [
+        248044,
+        248070,
+        248071,
+        248076,
+        248056,
+        248057,
+        248053,
+        248054,
+        248045,
+        248046,
+        248047,
+        248048,
+        248049,
+        248050,
+        248051,
+        248052,
+        248055
+      ],
+      "kev_special_ids": {
+        "<|fim_prefix|>": 248060,
+        "<|fim_middle|>": 248061,
+        "<|box_start|>": 248049,
+        "<|box_end|>": 248050,
+        "<|fim_suffix|>": 248062
+      },
+      "bos_token_id": null,
+      "eos_token_id": 248044,
+      "pad_token_id": 248044
+    },
+    "actual_shared_runtime": {
+      "files": {
+        "tokenizer.json": "fe000e3ed39ed12b8d2481d527d44f93c65d37e87645d2dcc80d1bf9d50d2927",
+        "tokenizer_config.json": "3891e840d7dc5fca0af33d3a25083a735e36fe06214e3f707024820cb6b9f89c"
+      },
+      "backend_semantic_sha256": "d1a021dabae4cae884037ec064efcb8c5005d46307cafd8ab7924717e8e800a9",
+      "backend_component_hashes": {
+        "normalizer": "5628358406a1a2864e0f9e853618fc4d47d359acf10253558d0c18886de3f06e",
+        "pre_tokenizer": "4cba7e5c03fddf4af78a44f283740fd19687522c60cc36ee271b655f634a7af3",
+        "post_processor": "4942970eeb62af80cf8c4eb5d864699b914996b14b6a5e083528e3eed7dfc44d",
+        "decoder": "1d64d97add535d9ad91561aabea254849cf7f2ea4b924cc61c17152f1dd6e672",
+        "model": "028a8aa14a411ea601bbc7c9a88b232f3eeab0d4f6b0702a746b10e5cc45c365",
+        "added_tokens": "b9a3adcc43f7f0d345f3fc2a59353df0a1fb4c228ca845a2b094ebe13ff52d3f"
+      },
+      "special_tokens_map_sha256": "db272d85d5fca8ea1c70fcc27a2b878ee715de2dd2a82b145fcc2640d8bfed0f",
+      "all_special_ids": [
+        248044,
+        248070,
+        248071,
+        248076,
+        248056,
+        248057,
+        248053,
+        248054,
+        248045,
+        248046,
+        248047,
+        248048,
+        248049,
+        248050,
+        248051,
+        248052,
+        248055
+      ],
+      "kev_special_ids": {
+        "<|fim_prefix|>": 248060,
+        "<|fim_middle|>": 248061,
+        "<|box_start|>": 248049,
+        "<|box_end|>": 248050,
+        "<|fim_suffix|>": 248062
+      },
+      "bos_token_id": null,
+      "eos_token_id": 248044,
+      "pad_token_id": 248044
+    }
+  },
+  "splits": {
+    "train": {
+      "rows": 576,
+      "mismatched_encodings": 0,
+      "mismatched_serialized_token_ids": 0,
+      "token_and_position_aggregate_hashes": {
+        "original_saved": "51a3d1762a18e119d82f30a0fd6822ba1449e24c0779a5121b022bfb2b5ede94",
+        "selected_saved": "51a3d1762a18e119d82f30a0fd6822ba1449e24c0779a5121b022bfb2b5ede94",
+        "actual_shared_runtime": "51a3d1762a18e119d82f30a0fd6822ba1449e24c0779a5121b022bfb2b5ede94"
+      }
+    },
+    "dev": {
+      "rows": 120,
+      "mismatched_encodings": 0,
+      "mismatched_serialized_token_ids": 0,
+      "token_and_position_aggregate_hashes": {
+        "original_saved": "20970c85bda6eb1b66d3dbab0421a656c8da165cb7fc092cac224a99a605e337",
+        "selected_saved": "20970c85bda6eb1b66d3dbab0421a656c8da165cb7fc092cac224a99a605e337",
+        "actual_shared_runtime": "20970c85bda6eb1b66d3dbab0421a656c8da165cb7fc092cac224a99a605e337"
+      }
+    },
+    "final_blinded": {
+      "rows": 120,
+      "mismatched_encodings": 0,
+      "mismatched_serialized_token_ids": 0,
+      "token_and_position_aggregate_hashes": {
+        "original_saved": "978b3a15f09e8f10ddf6acb7d817b02542daa38698c60a2309363a3d9910a40b",
+        "selected_saved": "978b3a15f09e8f10ddf6acb7d817b02542daa38698c60a2309363a3d9910a40b",
+        "actual_shared_runtime": "978b3a15f09e8f10ddf6acb7d817b02542daa38698c60a2309363a3d9910a40b"
+      }
+    }
+  },
+  "training_exposure": {
+    "0": {
+      "rows_seen": 0,
+      "row_epochs": 0.0,
+      "unique_semantic_scenarios": 0
+    },
+    "50": {
+      "rows_seen": 50,
+      "row_epochs": 0.08680555555555555,
+      "unique_semantic_scenarios": 41
+    },
+    "100": {
+      "rows_seen": 100,
+      "row_epochs": 0.1736111111111111,
+      "unique_semantic_scenarios": 60
+    },
+    "200": {
+      "rows_seen": 200,
+      "row_epochs": 0.3472222222222222,
+      "unique_semantic_scenarios": 69
+    }
+  },
+  "backend_component_equality": {
+    "normalizer": true,
+    "pre_tokenizer": false,
+    "post_processor": true,
+    "decoder": true,
+    "model": true,
+    "added_tokens": true
+  },
+  "saved_tokenizer_difference": {
+    "pure_serialization_only": false,
+    "pretokenizer_regex": "Original saved regex excludes Unicode mark category; selected/base regex includes Unicode mark category in letter runs and excludes marks from punctuation runs. Could affect other Unicode inputs.",
+    "tokenizer_classes": "Original saved Qwen2Tokenizer; selected saved Qwen3_5Tokenizer. Actual shared base is loaded by transformers as Qwen3_5Tokenizer.",
+    "base_bytelevel_offsets": "On disk base trim_offsets false vs saved true; loaded semantic backend identical to selected.",
+    "scope": "Observed identical on all816 approved rows; no assertion of equivalence for arbitrary future input.",
+    "evaluation_consequence": "Both real evaluation paths load the same locked base tokenizer, so this saved-file difference did not introduce original-vs-candidate tokenizer changes."
+  },
+  "dropout_eval_verification": {
+    "runtime": "Both workers assert model.lm.training False and every torch pointer-head module.training False immediately before inference. Head dropout modules empty.",
+    "static_path": "mlx_lm.utils.load_model calls model.eval(), which MLX Module.eval() recursively applies train(False); Kev MLX adapter is folded into backbone weights, so PEFT training LoRA dropout0.05 is absent from inference. Qwen3.5/Qwen3Next source has no dropout modules.",
+    "numeric_temperature": 2.406050072164233,
+    "same_mlx_path": "Both workers use Checkpoint.load(mps, LoadOptions(backend=mlx)) -> _load_mlx -> load_base -> merge_lora -> MLXDecisionModel, identical encoder/probs/to_answers; only checkpoint weights differ."
+  }
+}

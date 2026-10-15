@@ -1,0 +1,7 @@
+(version 1)
+(allow default)
+(deny network*)
+(allow network-inbound (local ip "localhost:8019"))
+(allow network-bind (local ip "localhost:8019"))
+(deny process-exec)
+(deny process-fork)

@@ -1,0 +1,3246 @@
+{
+  "status": "PUBLIC_CONSUMED_BENCHMARK_NOT_FUTURE_HOLDOUT",
+  "provenance": "Blinded inputs plus parent-held independent synthetic designer labels after selection. Reconstructed file, not byte-identical to originally sequestered final_test.json. No original rationales recovered.",
+  "cases": [
+    {
+      "id": "final_test-disk_permission-s1-05",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_record.txt\nBefore:\nchmod 600 report.dat\nAfter:\nchmod 644 report.dat\nSupplied evidence:\nPOSIX permissions apply; report.dat exists and other local users can access its directory."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s1",
+      "variant_id": 5,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s2-01",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_sample.txt\nBefore:\nreturn bool(re.search(\"cat\",text))\nAfter:\nreturn bool(re.search(\"cat\", text))\nSupplied evidence:\nOnly Python argument spacing changes; no source inspection."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s2",
+      "variant_id": 1,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s2-05",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_record.txt\nBefore:\noutput=RGBA(red,green,blue,255)\nAfter:\noutput = RGBA(red, green, blue, 255)\nSupplied evidence:\nThe language ignores whitespace outside tokens; same constructor and arguments."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s2",
+      "variant_id": 5,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s1-07",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_piece.txt\nBefore:\nreturn bool(re.search(\"cat\", text))\nAfter:\nreturn bool(re.search(\"^cat$\", text))\nSupplied evidence:\nStandard re module; text may be \"bobcat\" and the boolean is returned."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s1",
+      "variant_id": 7,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s3-01",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_sample.txt\nBefore:\nreturn pack(number, format_alpha)\nAfter:\nreturn pack(number, format_beta)\nSupplied evidence:\npack is project-defined; both formats and implementation are absent."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s3",
+      "variant_id": 1,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s1-06",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_element.txt\nBefore:\nreturn struct.pack(\"<I\", number)\nAfter:\nreturn struct.pack(\">I\", number)\nSupplied evidence:\nnumber can be 1; built-in struct packs a four-byte integer and returned bytes are transmitted."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s1",
+      "variant_id": 6,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s1-03",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_packet.txt\nBefore:\nreturn bool(re.search(\"cat\", text))\nAfter:\nreturn bool(re.search(\"^cat$\", text))\nSupplied evidence:\nStandard re module; text may be \"bobcat\" and the boolean is returned."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s1",
+      "variant_id": 3,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s1-07",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_piece.txt\nBefore:\nchmod 600 report.dat\nAfter:\nchmod 644 report.dat\nSupplied evidence:\nPOSIX permissions apply; report.dat exists and other local users can access its directory."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s1",
+      "variant_id": 7,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s1-02",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_entry.txt\nBefore:\nchmod 600 report.dat\nAfter:\nchmod 644 report.dat\nSupplied evidence:\nPOSIX permissions apply; report.dat exists and other local users can access its directory."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s1",
+      "variant_id": 2,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s3-08",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_object.txt\nBefore:\napply_access report.dat alpha\nAfter:\napply_access report.dat beta\nSupplied evidence:\napply_access is a project command; profile definitions and implementation are unavailable."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s3",
+      "variant_id": 8,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s2-05",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_record.txt\nBefore:\nreturn bool(re.search(\"cat\",text))\nAfter:\nreturn bool(re.search(\"cat\", text))\nSupplied evidence:\nOnly Python argument spacing changes; no source inspection."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s2",
+      "variant_id": 5,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s1-02",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_entry.txt\nBefore:\noutput = RGBA(red, green, blue, 255)\nAfter:\noutput = RGBA(red, green, blue, 0)\nSupplied evidence:\nRGBA constructs an 8-bit pixel; alpha 255 is opaque and 0 transparent; output is rendered."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s1",
+      "variant_id": 2,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s2-02",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_entry.txt\nBefore:\nchmod 600 report.dat\nAfter:\nchmod   600   report.dat\nSupplied evidence:\nPOSIX shell with normal unquoted token separation; only inter-token spaces change."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s2",
+      "variant_id": 2,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s2-05",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_record.txt\nBefore:\nchmod 600 report.dat\nAfter:\nchmod   600   report.dat\nSupplied evidence:\nPOSIX shell with normal unquoted token separation; only inter-token spaces change."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s2",
+      "variant_id": 5,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s3-03",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_packet.txt\nBefore:\nreturn pack(number, format_alpha)\nAfter:\nreturn pack(number, format_beta)\nSupplied evidence:\npack is project-defined; both formats and implementation are absent."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s3",
+      "variant_id": 3,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s1-05",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_record.txt\nBefore:\nreturn struct.pack(\"<I\", number)\nAfter:\nreturn struct.pack(\">I\", number)\nSupplied evidence:\nnumber can be 1; built-in struct packs a four-byte integer and returned bytes are transmitted."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s1",
+      "variant_id": 5,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s3-01",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_sample.txt\nBefore:\napply_access report.dat alpha\nAfter:\napply_access report.dat beta\nSupplied evidence:\napply_access is a project command; profile definitions and implementation are unavailable."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s3",
+      "variant_id": 1,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s2-08",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_object.txt\nBefore:\nreturn struct.pack(\"<I\",number)\nAfter:\nreturn struct.pack(\"<I\", number)\nSupplied evidence:\nOnly Python argument spacing changes."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s2",
+      "variant_id": 8,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s3-01",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_sample.txt\nBefore:\noutput = transform(pixel, profile_alpha)\nAfter:\noutput = transform(pixel, profile_beta)\nSupplied evidence:\nNeither transform nor profile definitions are available."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s3",
+      "variant_id": 1,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s2-03",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_packet.txt\nBefore:\n# Redirect response note.\nAfter:\n# Redirect response note!\nSupplied evidence:\nThis is a human-only note, never emitted or parsed."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s2",
+      "variant_id": 3,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s2-02",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_entry.txt\nBefore:\n# Redirect response note.\nAfter:\n# Redirect response note!\nSupplied evidence:\nThis is a human-only note, never emitted or parsed."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s2",
+      "variant_id": 2,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s2-07",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_piece.txt\nBefore:\noutput=RGBA(red,green,blue,255)\nAfter:\noutput = RGBA(red, green, blue, 255)\nSupplied evidence:\nThe language ignores whitespace outside tokens; same constructor and arguments."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s2",
+      "variant_id": 7,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s3-05",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_record.txt\nBefore:\nreturn pack(number, format_alpha)\nAfter:\nreturn pack(number, format_beta)\nSupplied evidence:\npack is project-defined; both formats and implementation are absent."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s3",
+      "variant_id": 5,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s1-08",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_object.txt\nBefore:\nreturn bool(re.search(\"cat\", text))\nAfter:\nreturn bool(re.search(\"^cat$\", text))\nSupplied evidence:\nStandard re module; text may be \"bobcat\" and the boolean is returned."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s1",
+      "variant_id": 8,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s3-07",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_piece.txt\nBefore:\napply_access report.dat alpha\nAfter:\napply_access report.dat beta\nSupplied evidence:\napply_access is a project command; profile definitions and implementation are unavailable."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s3",
+      "variant_id": 7,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s2-02",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_entry.txt\nBefore:\nreturn struct.pack(\"<I\",number)\nAfter:\nreturn struct.pack(\"<I\", number)\nSupplied evidence:\nOnly Python argument spacing changes."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s2",
+      "variant_id": 2,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s2-03",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_packet.txt\nBefore:\noutput=RGBA(red,green,blue,255)\nAfter:\noutput = RGBA(red, green, blue, 255)\nSupplied evidence:\nThe language ignores whitespace outside tokens; same constructor and arguments."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s2",
+      "variant_id": 3,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s2-06",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_element.txt\nBefore:\nreturn struct.pack(\"<I\",number)\nAfter:\nreturn struct.pack(\"<I\", number)\nSupplied evidence:\nOnly Python argument spacing changes."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s2",
+      "variant_id": 6,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s1-01",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_sample.txt\nBefore:\nreturn struct.pack(\"<I\", number)\nAfter:\nreturn struct.pack(\">I\", number)\nSupplied evidence:\nnumber can be 1; built-in struct packs a four-byte integer and returned bytes are transmitted."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s1",
+      "variant_id": 1,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s3-03",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_packet.txt\nBefore:\noutput = transform(pixel, profile_alpha)\nAfter:\noutput = transform(pixel, profile_beta)\nSupplied evidence:\nNeither transform nor profile definitions are available."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s3",
+      "variant_id": 3,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s1-01",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_sample.txt\nBefore:\nchmod 600 report.dat\nAfter:\nchmod 644 report.dat\nSupplied evidence:\nPOSIX permissions apply; report.dat exists and other local users can access its directory."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s1",
+      "variant_id": 1,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s1-01",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_sample.txt\nBefore:\nreturn bool(re.search(\"cat\", text))\nAfter:\nreturn bool(re.search(\"^cat$\", text))\nSupplied evidence:\nStandard re module; text may be \"bobcat\" and the boolean is returned."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s1",
+      "variant_id": 1,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s3-04",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_unit.txt\nBefore:\napply_access report.dat alpha\nAfter:\napply_access report.dat beta\nSupplied evidence:\napply_access is a project command; profile definitions and implementation are unavailable."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s3",
+      "variant_id": 4,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s3-03",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_packet.txt\nBefore:\nreturn bool(re.search(pattern_a, text))\nAfter:\nreturn bool(re.search(pattern_b, text))\nSupplied evidence:\nNeither pattern value is supplied."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s3",
+      "variant_id": 3,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s2-08",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_object.txt\nBefore:\nreturn bool(re.search(\"cat\",text))\nAfter:\nreturn bool(re.search(\"cat\", text))\nSupplied evidence:\nOnly Python argument spacing changes; no source inspection."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s2",
+      "variant_id": 8,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s3-03",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_packet.txt\nBefore:\napply_access report.dat alpha\nAfter:\napply_access report.dat beta\nSupplied evidence:\napply_access is a project command; profile definitions and implementation are unavailable."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s3",
+      "variant_id": 3,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s3-07",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_piece.txt\nBefore:\nreturn bool(re.search(pattern_a, text))\nAfter:\nreturn bool(re.search(pattern_b, text))\nSupplied evidence:\nNeither pattern value is supplied."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s3",
+      "variant_id": 7,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s2-07",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_piece.txt\nBefore:\nchmod 600 report.dat\nAfter:\nchmod   600   report.dat\nSupplied evidence:\nPOSIX shell with normal unquoted token separation; only inter-token spaces change."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s2",
+      "variant_id": 7,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s3-05",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_record.txt\nBefore:\nreturn bool(re.search(pattern_a, text))\nAfter:\nreturn bool(re.search(pattern_b, text))\nSupplied evidence:\nNeither pattern value is supplied."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s3",
+      "variant_id": 5,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s3-06",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_element.txt\nBefore:\nreturn bool(re.search(pattern_a, text))\nAfter:\nreturn bool(re.search(pattern_b, text))\nSupplied evidence:\nNeither pattern value is supplied."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s3",
+      "variant_id": 6,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s2-03",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_packet.txt\nBefore:\nchmod 600 report.dat\nAfter:\nchmod   600   report.dat\nSupplied evidence:\nPOSIX shell with normal unquoted token separation; only inter-token spaces change."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s2",
+      "variant_id": 3,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s2-07",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_piece.txt\nBefore:\n# Redirect response note.\nAfter:\n# Redirect response note!\nSupplied evidence:\nThis is a human-only note, never emitted or parsed."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s2",
+      "variant_id": 7,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s2-02",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_entry.txt\nBefore:\noutput=RGBA(red,green,blue,255)\nAfter:\noutput = RGBA(red, green, blue, 255)\nSupplied evidence:\nThe language ignores whitespace outside tokens; same constructor and arguments."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s2",
+      "variant_id": 2,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s1-06",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_element.txt\nBefore:\noutput = RGBA(red, green, blue, 255)\nAfter:\noutput = RGBA(red, green, blue, 0)\nSupplied evidence:\nRGBA constructs an 8-bit pixel; alpha 255 is opaque and 0 transparent; output is rendered."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s1",
+      "variant_id": 6,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s2-08",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_object.txt\nBefore:\noutput=RGBA(red,green,blue,255)\nAfter:\noutput = RGBA(red, green, blue, 255)\nSupplied evidence:\nThe language ignores whitespace outside tokens; same constructor and arguments."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s2",
+      "variant_id": 8,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s3-06",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_element.txt\nBefore:\nredirect_profile = \"alpha\"\nAfter:\nredirect_profile = \"beta\"\nSupplied evidence:\nProfile definitions, response codes, and headers are absent."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s3",
+      "variant_id": 6,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s1-04",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_unit.txt\nBefore:\nreturn struct.pack(\"<I\", number)\nAfter:\nreturn struct.pack(\">I\", number)\nSupplied evidence:\nnumber can be 1; built-in struct packs a four-byte integer and returned bytes are transmitted."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s1",
+      "variant_id": 4,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s3-07",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_piece.txt\nBefore:\nreturn pack(number, format_alpha)\nAfter:\nreturn pack(number, format_beta)\nSupplied evidence:\npack is project-defined; both formats and implementation are absent."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s3",
+      "variant_id": 7,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s1-06",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_element.txt\nBefore:\nreturn bool(re.search(\"cat\", text))\nAfter:\nreturn bool(re.search(\"^cat$\", text))\nSupplied evidence:\nStandard re module; text may be \"bobcat\" and the boolean is returned."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s1",
+      "variant_id": 6,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s1-07",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_piece.txt\nBefore:\nstatus = 302; Location = /next\nAfter:\nstatus = 307; Location = /next\nSupplied evidence:\nThis actual response redirects a POST request; clients follow standard HTTP redirect method rules."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s1",
+      "variant_id": 7,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s1-01",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_sample.txt\nBefore:\nstatus = 302; Location = /next\nAfter:\nstatus = 307; Location = /next\nSupplied evidence:\nThis actual response redirects a POST request; clients follow standard HTTP redirect method rules."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s1",
+      "variant_id": 1,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s1-08",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_object.txt\nBefore:\nchmod 600 report.dat\nAfter:\nchmod 644 report.dat\nSupplied evidence:\nPOSIX permissions apply; report.dat exists and other local users can access its directory."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s1",
+      "variant_id": 8,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s3-01",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_sample.txt\nBefore:\nredirect_profile = \"alpha\"\nAfter:\nredirect_profile = \"beta\"\nSupplied evidence:\nProfile definitions, response codes, and headers are absent."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s3",
+      "variant_id": 1,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s3-04",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_unit.txt\nBefore:\nreturn bool(re.search(pattern_a, text))\nAfter:\nreturn bool(re.search(pattern_b, text))\nSupplied evidence:\nNeither pattern value is supplied."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s3",
+      "variant_id": 4,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s3-08",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_object.txt\nBefore:\nreturn bool(re.search(pattern_a, text))\nAfter:\nreturn bool(re.search(pattern_b, text))\nSupplied evidence:\nNeither pattern value is supplied."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s3",
+      "variant_id": 8,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s1-06",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_element.txt\nBefore:\nstatus = 302; Location = /next\nAfter:\nstatus = 307; Location = /next\nSupplied evidence:\nThis actual response redirects a POST request; clients follow standard HTTP redirect method rules."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s1",
+      "variant_id": 6,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s3-02",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_entry.txt\nBefore:\noutput = transform(pixel, profile_alpha)\nAfter:\noutput = transform(pixel, profile_beta)\nSupplied evidence:\nNeither transform nor profile definitions are available."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s3",
+      "variant_id": 2,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s1-04",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_unit.txt\nBefore:\noutput = RGBA(red, green, blue, 255)\nAfter:\noutput = RGBA(red, green, blue, 0)\nSupplied evidence:\nRGBA constructs an 8-bit pixel; alpha 255 is opaque and 0 transparent; output is rendered."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s1",
+      "variant_id": 4,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s2-08",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_object.txt\nBefore:\nchmod 600 report.dat\nAfter:\nchmod   600   report.dat\nSupplied evidence:\nPOSIX shell with normal unquoted token separation; only inter-token spaces change."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s2",
+      "variant_id": 8,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s2-01",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_sample.txt\nBefore:\n# Redirect response note.\nAfter:\n# Redirect response note!\nSupplied evidence:\nThis is a human-only note, never emitted or parsed."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s2",
+      "variant_id": 1,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s2-08",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_object.txt\nBefore:\n# Redirect response note.\nAfter:\n# Redirect response note!\nSupplied evidence:\nThis is a human-only note, never emitted or parsed."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s2",
+      "variant_id": 8,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s1-04",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_unit.txt\nBefore:\nchmod 600 report.dat\nAfter:\nchmod 644 report.dat\nSupplied evidence:\nPOSIX permissions apply; report.dat exists and other local users can access its directory."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s1",
+      "variant_id": 4,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s1-04",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_unit.txt\nBefore:\nreturn bool(re.search(\"cat\", text))\nAfter:\nreturn bool(re.search(\"^cat$\", text))\nSupplied evidence:\nStandard re module; text may be \"bobcat\" and the boolean is returned."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s1",
+      "variant_id": 4,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s3-02",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_entry.txt\nBefore:\nreturn bool(re.search(pattern_a, text))\nAfter:\nreturn bool(re.search(pattern_b, text))\nSupplied evidence:\nNeither pattern value is supplied."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s3",
+      "variant_id": 2,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s2-06",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_element.txt\nBefore:\nreturn bool(re.search(\"cat\",text))\nAfter:\nreturn bool(re.search(\"cat\", text))\nSupplied evidence:\nOnly Python argument spacing changes; no source inspection."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s2",
+      "variant_id": 6,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s2-06",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_element.txt\nBefore:\noutput=RGBA(red,green,blue,255)\nAfter:\noutput = RGBA(red, green, blue, 255)\nSupplied evidence:\nThe language ignores whitespace outside tokens; same constructor and arguments."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s2",
+      "variant_id": 6,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s2-05",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_record.txt\nBefore:\nreturn struct.pack(\"<I\",number)\nAfter:\nreturn struct.pack(\"<I\", number)\nSupplied evidence:\nOnly Python argument spacing changes."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s2",
+      "variant_id": 5,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s3-06",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_element.txt\nBefore:\noutput = transform(pixel, profile_alpha)\nAfter:\noutput = transform(pixel, profile_beta)\nSupplied evidence:\nNeither transform nor profile definitions are available."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s3",
+      "variant_id": 6,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s3-05",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_record.txt\nBefore:\noutput = transform(pixel, profile_alpha)\nAfter:\noutput = transform(pixel, profile_beta)\nSupplied evidence:\nNeither transform nor profile definitions are available."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s3",
+      "variant_id": 5,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s2-07",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_piece.txt\nBefore:\nreturn bool(re.search(\"cat\",text))\nAfter:\nreturn bool(re.search(\"cat\", text))\nSupplied evidence:\nOnly Python argument spacing changes; no source inspection."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s2",
+      "variant_id": 7,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s3-04",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_unit.txt\nBefore:\nreturn pack(number, format_alpha)\nAfter:\nreturn pack(number, format_beta)\nSupplied evidence:\npack is project-defined; both formats and implementation are absent."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s3",
+      "variant_id": 4,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s3-08",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_object.txt\nBefore:\nredirect_profile = \"alpha\"\nAfter:\nredirect_profile = \"beta\"\nSupplied evidence:\nProfile definitions, response codes, and headers are absent."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s3",
+      "variant_id": 8,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s2-04",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_unit.txt\nBefore:\nreturn struct.pack(\"<I\",number)\nAfter:\nreturn struct.pack(\"<I\", number)\nSupplied evidence:\nOnly Python argument spacing changes."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s2",
+      "variant_id": 4,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s2-01",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_sample.txt\nBefore:\nchmod 600 report.dat\nAfter:\nchmod   600   report.dat\nSupplied evidence:\nPOSIX shell with normal unquoted token separation; only inter-token spaces change."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s2",
+      "variant_id": 1,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s3-02",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_entry.txt\nBefore:\napply_access report.dat alpha\nAfter:\napply_access report.dat beta\nSupplied evidence:\napply_access is a project command; profile definitions and implementation are unavailable."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s3",
+      "variant_id": 2,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s2-02",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_entry.txt\nBefore:\nreturn bool(re.search(\"cat\",text))\nAfter:\nreturn bool(re.search(\"cat\", text))\nSupplied evidence:\nOnly Python argument spacing changes; no source inspection."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s2",
+      "variant_id": 2,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s3-06",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_element.txt\nBefore:\nreturn pack(number, format_alpha)\nAfter:\nreturn pack(number, format_beta)\nSupplied evidence:\npack is project-defined; both formats and implementation are absent."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s3",
+      "variant_id": 6,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s1-07",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_piece.txt\nBefore:\noutput = RGBA(red, green, blue, 255)\nAfter:\noutput = RGBA(red, green, blue, 0)\nSupplied evidence:\nRGBA constructs an 8-bit pixel; alpha 255 is opaque and 0 transparent; output is rendered."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s1",
+      "variant_id": 7,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s3-07",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_piece.txt\nBefore:\nredirect_profile = \"alpha\"\nAfter:\nredirect_profile = \"beta\"\nSupplied evidence:\nProfile definitions, response codes, and headers are absent."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s3",
+      "variant_id": 7,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s3-04",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_unit.txt\nBefore:\nredirect_profile = \"alpha\"\nAfter:\nredirect_profile = \"beta\"\nSupplied evidence:\nProfile definitions, response codes, and headers are absent."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s3",
+      "variant_id": 4,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s3-06",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_element.txt\nBefore:\napply_access report.dat alpha\nAfter:\napply_access report.dat beta\nSupplied evidence:\napply_access is a project command; profile definitions and implementation are unavailable."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s3",
+      "variant_id": 6,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s3-07",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_piece.txt\nBefore:\noutput = transform(pixel, profile_alpha)\nAfter:\noutput = transform(pixel, profile_beta)\nSupplied evidence:\nNeither transform nor profile definitions are available."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s3",
+      "variant_id": 7,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s3-03",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_packet.txt\nBefore:\nredirect_profile = \"alpha\"\nAfter:\nredirect_profile = \"beta\"\nSupplied evidence:\nProfile definitions, response codes, and headers are absent."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s3",
+      "variant_id": 3,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s1-04",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_unit.txt\nBefore:\nstatus = 302; Location = /next\nAfter:\nstatus = 307; Location = /next\nSupplied evidence:\nThis actual response redirects a POST request; clients follow standard HTTP redirect method rules."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s1",
+      "variant_id": 4,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s2-03",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_packet.txt\nBefore:\nreturn bool(re.search(\"cat\",text))\nAfter:\nreturn bool(re.search(\"cat\", text))\nSupplied evidence:\nOnly Python argument spacing changes; no source inspection."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s2",
+      "variant_id": 3,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s3-02",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_entry.txt\nBefore:\nredirect_profile = \"alpha\"\nAfter:\nredirect_profile = \"beta\"\nSupplied evidence:\nProfile definitions, response codes, and headers are absent."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s3",
+      "variant_id": 2,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s1-05",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_record.txt\nBefore:\nstatus = 302; Location = /next\nAfter:\nstatus = 307; Location = /next\nSupplied evidence:\nThis actual response redirects a POST request; clients follow standard HTTP redirect method rules."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s1",
+      "variant_id": 5,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s2-04",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_unit.txt\nBefore:\nchmod 600 report.dat\nAfter:\nchmod   600   report.dat\nSupplied evidence:\nPOSIX shell with normal unquoted token separation; only inter-token spaces change."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s2",
+      "variant_id": 4,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s2-04",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_unit.txt\nBefore:\n# Redirect response note.\nAfter:\n# Redirect response note!\nSupplied evidence:\nThis is a human-only note, never emitted or parsed."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s2",
+      "variant_id": 4,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s3-05",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_record.txt\nBefore:\nredirect_profile = \"alpha\"\nAfter:\nredirect_profile = \"beta\"\nSupplied evidence:\nProfile definitions, response codes, and headers are absent."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s3",
+      "variant_id": 5,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s1-03",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_packet.txt\nBefore:\noutput = RGBA(red, green, blue, 255)\nAfter:\noutput = RGBA(red, green, blue, 0)\nSupplied evidence:\nRGBA constructs an 8-bit pixel; alpha 255 is opaque and 0 transparent; output is rendered."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s1",
+      "variant_id": 3,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s1-08",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_object.txt\nBefore:\nstatus = 302; Location = /next\nAfter:\nstatus = 307; Location = /next\nSupplied evidence:\nThis actual response redirects a POST request; clients follow standard HTTP redirect method rules."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s1",
+      "variant_id": 8,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s2-04",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_unit.txt\nBefore:\nreturn bool(re.search(\"cat\",text))\nAfter:\nreturn bool(re.search(\"cat\", text))\nSupplied evidence:\nOnly Python argument spacing changes; no source inspection."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s2",
+      "variant_id": 4,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s1-01",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_sample.txt\nBefore:\noutput = RGBA(red, green, blue, 255)\nAfter:\noutput = RGBA(red, green, blue, 0)\nSupplied evidence:\nRGBA constructs an 8-bit pixel; alpha 255 is opaque and 0 transparent; output is rendered."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s1",
+      "variant_id": 1,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s2-07",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_piece.txt\nBefore:\nreturn struct.pack(\"<I\",number)\nAfter:\nreturn struct.pack(\"<I\", number)\nSupplied evidence:\nOnly Python argument spacing changes."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s2",
+      "variant_id": 7,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s1-03",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_packet.txt\nBefore:\nchmod 600 report.dat\nAfter:\nchmod 644 report.dat\nSupplied evidence:\nPOSIX permissions apply; report.dat exists and other local users can access its directory."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s1",
+      "variant_id": 3,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s1-02",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_entry.txt\nBefore:\nreturn struct.pack(\"<I\", number)\nAfter:\nreturn struct.pack(\">I\", number)\nSupplied evidence:\nnumber can be 1; built-in struct packs a four-byte integer and returned bytes are transmitted."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s1",
+      "variant_id": 2,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s1-05",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_record.txt\nBefore:\nreturn bool(re.search(\"cat\", text))\nAfter:\nreturn bool(re.search(\"^cat$\", text))\nSupplied evidence:\nStandard re module; text may be \"bobcat\" and the boolean is returned."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s1",
+      "variant_id": 5,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s1-08",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_object.txt\nBefore:\nreturn struct.pack(\"<I\", number)\nAfter:\nreturn struct.pack(\">I\", number)\nSupplied evidence:\nnumber can be 1; built-in struct packs a four-byte integer and returned bytes are transmitted."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s1",
+      "variant_id": 8,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s2-01",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_sample.txt\nBefore:\noutput=RGBA(red,green,blue,255)\nAfter:\noutput = RGBA(red, green, blue, 255)\nSupplied evidence:\nThe language ignores whitespace outside tokens; same constructor and arguments."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s2",
+      "variant_id": 1,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s3-02",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_entry.txt\nBefore:\nreturn pack(number, format_alpha)\nAfter:\nreturn pack(number, format_beta)\nSupplied evidence:\npack is project-defined; both formats and implementation are absent."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s3",
+      "variant_id": 2,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s1-02",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_entry.txt\nBefore:\nstatus = 302; Location = /next\nAfter:\nstatus = 307; Location = /next\nSupplied evidence:\nThis actual response redirects a POST request; clients follow standard HTTP redirect method rules."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s1",
+      "variant_id": 2,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s1-02",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_entry.txt\nBefore:\nreturn bool(re.search(\"cat\", text))\nAfter:\nreturn bool(re.search(\"^cat$\", text))\nSupplied evidence:\nStandard re module; text may be \"bobcat\" and the boolean is returned."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s1",
+      "variant_id": 2,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s1-05",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_record.txt\nBefore:\noutput = RGBA(red, green, blue, 255)\nAfter:\noutput = RGBA(red, green, blue, 0)\nSupplied evidence:\nRGBA constructs an 8-bit pixel; alpha 255 is opaque and 0 transparent; output is rendered."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s1",
+      "variant_id": 5,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s2-06",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_element.txt\nBefore:\n# Redirect response note.\nAfter:\n# Redirect response note!\nSupplied evidence:\nThis is a human-only note, never emitted or parsed."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s2",
+      "variant_id": 6,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s2-05",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_record.txt\nBefore:\n# Redirect response note.\nAfter:\n# Redirect response note!\nSupplied evidence:\nThis is a human-only note, never emitted or parsed."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s2",
+      "variant_id": 5,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s2-06",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_element.txt\nBefore:\nchmod 600 report.dat\nAfter:\nchmod   600   report.dat\nSupplied evidence:\nPOSIX shell with normal unquoted token separation; only inter-token spaces change."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s2",
+      "variant_id": 6,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-http_redirect_code-s1-03",
+      "state": {
+        "synthetic_diff": "Language/content: HTTP configuration\nFile context: example_packet.txt\nBefore:\nstatus = 302; Location = /next\nAfter:\nstatus = 307; Location = /next\nSupplied evidence:\nThis actual response redirects a POST request; clients follow standard HTTP redirect method rules."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "http_redirect_code",
+      "scenario_id": "http_redirect_code-s1",
+      "variant_id": 3,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s1-07",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_piece.txt\nBefore:\nreturn struct.pack(\"<I\", number)\nAfter:\nreturn struct.pack(\">I\", number)\nSupplied evidence:\nnumber can be 1; built-in struct packs a four-byte integer and returned bytes are transmitted."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s1",
+      "variant_id": 7,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s2-03",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_packet.txt\nBefore:\nreturn struct.pack(\"<I\",number)\nAfter:\nreturn struct.pack(\"<I\", number)\nSupplied evidence:\nOnly Python argument spacing changes."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s2",
+      "variant_id": 3,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s1-06",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_element.txt\nBefore:\nchmod 600 report.dat\nAfter:\nchmod 644 report.dat\nSupplied evidence:\nPOSIX permissions apply; report.dat exists and other local users can access its directory."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s1",
+      "variant_id": 6,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s1-08",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_object.txt\nBefore:\noutput = RGBA(red, green, blue, 255)\nAfter:\noutput = RGBA(red, green, blue, 0)\nSupplied evidence:\nRGBA constructs an 8-bit pixel; alpha 255 is opaque and 0 transparent; output is rendered."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s1",
+      "variant_id": 8,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-disk_permission-s3-05",
+      "state": {
+        "synthetic_diff": "Language/content: Shell\nFile context: example_record.txt\nBefore:\napply_access report.dat alpha\nAfter:\napply_access report.dat beta\nSupplied evidence:\napply_access is a project command; profile definitions and implementation are unavailable."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "disk_permission",
+      "scenario_id": "disk_permission-s3",
+      "variant_id": 5,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s3-04",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_unit.txt\nBefore:\noutput = transform(pixel, profile_alpha)\nAfter:\noutput = transform(pixel, profile_beta)\nSupplied evidence:\nNeither transform nor profile definitions are available."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s3",
+      "variant_id": 4,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s2-01",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_sample.txt\nBefore:\nreturn struct.pack(\"<I\",number)\nAfter:\nreturn struct.pack(\"<I\", number)\nSupplied evidence:\nOnly Python argument spacing changes."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s2",
+      "variant_id": 1,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s3-08",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_object.txt\nBefore:\nreturn pack(number, format_alpha)\nAfter:\nreturn pack(number, format_beta)\nSupplied evidence:\npack is project-defined; both formats and implementation are absent."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s3",
+      "variant_id": 8,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s3-08",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_object.txt\nBefore:\noutput = transform(pixel, profile_alpha)\nAfter:\noutput = transform(pixel, profile_beta)\nSupplied evidence:\nNeither transform nor profile definitions are available."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s3",
+      "variant_id": 8,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-regex_anchor-s3-01",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_sample.txt\nBefore:\nreturn bool(re.search(pattern_a, text))\nAfter:\nreturn bool(re.search(pattern_b, text))\nSupplied evidence:\nNeither pattern value is supplied."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "unknown",
+      "family": "regex_anchor",
+      "scenario_id": "regex_anchor-s3",
+      "variant_id": 1,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-binary_endianness-s1-03",
+      "state": {
+        "synthetic_diff": "Language/content: Python\nFile context: example_packet.txt\nBefore:\nreturn struct.pack(\"<I\", number)\nAfter:\nreturn struct.pack(\">I\", number)\nSupplied evidence:\nnumber can be 1; built-in struct packs a four-byte integer and returned bytes are transmitted."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "review",
+      "family": "binary_endianness",
+      "scenario_id": "binary_endianness-s1",
+      "variant_id": 3,
+      "split": "final_test"
+    },
+    {
+      "id": "final_test-image_alpha-s2-04",
+      "state": {
+        "synthetic_diff": "Language/content: Image pipeline pseudocode\nFile context: example_unit.txt\nBefore:\noutput=RGBA(red,green,blue,255)\nAfter:\noutput = RGBA(red, green, blue, 255)\nSupplied evidence:\nThe language ignores whitespace outside tokens; same constructor and arguments."
+      },
+      "question": "Does this commit need independent code review? Skip only when supplied evidence establishes no behavior, interface, security, or data effect. Missing evidence means unknown.",
+      "type": "choice",
+      "criteria": [
+        {
+          "value": "review",
+          "description": "Behavior, interfaces, or security change"
+        },
+        {
+          "value": "skip",
+          "description": "Only wording or formatting, no behavior effect"
+        },
+        {
+          "value": "unknown",
+          "description": "Insufficient evidence"
+        }
+      ],
+      "expected": "skip",
+      "family": "image_alpha",
+      "scenario_id": "image_alpha-s2",
+      "variant_id": 4,
+      "split": "final_test"
+    }
+  ]
+}
