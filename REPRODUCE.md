@@ -2,6 +2,13 @@
 
 ## Frozen inference
 
+Choose the source checkout for the workflow you need. The immutable
+`v0.1.0-experimental` tag reproduces the original standalone inference release;
+the [Claude Code/Codex skill setup](skills/kev-review-gate/references/setup.md)
+requires a reviewed current main commit, which adds `/health` and `kev_gate.py`.
+Both use the same frozen Release weights and pinned base/tokenizer. Updating
+the skill/runtime source does not require retraining or replacing those weights.
+
 Use the release tag, requirements.lock, pinned external base snapshot and
 Release weights. README provides commands. `evaluate.py --reference
 results/final_predictions.json` checks exact rounded answer objects and input
