@@ -1,0 +1,70 @@
+{
+  "status": "passed",
+  "scope": "Dedicated skill and fixed-loopback CLI on main; original model Release and weights unchanged",
+  "unit_mock_and_loopback_protocol_tests": 57,
+  "model_inference_calls_in_those_tests": 0,
+  "actual_model_inference_calls": 5,
+  "actual_fixture_calls": 3,
+  "actual_file_stdin_calls": 2,
+  "actual_fixture_answer_matches": 3,
+  "actual_file_stdin_results_match": true,
+  "doctor_actual_identity_verified": {
+    "model": "kev-review-gate-step50",
+    "version": "v0.1.0-experimental",
+    "backend": "mlx",
+    "base_revision": "1001bb4d826a52d1f399e183466143f4da7b741b",
+    "temperature": 2.406050072164233,
+    "backbone_dtype": "bfloat16",
+    "head_dtype": "float32",
+    "automatic_skip_enabled": false,
+    "health_schema": 1,
+    "base_model_id": "Qwen/Qwen3.5-4B-Base",
+    "tokenizer_id": "Qwen/Qwen3.5-4B-Base",
+    "tokenizer_revision": "1001bb4d826a52d1f399e183466143f4da7b741b",
+    "tokenizer_files_sha256": {
+      "tokenizer.json": "fe000e3ed39ed12b8d2481d527d44f93c65d37e87645d2dcc80d1bf9d50d2927",
+      "tokenizer_config.json": "3891e840d7dc5fca0af33d3a25083a735e36fe06214e3f707024820cb6b9f89c"
+    },
+    "weights_files_sha256": {
+      "adapter_model.safetensors": "d2634d72e193f896ef44b46c747be1220a9ede3d457537c6569891ec6f68f63f",
+      "head.safetensors": "e7a4950e89f731331eafb39321df438b9a9be0076669e0d187614d6fb0273fc5",
+      "LICENSE": "6b08bb37982c233aa12bcbdf19106da12f3f4fcf800773ea42e28ebeddd34fb8",
+      "NOTICE": "26b90ad3bccb4b857b7bcf623be1a6ee47f6ebefb83d7774607e55d477bd1386",
+      "adapter_config.json": "eb856804a12ae8949b99dc26d3bb0c3254cc6e59a9d339224c8431ab2c7b88ac",
+      "model_config.json": "c12ae0f6a1dc6ff60358e37b3594c9e7e97236bb46298f21da266e54efa09aec"
+    },
+    "eval_mode": true,
+    "max_state_tokens": 384,
+    "max_packed_tokens": 512
+  },
+  "doctor_offline_after_cleanup": "service_unavailable, decision:null, nonzero exit",
+  "skill_frontmatter_validation": "skill-creator quick_validate passed",
+  "outbound_model_api_calls": 0,
+  "training_or_reselection": false,
+  "model_input_contract_changed": false,
+  "inference_math_changed": false,
+  "automatic_skip_enabled": false,
+  "service_before": "No listener on8019",
+  "service_after": "Owned foreground test server stopped; no persistent service installed",
+  "global_skill_installation_performed": false,
+  "existing_integrations_modified": false,
+  "sensitive_info_scan": "Passed on all tracked and new public files; no actual private paths, emails, credentials or raw input logs",
+  "files_sha256": {
+    "kev_gate.py": "2426c024f9e0f6d6378020fd355bc4c71b9d8ec215663426fc8e270d16d285ef",
+    "runtime.py": "bbcfdd1272f33bc9f627a810e1db92e65c1305575dc9298b46d609cb0defd104",
+    "serve.py": "b3f498b97f11d90f1de1ff1739a6531d45102175031d779d5640d6e7a197ff62",
+    "skills/kev-review-gate/SKILL.md": "3b0fbe12cbe8749a09b64f9d91f374c54a10547abbf5bbb3a5f3d8e8dedbe929",
+    "skills/kev-review-gate/references/contract.md": "4f5f91537c892cbfff30aa24bda4d2466d6de24b5a4b48a5972802ba0b7b4202",
+    "skills/kev-review-gate/references/setup.md": "678715cc65a0e8f1ca67b83f2154fd78578df875da4425ca263e125095b9a7fd",
+    "tests/test_agent_client.py": "5e846b4abe025b76aeb5c79c6143dccd039daa56ba8cca756a42d448d5d5c2b2",
+    "tests/test_http_contract.py": "e10efa7fafa8de94362f204fda0c5d16c05ef19d0fc11281cec17aa29873884b",
+    "tests/fixtures/skill_cases.json": "dac7a8cf78c74e8618553cf2188840c520a85118d45e8a981c819e97f1f5b20a"
+  },
+  "limits": [
+    "Tests use public synthetic inputs only",
+    "Raw git diffs and new domains unvalidated; published synthetic scores do not transfer",
+    "Health is self-report from a local process, not hostile-process attestation",
+    "Remote/cloud executors cannot reach a Mac loopback server",
+    "No automatic review bypass, retries, cloud fallback or server lifecycle management"
+  ]
+}

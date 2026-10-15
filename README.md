@@ -13,7 +13,9 @@ LoRA and pointer head on Qwen3.5-4B-Base. No upstream affiliation or endorsement
 Validated on Apple M5 Pro, 48 GB unified memory, macOS, Python 3.12.14. This release
 requires Apple Silicon/MLX and the pinned dependencies; no CPU or cloud fallback.
 
-1. Clone the `v0.1.0-experimental` tag and install `requirements.lock` in a Python3.12 venv.
+1. Clone a reviewed main commit for the Agent Skill/healthcheck integration and
+   install `requirements.lock` in a Python3.12 venv. The original
+   `v0.1.0-experimental` tag remains the frozen standalone-inference baseline.
 2. Download `kev-review-gate-step50.tar.gz` and `SHA256SUMS` from the
    [GitHub Release](https://github.com/dotoricode/kev-review-gate/releases/tag/v0.1.0-experimental).
    Run `shasum -a 256 -c SHA256SUMS`, then extract the archive under `weights/`.
@@ -51,6 +53,40 @@ Successful responses also say `status: "review_required"` and
 Localizing this classifier does not localize a later Codex/Claude reviewer.
 A downstream workflow sending real diffs to cloud reviewers still transmits
 those diffs. This repository does not read repositories or launch reviewers.
+
+## Claude Code and Codex Agent Skill
+
+The [dedicated skill](skills/kev-review-gate/SKILL.md) uses the fixed local
+runtime for advisory review-need judgments. [Setup and manual installation](skills/kev-review-gate/references/setup.md)
+cover both agents, project/personal discovery, explicit foreground startup and
+updates without overwriting another skill. Nothing installs or starts automatically.
+Use an approved agent executor on the server's machine; cloud/remote loopback
+does not reach a service on your Mac.
+
+Set `KEV_REVIEW_GATE_REPO` to this reviewed clone in your local session:
+
+```sh
+python3 "$KEV_REVIEW_GATE_REPO/kev_gate.py" doctor
+python3 "$KEV_REVIEW_GATE_REPO/kev_gate.py" fixture
+python3 "$KEV_REVIEW_GATE_REPO/kev_gate.py" judge --input "$STATE_FILE"
+```
+
+`STATE_FILE` is UTF-8 JSON with exactly `synthetic_diff` as a string; `--input -`
+reads stdin. Write evidence with file tools, never interpolate code into shell
+arguments. The CLI retains the original fixed question/ordered criteria. It
+checks health and response identity against pinned model/base/tokenizer hashes,
+temperature and precision before accepting a judgment. It accepts only the
+literal `http://127.0.0.1:8019`, ignores proxy environment, refuses redirects and
+has no cloud fallback or automatic retries. Errors return nonzero exit status,
+`ok:false`, `status:manual`, `decision:null`; semantic `unknown` is a successful
+model answer. Doctor self-report is not malicious-process attestation.
+
+The Agent Skill does not expand company-data authorization. Approved Claude or
+Codex environments may prepare permitted evidence; this implementation was
+tested only with public synthetic fixtures. Real raw git diffs, summaries and
+new domains are unvalidated and do not inherit the published synthetic scores.
+Automatic review skipping remains disabled. The existing weight assets and
+`v0.1.0-experimental` Release are unchanged by this integration.
 
 ## Measured experiment
 

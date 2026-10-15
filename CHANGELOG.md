@@ -1,5 +1,13 @@
 # Changes
 
+## Agent Skill integration on main
+
+Add a Claude Code/Codex skill, stdlib-only loopback doctor/judge/fixture CLI,
+and safe `/health` metadata using the same pinned runtime. Service/protocol
+errors remain distinct from the model's unknown class. Add mock failure tests
+and public synthetic fixture checks. No model, tokenizer, prompt, temperature,
+weight asset or existing v0.1.0-experimental Release change.
+
 ## v0.1.0-experimental
 
 Continue training the pinned Kev-4B LoRA and pointer head for 50 optimizer updates

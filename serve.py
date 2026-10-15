@@ -8,6 +8,11 @@ from runtime import ReviewGate
 FAIL={'status':'manual','decision':'review_required','automatic_skip_enabled':False}
 class Handler(BaseHTTPRequestHandler):
     gate=None
+    def do_GET(self):
+        if self.path!='/health' or self.headers.get('Host')!='127.0.0.1:8019' or self.headers.get('Origin') or self.headers.get('Transfer-Encoding'):
+            result=FAIL;code=422
+        else:result={'status':'ready','identity':self.gate.identity};code=200
+        raw=json.dumps(result,allow_nan=False).encode();self.send_response(code);self.send_header('Content-Type','application/json');self.send_header('Content-Length',str(len(raw)));self.end_headers();self.wfile.write(raw)
     def do_POST(self):
         try:
             if self.path!='/v1/systemone' or self.headers.get('Host')!='127.0.0.1:8019' or self.headers.get('Origin') or self.headers.get('Transfer-Encoding'):raise ValueError('loopback_request_only')

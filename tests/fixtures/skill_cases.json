@@ -1,0 +1,20 @@
+[
+  {
+    "id": "final_test-disk_permission-s1-05",
+    "state": {
+      "synthetic_diff": "Language/content: Shell\nFile context: example_record.txt\nBefore:\nchmod 600 report.dat\nAfter:\nchmod 644 report.dat\nSupplied evidence:\nPOSIX permissions apply; report.dat exists and other local users can access its directory."
+    }
+  },
+  {
+    "id": "final_test-regex_anchor-s2-01",
+    "state": {
+      "synthetic_diff": "Language/content: Python\nFile context: example_sample.txt\nBefore:\nreturn bool(re.search(\"cat\",text))\nAfter:\nreturn bool(re.search(\"cat\", text))\nSupplied evidence:\nOnly Python argument spacing changes; no source inspection."
+    }
+  },
+  {
+    "id": "final_test-binary_endianness-s3-01",
+    "state": {
+      "synthetic_diff": "Language/content: Python\nFile context: example_sample.txt\nBefore:\nreturn pack(number, format_alpha)\nAfter:\nreturn pack(number, format_beta)\nSupplied evidence:\npack is project-defined; both formats and implementation are absent."
+    }
+  }
+]

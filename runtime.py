@@ -41,6 +41,10 @@ class ReviewGate:
         self.model.eval();self.model.head.temperature=c['temperature']
         if self.model.backend!='mlx' or self.model.dtype!='bfloat16' or self.model.lm.training or any(m.training for m in self.model.head.modules()) or any(p.dtype!=torch.float32 for p in self.model.head.parameters()):raise ValueError('evaluation_precision_required')
         self.identity={'model':'kev-review-gate-step50','version':'v0.1.0-experimental','backend':'mlx','base_revision':lock['base_revision'],'temperature':c['temperature'],'backbone_dtype':'bfloat16','head_dtype':'float32','automatic_skip_enabled':False}
+        self.identity.update(health_schema=1,base_model_id=lock['base_id'],
+            tokenizer_id=lock['base_id'],tokenizer_revision=lock['base_revision'],
+            tokenizer_files_sha256={n:lock['files']['base/'+n] for n in ['tokenizer.json','tokenizer_config.json']},
+            weights_files_sha256=expected,eval_mode=True,max_state_tokens=384,max_packed_tokens=512)
 
     def predict(self,payload):
         from kev.api import SystemOneRequest,to_record,to_answers

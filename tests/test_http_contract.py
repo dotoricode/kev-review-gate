@@ -18,3 +18,13 @@ def test_fixed_host_contract_and_safe_failure():
         for body,host,path,origin in [('{}','127.0.0.1:8019','/v1/systemone',None),('{','127.0.0.1:8019','/v1/systemone',None),('{"a":1,"a":2}','127.0.0.1:8019','/v1/systemone',None),('{"x":NaN}','127.0.0.1:8019','/v1/systemone',None),('{}','example.invalid','/v1/systemone',None),('{}','127.0.0.1:8019','/wrong',None),('{}','127.0.0.1:8019','/v1/systemone','https://example.invalid')]:
             code,result=call(server,body,host,path,origin);assert code==422;assert result=={'status':'manual','decision':'review_required','automatic_skip_enabled':False}
     finally:server.shutdown();server.server_close();thread.join()
+
+def test_health_is_safe_and_requires_fixed_host():
+    class HealthStub:identity={'model':'synthetic-stub'}
+    class TestHandler(Handler):gate=HealthStub()
+    server=HTTPServer(('127.0.0.1',0),TestHandler);thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
+    try:
+        for host,path,status in [('127.0.0.1:8019','/health',200),('example.invalid','/health',422),('127.0.0.1:8019','/wrong',422)]:
+            c=http.client.HTTPConnection('127.0.0.1',server.server_port);c.request('GET',path,headers={'Host':host});r=c.getresponse();data=json.loads(r.read());assert r.status==status
+            assert data==({'status':'ready','identity':HealthStub.identity} if status==200 else {'status':'manual','decision':'review_required','automatic_skip_enabled':False});c.close()
+    finally:server.shutdown();server.server_close();thread.join()
