@@ -24,5 +24,8 @@
     "NOTICE",
     "CHANGELOG.md"
   ],
-  "python_tests": "9 tests passed, including valid/invalid HTTP contract and manual fail-closed behavior"
+  "python_tests": "9 tests passed, including valid/invalid HTTP contract and manual fail-closed behavior",
+  "checksum_inventory": "Git tracked public files only; excludes git metadata, pytest cache, bytecode and generated outputs",
+  "publication_validation_correction": "First public-source checksum check found ignored pytest cache entries in manifest. Corrected inventory before completion; model/weight bytes unchanged.",
+  "historical_trainer_import": "Passed with main/model/optimizer/inference unexecuted"
 }

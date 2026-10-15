@@ -17,3 +17,4 @@ training_support/*.json
 training_support/*.jsonl
 *.pt
 *.safetensors
+.pytest_cache/
