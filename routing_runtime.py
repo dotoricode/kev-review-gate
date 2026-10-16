@@ -12,12 +12,21 @@ ROOT = Path(__file__).resolve().parent
 FILES = {'adapter_config.json', 'adapter_model.safetensors', 'head.safetensors', 'model_config.json'}
 
 
-def verify_routing_artifacts(base_dir, weights_dir):
+def verify_routing_artifacts(base_dir, weights_dir, *, evaluation=False):
     base, weights = Path(base_dir).resolve(), Path(weights_dir).resolve()
     manifest_path = ROOT / 'provenance/routing-weights.json'
     if not manifest_path.is_file() or not weights.is_dir():
         raise ValueError('routing_weights_unavailable')
     expected = json.loads(manifest_path.read_text())
+    candidate_step = None
+    if evaluation:
+        candidates = json.loads((ROOT / 'provenance/routing-evaluation-weights.json').read_text())['candidates']
+        actual = json.loads((weights / 'routing_manifest.json').read_text())
+        matches = [int(step) for step, manifest in candidates.items() if step in ('0', '25', '50') and manifest == actual]
+        if len(matches) != 1:
+            raise ValueError('routing_identity_mismatch')
+        candidate_step = matches[0]
+        expected = candidates[str(candidate_step)]
     if expected.get('model') != MODEL_ID or expected.get('policy_version') != POLICY_VERSION or set(expected.get('public_files', {})) != FILES:
         raise ValueError('routing_identity_mismatch')
     if json.loads((weights / 'routing_manifest.json').read_text()) != expected:
@@ -31,6 +40,8 @@ def verify_routing_artifacts(base_dir, weights_dir):
                 'option_isolation': False, 'special_embeddings': False,
                 'model_id': MODEL_ID, 'policy_version': POLICY_VERSION,
                 'questions_sha256': sha(questions())}
+    if candidate_step is not None and (type(c.get('selected_step')) is not int or c['selected_step'] != candidate_step):
+        raise ValueError('routing_identity_mismatch')
     if any(type(c.get(k)) is not type(v) or c[k] != v for k, v in required.items()):
         raise ValueError('routing_identity_mismatch')
     return base, weights, c, expected

@@ -1,9 +1,10 @@
 # SPDX-License-Identifier: Apache-2.0
-import json,sys,tempfile,unittest
+import json,sys,tempfile,unittest,copy,shutil,builtins,hashlib
+from unittest import mock
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from routing_data import build,freeze,sha
-from routing_eval import aggregate,validate_answer,evaluate,claim_final_attempt,select_checkpoint,policy_metrics
+from routing_eval import aggregate,validate_answer,evaluate,claim_final_attempt,select_checkpoint,policy_metrics,freeze_selection,local_predictor
 from routing_policy import CHOICES,questions
 
 class RoutingTrainingTests(unittest.TestCase):
@@ -51,7 +52,51 @@ class RoutingTrainingTests(unittest.TestCase):
   row={'id':'risk','expected':'astra_high','predicted':'sol_high','status':'completed','latency_ms':1}
   self.assertEqual(aggregate([row])['high_risk_downrouting'],1)
   self.assertEqual(policy_metrics([row],[c])['accuracy'],1)
+  self.assertEqual(policy_metrics([row],[c])['original_high_risk_downrouting'],1)
   self.assertEqual(row['predicted'],'sol_high')
+ def test_artifact_validation_precedes_any_model_loading(self):
+  original_import=builtins.__import__
+  def guard(name,*args,**kwargs):
+   if name.startswith('kev.'):raise AssertionError('GPU imports reached before artifact verification')
+   return original_import(name,*args,**kwargs)
+  with mock.patch('isolation.isolate'),mock.patch('routing_runtime.verify_routing_artifacts',side_effect=ValueError('artifact_integrity_failure')),mock.patch('builtins.__import__',side_effect=guard):
+   with self.assertRaisesRegex(ValueError,'artifact_integrity_failure'):local_predictor('base','weights')
+ def test_each_pinned_candidate_rejects_tampered_tensor_manifest_and_base(self):
+  import routing_runtime as runtime
+  from contract import sha as contract_sha
+  with tempfile.TemporaryDirectory() as temp:
+   root=Path(temp);(root/'provenance').mkdir();base=root/'base';base.mkdir();(base/'model.bin').write_bytes(b'base')
+   lock={'base_id':'fixture-base','base_revision':'pinned-base','files':{'base/model.bin':hashlib.sha256(b'base').hexdigest()}}
+   (root/'provenance/upstream-model-lock.json').write_text(json.dumps(lock));pins={};dirs={}
+   for step in (0,25,50):
+    weights=root/f'weights-{step}';weights.mkdir();dirs[step]=weights
+    config={'base':lock['base_id'],'base_revision':lock['base_revision'],'tokenizer_revision':lock['base_revision'],'temperature':2.406050072164233,'option_isolation':False,'special_embeddings':False,'model_id':runtime.MODEL_ID,'policy_version':runtime.POLICY_VERSION,'questions_sha256':contract_sha(questions()),'selected_step':step}
+    for name in runtime.FILES:(weights/name).write_bytes(json.dumps(config).encode() if name=='model_config.json' else f'{name}-{step}'.encode())
+    pins[str(step)]={'model':runtime.MODEL_ID,'policy_version':runtime.POLICY_VERSION,'public_files':{name:hashlib.sha256((weights/name).read_bytes()).hexdigest() for name in runtime.FILES}}
+    (weights/'routing_manifest.json').write_text(json.dumps(pins[str(step)]))
+   (root/'provenance/routing-weights.json').write_text(json.dumps(pins['25']))
+   (root/'provenance/routing-evaluation-weights.json').write_text(json.dumps({'candidates':pins}))
+   with mock.patch.object(runtime,'ROOT',root):
+    for step in (0,25,50):
+     weights=dirs[step];runtime.verify_routing_artifacts(base,weights,evaluation=True)
+     target=weights/'head.safetensors';saved=target.read_bytes();target.write_bytes(b'tampered')
+     with self.assertRaises(ValueError):runtime.verify_routing_artifacts(base,weights,evaluation=True)
+     target.write_bytes(saved)
+    with self.assertRaises(ValueError):runtime.verify_routing_artifacts(base,dirs[0])
+    (base/'model.bin').write_bytes(b'tampered')
+    with self.assertRaises(ValueError):runtime.verify_routing_artifacts(base,dirs[25],evaluation=True)
+    (base/'model.bin').write_bytes(b'base')
+    altered=copy.deepcopy(pins['25']);altered['public_files']['head.safetensors']=hashlib.sha256(b'tampered').hexdigest();(dirs[25]/'routing_manifest.json').write_text(json.dumps(altered));(dirs[25]/'head.safetensors').write_bytes(b'tampered')
+    with self.assertRaises(ValueError):runtime.verify_routing_artifacts(base,dirs[25],evaluation=True)
+ def test_freeze_rejects_final_stale_contract_wrong_provider_and_wrong_step(self):
+  source=Path(__file__).resolve().parents[1]/'routing/results'
+  mutations=[lambda r:r.update(dataset_sha256='final-digest'),lambda r:r.update(questions_sha256='stale'),lambda r:r.update(provider='Jev'),lambda r:r.update(artifact_manifest=json.loads((source/'kev-dev-step50.json').read_text())['artifact_manifest'])]
+  for mutation in mutations:
+   with tempfile.TemporaryDirectory() as temp:
+    root=Path(temp)
+    for step in (0,25,50):shutil.copy2(source/f'kev-dev-step{step}.json',root/f'kev-dev-step{step}.json')
+    p=root/'kev-dev-step0.json';r=json.loads(p.read_text());mutation(r);p.write_text(json.dumps(r))
+    with self.assertRaises(ValueError):freeze_selection(root,root/'selection.json')
  def test_selection_requires_all_fixed_steps_and_uses_declared_tie_break(self):
   report={'status':'completed','metrics':{'measured':20,'macro_accuracy':.9,'high_risk_downrouting':0}}
   with self.assertRaises(ValueError):select_checkpoint({0:report})

@@ -48,12 +48,33 @@ def policy_metrics(rows,cases):
  by_result={r['id']:r for r in applied}
  original_risks=[r for r in rows if r.get('status')=='completed' and r['expected']=='astra_high']
  result['original_high_risk_cases']=len(original_risks)
- result['original_high_risk_downrouting']=sum(by_result[r['id']]['predicted'] not in ('astra_high','unknown') for r in original_risks)
+ result['original_high_risk_downrouting']=sum(r['predicted'] not in ('astra_high','unknown') for r in original_risks)
+ result['policy_residual_high_risk_downrouting']=sum(by_result[r['id']]['predicted'] not in ('astra_high','unknown') for r in original_risks)
  return result
+
+
+def validate_dev_reports(reports):
+ protocol=json.loads((ROOT/'routing/data/protocol.json').read_text())
+ dev_path=ROOT/'routing/data/dev.json'
+ digest=hashlib.sha256(dev_path.read_bytes()).hexdigest()
+ if digest!=protocol['dataset_hashes']['dev.json'] or protocol['questions_sha256']!=sha(questions()):raise ValueError('frozen_dev_contract_mismatch')
+ cases={c['id']:c for c in json.loads(dev_path.read_text())['cases']}
+ pins=json.loads((ROOT/'provenance/routing-evaluation-weights.json').read_text())['candidates']
+ for step,r in reports.items():
+  if r.get('provider')!='Kev' or r.get('dataset_sha256')!=digest or r.get('questions_sha256')!=sha(questions()) or r.get('artifact_manifest')!=pins[str(step)]:raise ValueError('invalid_dev_report_identity')
+  rows=r.get('rows')
+  if not isinstance(rows,list) or len(rows)!=20 or {row.get('id') for row in rows}!=set(cases):raise ValueError('invalid_dev_report_cases')
+  for row in rows:
+   c=cases[row['id']]
+   if row.get('status')!='completed' or row.get('family')!=c['family'] or row.get('expected')!=c['expected'] or row.get('input_sha256')!=sha({'state':c['state'],'questions':questions()}):raise ValueError('invalid_dev_report_case')
+   answer=validate_answer({'answers':row.get('answers')})
+   if row.get('predicted')!=answer['choice']:raise ValueError('invalid_dev_report_prediction')
+  if r.get('metrics')!=aggregate(rows) or r.get('raw_metrics')!=aggregate(rows):raise ValueError('invalid_dev_report_metrics')
 
 
 def freeze_selection(results,output):
  reports={step:json.loads((Path(results)/f'kev-dev-step{step}.json').read_text()) for step in (0,25,50)}
+ validate_dev_reports(reports)
  decision=select_checkpoint(reports);decision['questions_sha256']=sha(questions())
  decision['dev_report_sha256']={str(step):sha(r) for step,r in reports.items()}
  decision['artifact_manifest']=reports[decision['selected_step']]['artifact_manifest']
@@ -76,7 +97,7 @@ def validate_answer(raw):
  if not isinstance(raw,dict) or not isinstance(raw.get('answers'),dict) or set(raw['answers'])!={'route'}:raise ValueError('invalid_response')
  answer=raw['answers'].get('route')
  if not isinstance(answer,dict) or set(answer)!={'type','choice','confidence','probabilities'}:raise ValueError('invalid_response')
- if answer.get('type')!='choice' or answer.get('choice') not in CHOICES:raise ValueError('invalid_choice','invalid_response','invalid_confidence','nonmax_choice')
+ if answer.get('type')!='choice' or answer.get('choice') not in CHOICES:raise ValueError('invalid_choice')
  confidence=answer.get('confidence')
  if type(confidence) not in (int,float) or not math.isfinite(confidence) or not 0<=confidence<=1:raise ValueError('invalid_confidence')
  ps=answer.get('probabilities')
@@ -100,7 +121,9 @@ def jev_call(state):
 
 
 def local_predictor(base,weights):
- # Environment and offline isolation precede all GPU imports.
+ # Both evaluation candidates and the base must match repository pins before GPU imports.
+ from routing_runtime import verify_routing_artifacts
+ base,weights,cfg,verified_manifest=verify_routing_artifacts(base,weights,evaluation=True)
  from isolation import isolate
  isolate();sys.path.insert(0,str(ROOT/'vendor'))
  from kev.model import load_tokenizer,pad_id
@@ -108,7 +131,7 @@ def local_predictor(base,weights):
  from safetensors.torch import load_file
  from kev.api import SystemOneRequest,to_record,to_answers
  import kev.mlx_model as mm
- cfg=json.loads((Path(weights)/'model_config.json').read_text());mm.CACHE_LIMIT=256*1024**2
+ mm.CACHE_LIMIT=256*1024**2
  tok=load_tokenizer(str(base));lm=load_base(Path(base));merge_lora(lm,Path(weights));model=MLXDecisionModel(lm,pad_id(tok),head_dim=256)
  model.head.load_state_dict(load_file(Path(weights)/'head.safetensors'));model.head.temperature=cfg['temperature'];model.eval()
  def predict(state):
@@ -116,6 +139,7 @@ def local_predictor(base,weights):
   enc=model.encode(tok,rec,max_state=384,max_branch=512,strict=True)
   if len(enc['ids'])>512:raise ValueError('packed_token_limit')
   return {'answers':to_answers([x.tolist() for x in model.probs(enc)],meta),'usage':{'input_tokens':len(enc['ids'])},'token_ids_sha256':sha(enc['ids'])}
+ predict.artifact_manifest=verified_manifest
  return predict
 
 
@@ -154,7 +178,7 @@ def main():
  journal=out.with_suffix('.journal.jsonl').open('x')
  cases=json.loads(Path(a.data).read_text())['cases'];predict=jev_call if a.provider=='Jev' else local_predictor(a.base_dir,a.weights_dir)
  with journal:result=evaluate(cases,predict,a.provider,journal)
- if a.provider=='Kev':result['artifact_manifest']=json.loads((Path(a.weights_dir)/'routing_manifest.json').read_text())
+ if a.provider=='Kev':result['artifact_manifest']=predict.artifact_manifest
  else:result['requested_model']='jev-latest'
  result['final_selection_sha256']=final_selection
  result['dataset_sha256']=hashlib.sha256(Path(a.data).read_bytes()).hexdigest()

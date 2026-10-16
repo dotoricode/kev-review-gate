@@ -1,0 +1,315 @@
+{
+  "created_utc": "2026-10-16T01:02:06.701164+00:00",
+  "reason": "PR1 Codex review: verify actual tensors/base; validate frozen dev evidence; count raw risk before policy override",
+  "network_requests": 0,
+  "model_inferences": 0,
+  "original_reports_modified": false,
+  "verified_artifacts": {
+    "0": {
+      "files": {
+        "adapter_model.safetensors": "90e817356246e7f18bfa7ca3d31794cd4fbeb3332a66a84cb51d9ceae925f2b2",
+        "head.safetensors": "65698f2568fc1b6ebb60a1c2a24c7bb6622dcc23e1c6d9efe8d3274ad918a9a7",
+        "adapter_config.json": "8a05dfd6c5e7f61a62e6db5d8de8093a8dbbd105aa7ee7b5e7b73f6249f45617",
+        "model_config.json": "f06b93820f100c8e9383c7590b4ed2a9ab982617cbc996e51e37fdd125e95163"
+      },
+      "base_matches_pinned_lock": true,
+      "actual_files_match_recorded_report_manifest": true
+    },
+    "25": {
+      "files": {
+        "adapter_model.safetensors": "e5b260bb7ce8c3ffe962ba888bc2ce3a4592a5dea68d6321993a234b2e3caebe",
+        "head.safetensors": "25c113cf1718b03ebec3dfb6d76cd09f5f2318f6292d3388a8cec9d6ac7fe097",
+        "adapter_config.json": "c754c542697527daba574072dde62b604c84aede8c8648548e64dde760b80bfa",
+        "model_config.json": "46c23c3f28dd752db348efa6ab633d6f7be3d13a75bcb566dc7b6548f729b6ef"
+      },
+      "base_matches_pinned_lock": true,
+      "actual_files_match_recorded_report_manifest": true
+    },
+    "50": {
+      "files": {
+        "adapter_model.safetensors": "b9c241400d9f001fa04d9f455949aeb6eea8402e86fa29bd0252f19f11dc7716",
+        "head.safetensors": "722835c9fd543fe42a33f6d6e7d5f008e16a684f8e9801018ae6e745354c6f65",
+        "adapter_config.json": "7b88a4f0ada51c271d97252e68341d1a210a4a8238f24580f85e8c79e5c3b05c",
+        "model_config.json": "a10074cc778e137e66e7dd39b664690f8211e8971b806b2498f2ec76d006852c"
+      },
+      "base_matches_pinned_lock": true,
+      "actual_files_match_recorded_report_manifest": true
+    }
+  },
+  "offline_metrics": {
+    "kev-dev-step0.json": {
+      "original_file_sha256": "aa2031c1a0323742620c72e7cd9567d719da12843fe4374586d76ae4bf685a42",
+      "raw_metrics_unchanged": true,
+      "corrected_policy_metrics": {
+        "total": 20,
+        "measured": 20,
+        "unavailable": 0,
+        "accuracy": 0.75,
+        "macro_accuracy": 0.8571428571428571,
+        "class_recall": {
+          "sol_medium": 1.0,
+          "sol_high": 1.0,
+          "astra_medium": 0.42857142857142855,
+          "astra_high": 0.8571428571428571,
+          "unknown": 1.0
+        },
+        "latency_median_ms": 121.21549999999999,
+        "latency_mean_ms": 160.49994999999998,
+        "policy_profile_underallocation": 1,
+        "policy_astra_high_targets": 7,
+        "original_high_risk_cases": 4,
+        "original_high_risk_downrouting": 4,
+        "policy_residual_high_risk_downrouting": 1
+      },
+      "previous_policy_metrics": {
+        "total": 20,
+        "measured": 20,
+        "unavailable": 0,
+        "accuracy": 0.75,
+        "macro_accuracy": 0.8571428571428571,
+        "class_recall": {
+          "sol_medium": 1.0,
+          "sol_high": 1.0,
+          "astra_medium": 0.42857142857142855,
+          "astra_high": 0.8571428571428571,
+          "unknown": 1.0
+        },
+        "latency_median_ms": 121.21549999999999,
+        "latency_mean_ms": 160.49994999999998,
+        "high_risk_downrouting": 1,
+        "high_risk_cases": 7
+      }
+    },
+    "kev-dev-step25.json": {
+      "original_file_sha256": "dd8a6d0c3bd7e786c2859cf157649b266598a5e368340a4ffcba0047351aebb7",
+      "raw_metrics_unchanged": true,
+      "corrected_policy_metrics": {
+        "total": 20,
+        "measured": 20,
+        "unavailable": 0,
+        "accuracy": 0.9,
+        "macro_accuracy": 0.9214285714285714,
+        "class_recall": {
+          "sol_medium": 1.0,
+          "sol_high": 1.0,
+          "astra_medium": 1.0,
+          "astra_high": 0.8571428571428571,
+          "unknown": 0.75
+        },
+        "latency_median_ms": 111.6195,
+        "latency_mean_ms": 146.70695,
+        "policy_profile_underallocation": 1,
+        "policy_astra_high_targets": 7,
+        "original_high_risk_cases": 4,
+        "original_high_risk_downrouting": 0,
+        "policy_residual_high_risk_downrouting": 0
+      },
+      "previous_policy_metrics": {
+        "total": 20,
+        "measured": 20,
+        "unavailable": 0,
+        "accuracy": 0.9,
+        "macro_accuracy": 0.9214285714285714,
+        "class_recall": {
+          "sol_medium": 1.0,
+          "sol_high": 1.0,
+          "astra_medium": 1.0,
+          "astra_high": 0.8571428571428571,
+          "unknown": 0.75
+        },
+        "latency_median_ms": 111.6195,
+        "latency_mean_ms": 146.70695,
+        "high_risk_downrouting": 1,
+        "high_risk_cases": 7
+      }
+    },
+    "kev-dev-step50.json": {
+      "original_file_sha256": "c16c6496de907b8533adb1e5a2a42b63635669c13718b90aaad880f51c8a24a7",
+      "raw_metrics_unchanged": true,
+      "corrected_policy_metrics": {
+        "total": 20,
+        "measured": 20,
+        "unavailable": 0,
+        "accuracy": 0.9,
+        "macro_accuracy": 0.9214285714285714,
+        "class_recall": {
+          "sol_medium": 1.0,
+          "sol_high": 1.0,
+          "astra_medium": 1.0,
+          "astra_high": 0.8571428571428571,
+          "unknown": 0.75
+        },
+        "latency_median_ms": 111.4725,
+        "latency_mean_ms": 145.9215,
+        "policy_profile_underallocation": 1,
+        "policy_astra_high_targets": 7,
+        "original_high_risk_cases": 4,
+        "original_high_risk_downrouting": 1,
+        "policy_residual_high_risk_downrouting": 1
+      },
+      "previous_policy_metrics": {
+        "total": 20,
+        "measured": 20,
+        "unavailable": 0,
+        "accuracy": 0.9,
+        "macro_accuracy": 0.9214285714285714,
+        "class_recall": {
+          "sol_medium": 1.0,
+          "sol_high": 1.0,
+          "astra_medium": 1.0,
+          "astra_high": 0.8571428571428571,
+          "unknown": 0.75
+        },
+        "latency_median_ms": 111.4725,
+        "latency_mean_ms": 145.9215,
+        "high_risk_downrouting": 1,
+        "high_risk_cases": 7
+      }
+    },
+    "jev-dev.json": {
+      "original_file_sha256": "3b07e26c564d9bdf3d8f928d29f4c9fdd6b5fef49ff82e2313205352e8be60d2",
+      "raw_metrics_unchanged": true,
+      "corrected_policy_metrics": {
+        "total": 20,
+        "measured": 20,
+        "unavailable": 0,
+        "accuracy": 0.8,
+        "macro_accuracy": 0.8857142857142857,
+        "class_recall": {
+          "sol_medium": 1.0,
+          "sol_high": 1.0,
+          "astra_medium": 0.42857142857142855,
+          "astra_high": 1.0,
+          "unknown": 1.0
+        },
+        "latency_median_ms": 208.4785,
+        "latency_mean_ms": 221.2055,
+        "policy_profile_underallocation": 0,
+        "policy_astra_high_targets": 7,
+        "original_high_risk_cases": 4,
+        "original_high_risk_downrouting": 0,
+        "policy_residual_high_risk_downrouting": 0
+      },
+      "previous_policy_metrics": {
+        "total": 20,
+        "measured": 20,
+        "unavailable": 0,
+        "accuracy": 0.8,
+        "macro_accuracy": 0.8857142857142857,
+        "class_recall": {
+          "sol_medium": 1.0,
+          "sol_high": 1.0,
+          "astra_medium": 0.42857142857142855,
+          "astra_high": 1.0,
+          "unknown": 1.0
+        },
+        "latency_median_ms": 208.4785,
+        "latency_mean_ms": 221.2055,
+        "policy_profile_underallocation": 0,
+        "policy_astra_high_targets": 7,
+        "original_high_risk_cases": 4,
+        "original_high_risk_downrouting": 0
+      }
+    },
+    "kev-final.json": {
+      "original_file_sha256": "cea69b0271484fb2f947add2f43e2253d1bf6248f5d4f0fe62008b598e3b2004",
+      "raw_metrics_unchanged": true,
+      "corrected_policy_metrics": {
+        "total": 20,
+        "measured": 20,
+        "unavailable": 0,
+        "accuracy": 0.8,
+        "macro_accuracy": 0.8428571428571429,
+        "class_recall": {
+          "sol_medium": 1.0,
+          "sol_high": 1.0,
+          "astra_medium": 1.0,
+          "astra_high": 0.7142857142857143,
+          "unknown": 0.5
+        },
+        "latency_median_ms": 111.625,
+        "latency_mean_ms": 142.4466,
+        "policy_profile_underallocation": 2,
+        "policy_astra_high_targets": 7,
+        "original_high_risk_cases": 4,
+        "original_high_risk_downrouting": 0,
+        "policy_residual_high_risk_downrouting": 0
+      },
+      "previous_policy_metrics": {
+        "total": 20,
+        "measured": 20,
+        "unavailable": 0,
+        "accuracy": 0.8,
+        "macro_accuracy": 0.8428571428571429,
+        "class_recall": {
+          "sol_medium": 1.0,
+          "sol_high": 1.0,
+          "astra_medium": 1.0,
+          "astra_high": 0.7142857142857143,
+          "unknown": 0.5
+        },
+        "latency_median_ms": 111.625,
+        "latency_mean_ms": 142.4466,
+        "policy_profile_underallocation": 2,
+        "policy_astra_high_targets": 7,
+        "original_high_risk_cases": 4,
+        "original_high_risk_downrouting": 0
+      }
+    },
+    "jev-final.json": {
+      "original_file_sha256": "b946923c6f501ae2b5e8ab63dbc8e43c17dc2e3dc1950cb2c159abdab369d993",
+      "raw_metrics_unchanged": true,
+      "corrected_policy_metrics": {
+        "total": 20,
+        "measured": 20,
+        "unavailable": 0,
+        "accuracy": 0.7,
+        "macro_accuracy": 0.8071428571428572,
+        "class_recall": {
+          "sol_medium": 1.0,
+          "sol_high": 1.0,
+          "astra_medium": 0.42857142857142855,
+          "astra_high": 0.8571428571428571,
+          "unknown": 0.75
+        },
+        "latency_median_ms": 232.4605,
+        "latency_mean_ms": 236.46595,
+        "policy_profile_underallocation": 1,
+        "policy_astra_high_targets": 7,
+        "original_high_risk_cases": 4,
+        "original_high_risk_downrouting": 0,
+        "policy_residual_high_risk_downrouting": 0
+      },
+      "previous_policy_metrics": {
+        "total": 20,
+        "measured": 20,
+        "unavailable": 0,
+        "accuracy": 0.7,
+        "macro_accuracy": 0.8071428571428572,
+        "class_recall": {
+          "sol_medium": 1.0,
+          "sol_high": 1.0,
+          "astra_medium": 0.42857142857142855,
+          "astra_high": 0.8571428571428571,
+          "unknown": 0.75
+        },
+        "latency_median_ms": 232.4605,
+        "latency_mean_ms": 236.46595,
+        "policy_profile_underallocation": 1,
+        "policy_astra_high_targets": 7,
+        "original_high_risk_cases": 4,
+        "original_high_risk_downrouting": 0
+      }
+    }
+  },
+  "original_selection_file_sha256": "14506e96aaff7e52569b9848a997a4bae2aa5bafda8da1e44fd2cee4d23cb94e",
+  "selection_rederived_unchanged": true,
+  "final_accuracy_unchanged": {
+    "Kev": 0.8,
+    "Jev": 0.7
+  },
+  "final_raw_risk_downrouting_unchanged": {
+    "Kev": 0,
+    "Jev": 0
+  }
+}
