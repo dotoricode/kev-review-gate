@@ -5,6 +5,9 @@ from pathlib import Path
 from routing_policy import questions, CHOICES, select
 from routing_data import sha
 ROOT=Path(__file__).resolve().parent
+# This tool reproduces one frozen experiment; a new experiment needs a new reviewed pin.
+FROZEN_SELECTION_SHA256='7b8c5ff4abd44656cff420b1752d6292d9a1a4d827fbfba1846cc5b6325d8deb'
+FROZEN_PROTOCOL_SHA256='e2e889843ac28f4acfb67d20712681c717dcc06727cbe9be69bf59b81c0f633d'
 
 
 def aggregate(rows):
@@ -85,10 +88,15 @@ def freeze_selection(results,output):
 
 def claim_final_attempt(selection_path,output,provider,weights):
  if not selection_path:raise ValueError('final_requires_frozen_selection')
- decision=json.loads(Path(selection_path).read_text());digest=decision.pop('selection_sha256')
- if sha(decision)!=digest or decision['questions_sha256']!=sha(questions()):raise ValueError('selection_integrity_failure')
+ if provider not in ('Jev','Kev'):raise ValueError('invalid_provider')
+ decision=json.loads(Path(selection_path).read_text());digest=decision.pop('selection_sha256',None)
+ if digest!=FROZEN_SELECTION_SHA256 or sha(decision)!=digest or decision.get('questions_sha256')!=sha(questions()):raise ValueError('selection_integrity_failure')
  if provider=='Kev' and json.loads((Path(weights)/'routing_manifest.json').read_text())!=decision['artifact_manifest']:raise ValueError('selected_weights_required')
- marker=Path(selection_path).with_name('final-attempt-'+provider.lower()+'.json')
+ experiment=ROOT/'routing/results'
+ legacy=experiment/('final-attempt-'+provider.lower()+'.json')
+ if legacy.exists():raise FileExistsError('final_attempt_already_consumed')
+ marker=experiment/'final-attempts'/FROZEN_PROTOCOL_SHA256/digest/(provider.lower()+'.json')
+ marker.parent.mkdir(parents=True,exist_ok=True)
  with marker.open('x') as stream:json.dump({'selection_sha256':digest,'provider':provider,'status':'claimed_once_before_final_data_load','output':str(Path(output).name)},stream)
  return digest
 

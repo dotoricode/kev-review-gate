@@ -33,12 +33,35 @@ class RoutingTrainingTests(unittest.TestCase):
    with self.assertRaises(ValueError):validate_answer(raw)
  def test_final_attempt_is_once_and_selection_is_tamper_evident(self):
   with tempfile.TemporaryDirectory() as temp:
-   root=Path(temp);decision={'questions_sha256':sha(questions()),'artifact_manifest':{},'selected_step':25};decision['selection_sha256']=sha(decision)
+   root=Path(temp);source=Path(__file__).resolve().parents[1]/'routing/results/selected_checkpoint.json';decision=json.loads(source.read_text())
    path=root/'selected_checkpoint.json';path.write_text(json.dumps(decision))
-   self.assertEqual(claim_final_attempt(path,root/'final.json','Jev',None),decision['selection_sha256'])
-   with self.assertRaises(FileExistsError):claim_final_attempt(path,root/'other.json','Jev',None)
+   import routing_eval as evaluation
+   with mock.patch.object(evaluation,'ROOT',root):
+    self.assertEqual(claim_final_attempt(path,root/'final.json','Jev',None),decision['selection_sha256'])
+    with self.assertRaises(FileExistsError):claim_final_attempt(path,root/'other.json','Jev',None)
    decision['selected_step']=50;path.write_text(json.dumps(decision))
    with self.assertRaises(ValueError):claim_final_attempt(path,root/'final.json','Kev',None)
+ def test_self_signed_alternate_selection_is_rejected(self):
+  import routing_eval as evaluation
+  source=Path(__file__).resolve().parents[1]/'routing/results'
+  decision=json.loads((source/'selected_checkpoint.json').read_text());decision['selected_step']=50;decision['artifact_manifest']=json.loads((source/'kev-dev-step50.json').read_text())['artifact_manifest'];decision.pop('selection_sha256');decision['selection_sha256']=sha(decision)
+  with tempfile.TemporaryDirectory() as temp:
+   root=Path(temp);path=root/'edited-selection.json';path.write_text(json.dumps(decision))
+   with mock.patch.object(evaluation,'ROOT',root):
+    with self.assertRaises(ValueError):claim_final_attempt(path,root/'final.json','Jev',None)
+ def test_copied_selection_cannot_claim_second_final_and_legacy_is_consumed(self):
+  import routing_eval as evaluation
+  source=Path(__file__).resolve().parents[1]/'routing/results/selected_checkpoint.json'
+  with tempfile.TemporaryDirectory() as temp:
+   root=Path(temp);(root/'left').mkdir();(root/'right').mkdir();left=root/'left/selection.json';right=root/'right/selection.json';shutil.copy2(source,left);shutil.copy2(source,right)
+   with mock.patch.object(evaluation,'ROOT',root):
+    claim_final_attempt(left,root/'first.json','Jev',None)
+    with self.assertRaises(FileExistsError):claim_final_attempt(right,root/'second.json','Jev',None)
+  with tempfile.TemporaryDirectory() as temp:
+   root=Path(temp);(root/'routing/results').mkdir(parents=True);legacy=root/'routing/results/final-attempt-jev.json';legacy.write_text('legacy consumed marker');path=root/'selection.json';shutil.copy2(source,path)
+   with mock.patch.object(evaluation,'ROOT',root):
+    with self.assertRaises(FileExistsError):claim_final_attempt(path,root/'final.json','Jev',None)
+   self.assertEqual(legacy.read_text(),'legacy consumed marker')
  def test_partial_call_journal_preserves_unavailable_and_duplicate_rejected(self):
   cases=build()['dev'][:1]
   with tempfile.TemporaryDirectory() as temp:
