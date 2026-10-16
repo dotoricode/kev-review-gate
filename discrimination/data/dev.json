@@ -1,0 +1,228 @@
+{
+  "cases": [
+    {
+      "id": "dev-0-bounded",
+      "family": "archive inspector",
+      "pair": "bounded",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the archive inspector.\nchanges: Display an empty archive size as zero. A single pure display helper changes.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "dev-1-missing",
+      "family": "tenant menu",
+      "pair": "missing",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: tenant menu 상태를 표시한다.\nchanges: Notes conflict about tenant menu: a literal edit or a sensitive behavior change. No patch supplied.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      }
+    },
+    {
+      "id": "dev-0-inert",
+      "family": "archive inspector",
+      "pair": "inert",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the archive inspector.\nchanges: Fix an archive heading typo. Executable conditions and values are unchanged.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "dev-2-bounded",
+      "family": "retry widget",
+      "pair": "bounded",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the retry widget.\nchanges: Display attempt zero instead of blank. A single pure display helper changes.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "dev-3-inert",
+      "family": "key status",
+      "pair": "inert",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: key status 상태를 표시한다.\nchanges: Correct key status caption casing. Executable conditions and values are unchanged.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "dev-2-missing",
+      "family": "retry widget",
+      "pair": "missing",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the retry widget.\nchanges: Notes conflict about retry widget: a literal edit or a sensitive behavior change. No patch supplied.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      }
+    },
+    {
+      "id": "dev-1-bounded",
+      "family": "tenant menu",
+      "pair": "bounded",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: tenant menu 상태를 표시한다.\nchanges: Remove a trailing separator for a one-item menu. A single pure display helper changes.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "dev-0-missing",
+      "family": "archive inspector",
+      "pair": "missing",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the archive inspector.\nchanges: Notes conflict about archive inspector: a literal edit or a sensitive behavior change. No patch supplied.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      }
+    },
+    {
+      "id": "dev-2-sensitive",
+      "family": "retry widget",
+      "pair": "sensitive",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the retry widget.\nchanges: Mutate retry ownership while cancellation and completion race.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      }
+    },
+    {
+      "id": "dev-3-sensitive",
+      "family": "key status",
+      "pair": "sensitive",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: key status 상태를 표시한다.\nchanges: Log private key material in an exception fallback.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      }
+    },
+    {
+      "id": "dev-3-bounded",
+      "family": "key status",
+      "pair": "bounded",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: key status 상태를 표시한다.\nchanges: Render a missing display timestamp as a dash. A single pure display helper changes.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "dev-1-sensitive",
+      "family": "tenant menu",
+      "pair": "sensitive",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: tenant menu 상태를 표시한다.\nchanges: Use another tenant identity when an access lookup fails.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      }
+    },
+    {
+      "id": "dev-2-inert",
+      "family": "retry widget",
+      "pair": "inert",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the retry widget.\nchanges: Fix the retry button label. Executable conditions and values are unchanged.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "dev-3-missing",
+      "family": "key status",
+      "pair": "missing",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: key status 상태를 표시한다.\nchanges: Notes conflict about key status: a literal edit or a sensitive behavior change. No patch supplied.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      }
+    },
+    {
+      "id": "dev-0-sensitive",
+      "family": "archive inspector",
+      "pair": "sensitive",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the archive inspector.\nchanges: Overwrite the only archive index before validating replacement data.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      }
+    },
+    {
+      "id": "dev-1-inert",
+      "family": "tenant menu",
+      "pair": "inert",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: tenant menu 상태를 표시한다.\nchanges: Correct menu item punctuation. Executable conditions and values are unchanged.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      }
+    }
+  ]
+}

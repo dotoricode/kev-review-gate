@@ -1,0 +1,487 @@
+{
+  "task": "route",
+  "split": "dev",
+  "model_identity": {
+    "model": "kev-review-router-v1",
+    "policy_version": "kev-routing-v1",
+    "weights_sha256": "d0243b4ed3f5e2b71b6bb3d5cd5eb082173af8a59fd0d40b69ee0c3d4541335d",
+    "backend": "mlx",
+    "temperature": 2.406050072164233,
+    "base_revision": "1001bb4d826a52d1f399e183466143f4da7b741b"
+  },
+  "rows": [
+    {
+      "id": "dev-0-bounded",
+      "family": "archive inspector",
+      "pair": "bounded",
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      },
+      "status": "completed",
+      "choice": "sol_medium",
+      "answer": {
+        "type": "choice",
+        "choice": "sol_medium",
+        "confidence": 0.9995,
+        "probabilities": {
+          "sol_medium": 0.9996,
+          "sol_high": 0.0003,
+          "astra_medium": 0.0001,
+          "astra_high": 0.0,
+          "unknown": 0.0
+        }
+      },
+      "policy": {
+        "recommended_model": "gpt-6.1-sol",
+        "selected_model": "gpt-6.1-sol",
+        "effort": "medium",
+        "choice": "sol_medium",
+        "policy_version": "kev-routing-v1",
+        "policy_override": false,
+        "catalog_hash": "6bca6b8190f8de66eb7b35acea9af33a7ea0c00e6c174bd9e6a4edc987858990"
+      },
+      "latency_ms": 818.846
+    },
+    {
+      "id": "dev-1-missing",
+      "family": "tenant menu",
+      "pair": "missing",
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "status": "completed",
+      "choice": "unknown",
+      "answer": {
+        "type": "choice",
+        "choice": "unknown",
+        "confidence": 0.4608,
+        "probabilities": {
+          "sol_medium": 0.0921,
+          "sol_high": 0.1512,
+          "astra_medium": 0.1415,
+          "astra_high": 0.0466,
+          "unknown": 0.5686
+        }
+      },
+      "policy_error": "routing_unknown",
+      "latency_ms": 147.098
+    },
+    {
+      "id": "dev-0-inert",
+      "family": "archive inspector",
+      "pair": "inert",
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "status": "completed",
+      "choice": "sol_medium",
+      "answer": {
+        "type": "choice",
+        "choice": "sol_medium",
+        "confidence": 0.9999,
+        "probabilities": {
+          "sol_medium": 0.9999,
+          "sol_high": 0.0,
+          "astra_medium": 0.0,
+          "astra_high": 0.0,
+          "unknown": 0.0
+        }
+      },
+      "policy": {
+        "recommended_model": "gpt-6.1-sol",
+        "selected_model": "gpt-6.1-sol",
+        "effort": "medium",
+        "choice": "sol_medium",
+        "policy_version": "kev-routing-v1",
+        "policy_override": false,
+        "catalog_hash": "6bca6b8190f8de66eb7b35acea9af33a7ea0c00e6c174bd9e6a4edc987858990"
+      },
+      "latency_ms": 140.965
+    },
+    {
+      "id": "dev-2-bounded",
+      "family": "retry widget",
+      "pair": "bounded",
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      },
+      "status": "completed",
+      "choice": "sol_medium",
+      "answer": {
+        "type": "choice",
+        "choice": "sol_medium",
+        "confidence": 0.9996,
+        "probabilities": {
+          "sol_medium": 0.9997,
+          "sol_high": 0.0002,
+          "astra_medium": 0.0001,
+          "astra_high": 0.0,
+          "unknown": 0.0
+        }
+      },
+      "policy": {
+        "recommended_model": "gpt-6.1-sol",
+        "selected_model": "gpt-6.1-sol",
+        "effort": "medium",
+        "choice": "sol_medium",
+        "policy_version": "kev-routing-v1",
+        "policy_override": false,
+        "catalog_hash": "6bca6b8190f8de66eb7b35acea9af33a7ea0c00e6c174bd9e6a4edc987858990"
+      },
+      "latency_ms": 141.262
+    },
+    {
+      "id": "dev-3-inert",
+      "family": "key status",
+      "pair": "inert",
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "status": "completed",
+      "choice": "sol_medium",
+      "answer": {
+        "type": "choice",
+        "choice": "sol_medium",
+        "confidence": 1.0,
+        "probabilities": {
+          "sol_medium": 1.0,
+          "sol_high": 0.0,
+          "astra_medium": 0.0,
+          "astra_high": 0.0,
+          "unknown": 0.0
+        }
+      },
+      "policy": {
+        "recommended_model": "gpt-6.1-sol",
+        "selected_model": "gpt-6.1-sol",
+        "effort": "medium",
+        "choice": "sol_medium",
+        "policy_version": "kev-routing-v1",
+        "policy_override": false,
+        "catalog_hash": "6bca6b8190f8de66eb7b35acea9af33a7ea0c00e6c174bd9e6a4edc987858990"
+      },
+      "latency_ms": 142.571
+    },
+    {
+      "id": "dev-2-missing",
+      "family": "retry widget",
+      "pair": "missing",
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "status": "completed",
+      "choice": "unknown",
+      "answer": {
+        "type": "choice",
+        "choice": "unknown",
+        "confidence": 0.8002,
+        "probabilities": {
+          "sol_medium": 0.057,
+          "sol_high": 0.0688,
+          "astra_medium": 0.0295,
+          "astra_high": 0.0046,
+          "unknown": 0.8401
+        }
+      },
+      "policy_error": "routing_unknown",
+      "latency_ms": 143.997
+    },
+    {
+      "id": "dev-1-bounded",
+      "family": "tenant menu",
+      "pair": "bounded",
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      },
+      "status": "completed",
+      "choice": "sol_medium",
+      "answer": {
+        "type": "choice",
+        "choice": "sol_medium",
+        "confidence": 0.9998,
+        "probabilities": {
+          "sol_medium": 0.9999,
+          "sol_high": 0.0001,
+          "astra_medium": 0.0,
+          "astra_high": 0.0,
+          "unknown": 0.0
+        }
+      },
+      "policy": {
+        "recommended_model": "gpt-6.1-sol",
+        "selected_model": "gpt-6.1-sol",
+        "effort": "medium",
+        "choice": "sol_medium",
+        "policy_version": "kev-routing-v1",
+        "policy_override": false,
+        "catalog_hash": "6bca6b8190f8de66eb7b35acea9af33a7ea0c00e6c174bd9e6a4edc987858990"
+      },
+      "latency_ms": 144.47
+    },
+    {
+      "id": "dev-0-missing",
+      "family": "archive inspector",
+      "pair": "missing",
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "status": "completed",
+      "choice": "unknown",
+      "answer": {
+        "type": "choice",
+        "choice": "unknown",
+        "confidence": 0.9118,
+        "probabilities": {
+          "sol_medium": 0.008,
+          "sol_high": 0.0334,
+          "astra_medium": 0.022,
+          "astra_high": 0.0071,
+          "unknown": 0.9294
+        }
+      },
+      "policy_error": "routing_unknown",
+      "latency_ms": 144.811
+    },
+    {
+      "id": "dev-2-sensitive",
+      "family": "retry widget",
+      "pair": "sensitive",
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      },
+      "status": "completed",
+      "choice": "astra_medium",
+      "answer": {
+        "type": "choice",
+        "choice": "astra_medium",
+        "confidence": 0.3714,
+        "probabilities": {
+          "sol_medium": 0.0024,
+          "sol_high": 0.4633,
+          "astra_medium": 0.4972,
+          "astra_high": 0.0317,
+          "unknown": 0.0054
+        }
+      },
+      "policy_error": "recommended_profile_unavailable",
+      "latency_ms": 141.371
+    },
+    {
+      "id": "dev-3-sensitive",
+      "family": "key status",
+      "pair": "sensitive",
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      },
+      "status": "completed",
+      "choice": "astra_high",
+      "answer": {
+        "type": "choice",
+        "choice": "astra_high",
+        "confidence": 0.995,
+        "probabilities": {
+          "sol_medium": 0.0,
+          "sol_high": 0.0003,
+          "astra_medium": 0.0034,
+          "astra_high": 0.996,
+          "unknown": 0.0002
+        }
+      },
+      "policy_error": "recommended_profile_unavailable",
+      "latency_ms": 146.26
+    },
+    {
+      "id": "dev-3-bounded",
+      "family": "key status",
+      "pair": "bounded",
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      },
+      "status": "completed",
+      "choice": "sol_medium",
+      "answer": {
+        "type": "choice",
+        "choice": "sol_medium",
+        "confidence": 0.9996,
+        "probabilities": {
+          "sol_medium": 0.9997,
+          "sol_high": 0.0002,
+          "astra_medium": 0.0,
+          "astra_high": 0.0,
+          "unknown": 0.0001
+        }
+      },
+      "policy": {
+        "recommended_model": "gpt-6.1-sol",
+        "selected_model": "gpt-6.1-sol",
+        "effort": "medium",
+        "choice": "sol_medium",
+        "policy_version": "kev-routing-v1",
+        "policy_override": false,
+        "catalog_hash": "6bca6b8190f8de66eb7b35acea9af33a7ea0c00e6c174bd9e6a4edc987858990"
+      },
+      "latency_ms": 144.157
+    },
+    {
+      "id": "dev-1-sensitive",
+      "family": "tenant menu",
+      "pair": "sensitive",
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      },
+      "status": "completed",
+      "choice": "astra_high",
+      "answer": {
+        "type": "choice",
+        "choice": "astra_high",
+        "confidence": 0.3144,
+        "probabilities": {
+          "sol_medium": 0.0985,
+          "sol_high": 0.3052,
+          "astra_medium": 0.129,
+          "astra_high": 0.4515,
+          "unknown": 0.0159
+        }
+      },
+      "policy_error": "recommended_profile_unavailable",
+      "latency_ms": 139.286
+    },
+    {
+      "id": "dev-2-inert",
+      "family": "retry widget",
+      "pair": "inert",
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "status": "completed",
+      "choice": "sol_medium",
+      "answer": {
+        "type": "choice",
+        "choice": "sol_medium",
+        "confidence": 0.9989,
+        "probabilities": {
+          "sol_medium": 0.9991,
+          "sol_high": 0.0005,
+          "astra_medium": 0.0002,
+          "astra_high": 0.0,
+          "unknown": 0.0001
+        }
+      },
+      "policy": {
+        "recommended_model": "gpt-6.1-sol",
+        "selected_model": "gpt-6.1-sol",
+        "effort": "medium",
+        "choice": "sol_medium",
+        "policy_version": "kev-routing-v1",
+        "policy_override": false,
+        "catalog_hash": "6bca6b8190f8de66eb7b35acea9af33a7ea0c00e6c174bd9e6a4edc987858990"
+      },
+      "latency_ms": 145.567
+    },
+    {
+      "id": "dev-3-missing",
+      "family": "key status",
+      "pair": "missing",
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "status": "completed",
+      "choice": "unknown",
+      "answer": {
+        "type": "choice",
+        "choice": "unknown",
+        "confidence": 0.3648,
+        "probabilities": {
+          "sol_medium": 0.093,
+          "sol_high": 0.1495,
+          "astra_medium": 0.1897,
+          "astra_high": 0.0759,
+          "unknown": 0.4919
+        }
+      },
+      "policy_error": "routing_unknown",
+      "latency_ms": 145.994
+    },
+    {
+      "id": "dev-0-sensitive",
+      "family": "archive inspector",
+      "pair": "sensitive",
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      },
+      "status": "completed",
+      "choice": "astra_high",
+      "answer": {
+        "type": "choice",
+        "choice": "astra_high",
+        "confidence": 0.3511,
+        "probabilities": {
+          "sol_medium": 0.0007,
+          "sol_high": 0.0675,
+          "astra_medium": 0.4464,
+          "astra_high": 0.4809,
+          "unknown": 0.0046
+        }
+      },
+      "policy_error": "recommended_profile_unavailable",
+      "latency_ms": 141.73
+    },
+    {
+      "id": "dev-1-inert",
+      "family": "tenant menu",
+      "pair": "inert",
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "status": "completed",
+      "choice": "sol_medium",
+      "answer": {
+        "type": "choice",
+        "choice": "sol_medium",
+        "confidence": 0.9998,
+        "probabilities": {
+          "sol_medium": 0.9999,
+          "sol_high": 0.0001,
+          "astra_medium": 0.0,
+          "astra_high": 0.0,
+          "unknown": 0.0
+        }
+      },
+      "policy": {
+        "recommended_model": "gpt-6.1-sol",
+        "selected_model": "gpt-6.1-sol",
+        "effort": "medium",
+        "choice": "sol_medium",
+        "policy_version": "kev-routing-v1",
+        "policy_override": false,
+        "catalog_hash": "6bca6b8190f8de66eb7b35acea9af33a7ea0c00e6c174bd9e6a4edc987858990"
+      },
+      "latency_ms": 142.754
+    }
+  ],
+  "choices": {
+    "sol_medium": 8,
+    "unknown": 4,
+    "astra_medium": 1,
+    "astra_high": 3
+  },
+  "measured": 16,
+  "expected_label_agreement": 0.75,
+  "scope": "Same new dev evidence, old fixed question contracts and label spaces. Descriptive baseline, not strict same-question accuracy comparison; no Astra-to-Sol remapping."
+}

@@ -112,6 +112,9 @@ class Parser(argparse.ArgumentParser):
 
 def main(argv=None):
     args = list(sys.argv[1:] if argv is None else argv)
+    if args and args[0] == 'discriminate':
+        from kev_discriminate import main as discriminate_main
+        return discriminate_main(args[1:])
     if args and args[0] == 'route':
         from kev_route import main as route_main
         return route_main(args[1:])
