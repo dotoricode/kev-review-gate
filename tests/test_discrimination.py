@@ -73,3 +73,30 @@ def test_unavailable_profile_preserves_need_without_substituting_effort():
     assert result['model_route'] is None
     assert result['error']['code']=='recommended_profile_unavailable'
     assert result['judgment']['probabilities']['skip']==1.
+
+
+@pytest.mark.parametrize('arguments,expected',[
+    ([], 'routing/data'),
+    (['--experiment','discrimination-v2'], 'discrimination/data'),
+    (['--experiment','discrimination-v2','--data-dir','custom/frozen'], 'custom/frozen'),
+    (['--data-dir','custom/routing'], 'custom/routing'),
+])
+def test_training_cli_uses_experiment_data_default_and_respects_explicit_path(monkeypatch,arguments,expected):
+    import sys
+    from pathlib import Path
+    import routing_train as training
+    class ReachedProtocol(Exception):
+        pass
+    for name in ('FROZEN_PROTOCOL_SHA256','questions','MODEL_ID','POLICY_VERSION'):
+        monkeypatch.setattr(training,name,getattr(training,name))
+    seen=[]
+    def verify(data,*,return_datasets=False):
+        seen.append(data)
+        raise ReachedProtocol
+    monkeypatch.setattr(training,'verify_protocol',verify)
+    monkeypatch.setattr(training,'verify_training_inputs',lambda *args:pytest.fail('model artifacts reached'))
+    monkeypatch.setattr(sys,'argv',['routing_train.py','--base-dir','unused-base','--original-dir','unused-original','--output','unused-output','--target','0',*arguments])
+    with pytest.raises(ReachedProtocol):
+        training.main()
+    expected_path=Path(expected) if expected.startswith('custom/') else training.ROOT/expected
+    assert seen==[expected_path]

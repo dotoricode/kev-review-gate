@@ -78,11 +78,12 @@ def export(source,dest,meta,step):
 
 def main():
  global FROZEN_PROTOCOL_SHA256, questions, MODEL_ID, POLICY_VERSION
- p=argparse.ArgumentParser();p.add_argument('--experiment',choices=['routing-v1','discrimination-v2'],default='routing-v1');p.add_argument('--base-dir',required=True);p.add_argument('--original-dir',required=True);p.add_argument('--output',required=True);p.add_argument('--data-dir',default=str(ROOT/'routing/data'));p.add_argument('--target',type=int,choices=[0,2,25,50],required=True);a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--experiment',choices=['routing-v1','discrimination-v2'],default='routing-v1');p.add_argument('--base-dir',required=True);p.add_argument('--original-dir',required=True);p.add_argument('--output',required=True);p.add_argument('--data-dir');p.add_argument('--target',type=int,choices=[0,2,25,50],required=True);a=p.parse_args()
  if a.experiment=='discrimination-v2':
   from discrimination import questions,MODEL_ID,POLICY_VERSION
   FROZEN_PROTOCOL_SHA256='76da5416a8ab3a66de1807473fe729820b3320da9a7f1d9062c64cbe5a62cb84'
- data=Path(a.data_dir);protocol,datasets=verify_protocol(data,return_datasets=True);verified_inputs=verify_training_inputs(a.base_dir,a.original_dir);out=Path(a.output);out.mkdir(parents=True,exist_ok=True)
+ data=Path(a.data_dir) if a.data_dir is not None else ROOT/('discrimination/data' if a.experiment=='discrimination-v2' else 'routing/data')
+ protocol,datasets=verify_protocol(data,return_datasets=True);verified_inputs=verify_training_inputs(a.base_dir,a.original_dir);out=Path(a.output);out.mkdir(parents=True,exist_ok=True)
  target=a.target;start=0 if target in (0,2,25) else 25
  if start:verify_resume(out,start,verified_inputs)
  stage=out/f'stage-{target:04d}';stage.mkdir(exist_ok=False)
