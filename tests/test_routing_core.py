@@ -143,3 +143,17 @@ def test_untrusted_manifest_and_old_task_configuration_rejected(tmp_path, monkey
         path.write_text(json.dumps(manifest))
     with pytest.raises(ValueError, match='routing_identity_mismatch'):
         runtime.verify_routing_artifacts(tmp_path, weights)
+
+@pytest.mark.parametrize('kind',['independent_final','risk_review'])
+def test_explicit_sol_only_catalog_does_not_force_excluded_astra(kind):
+    from kev_route import route
+    payload=request(kind);payload['candidates']=payload['candidates'][:1]
+    result=route(payload,predictor=lambda state:answer('sol_high'))
+    assert result['ok'] is True
+    assert result['model_route']['selected_model']=='current-sol'
+    assert result['model_route']['effort']=='high'
+    assert result['model_route']['policy_override'] is False
+    # A raw recommendation for an excluded tier still requires manual handling.
+    result=route(payload,predictor=lambda state:answer('astra_high'))
+    assert result['ok'] is False
+    assert result['error']['code']=='recommended_profile_unavailable'

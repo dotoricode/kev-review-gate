@@ -37,7 +37,7 @@ routing 가중치는 `adapter_config.json`, `adapter_model.safetensors`, `head.s
 
 모델에는 `task`와 `review_kind`만 전달합니다. 후보 목록은 모델 출력 이후 정책 코드가 검증합니다. 고정 질문과 순서가 있는 5개 선택지 `sol_medium / sol_high / astra_medium / astra_high / unknown`은 `routing_policy.questions()`가 정의합니다.
 
-4. 종료 코드 0, `ok:true`, `status:route_selected`이면 `model_route.selected_model`과 `effort`를 예정 리뷰 모델로 표시합니다. `recommended_model`은 원래 추천, `policy_override`는 정책에 따른 변경 여부입니다. 독립 최종·위험 리뷰는 Astra를 사용하며 추천한 추론 강도를 유지합니다. 추천 조합 또는 정책상 필수 조합이 후보에 없으면 실패합니다.
+4. 종료 코드 0, `ok:true`, `status:route_selected`이면 `model_route.selected_model`과 `effort`를 예정 리뷰 모델로 표시합니다. `recommended_model`은 원래 추천, `policy_override`는 정책에 따른 변경 여부입니다. 독립 최종·위험 리뷰는 승인 후보에 Astra가 있을 때만 Astra를 사용합니다. Sol만 승인한 경우 추천된 Sol 추론 강도를 유지합니다. 원래 추천 조합이 후보에 없으면 실패하며 다른 모델로 자동 전환하지 않습니다.
 5. 리뷰 실행 권한이 있는 호출 도구만 같은 `selected_model`과 `effort`를 Codex 실행 인자로 넘깁니다. UI에 표시한 값과 실행 인자가 일치하는지 확인하고, 완료 시 요청값과 실행 증거에서 확인한 값을 구분해 기록합니다. route 성공 자체는 리뷰 실행 증거가 아닙니다.
 
 ## 실패 처리와 검증 범위
@@ -51,3 +51,5 @@ routing 가중치는 `adapter_config.json`, `adapter_model.safetensors`, `head.s
 Kev 학습·평가의 비교군은 항상 실제 Jev입니다. 공개 합성 입력과 `routing_policy.questions()`의 동일한 고정 질문을 두 모델에 사용하고, 응답·오류·실제 호출 수·지연 시간을 남깁니다. 비공개 코드나 원본 사용자 자료를 비교용 외부 호출에 보내지 않습니다.
 
 Jev 예측은 비교용입니다. 학습 정답은 별도로 작성하고, Jev 응답을 teacher label로 사용하지 않습니다. 학습·개발·최종 평가 분리를 유지하고, 최종 평가는 모델 선택을 마친 뒤 실행합니다. 실패·timeout·수집 누락은 미완료로 보고하며 임의의 예측이나 결과를 만들지 않습니다. Jev 미수집 상태를 Kev 우세로 판단하지 않습니다.
+
+When the caller explicitly supplies only Sol candidates, final/risk review may use the recommended Sol effort; excluded Astra is never introduced. A raw Astra recommendation without an approved Astra candidate remains an error requiring manual review. This candidate restriction does not change the trained classes or previously recorded benchmark results.
