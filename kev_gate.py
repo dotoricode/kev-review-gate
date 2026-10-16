@@ -110,6 +110,10 @@ class Parser(argparse.ArgumentParser):
     def error(self,message):raise GateError('invalid_arguments')
 
 def main(argv=None):
+    args = list(sys.argv[1:] if argv is None else argv)
+    if args and args[0] == 'route':
+        from kev_route import main as route_main
+        return route_main(args[1:])
     try:
         p=Parser(description=__doc__);p.add_argument('command',choices=['doctor','judge','fixture'])
         p.add_argument('--input',help='UTF-8 state JSON file; - reads stdin')

@@ -1,0 +1,86 @@
+{
+  "original_files": {
+    "adapter_config.json": "8a05dfd6c5e7f61a62e6db5d8de8093a8dbbd105aa7ee7b5e7b73f6249f45617",
+    "adapter_model.safetensors": "90e817356246e7f18bfa7ca3d31794cd4fbeb3332a66a84cb51d9ceae925f2b2",
+    "head.pt": "dd633435998ecc751ac538717a3742e32149500fabf7d7276287dbf0693f347c"
+  },
+  "review_gate_release_files": {
+    "adapter_model.safetensors": {
+      "expected": "d2634d72e193f896ef44b46c747be1220a9ede3d457537c6569891ec6f68f63f",
+      "actual": "d2634d72e193f896ef44b46c747be1220a9ede3d457537c6569891ec6f68f63f",
+      "unchanged_from_published_release": true
+    },
+    "head.safetensors": {
+      "expected": "e7a4950e89f731331eafb39321df438b9a9be0076669e0d187614d6fb0273fc5",
+      "actual": "e7a4950e89f731331eafb39321df438b9a9be0076669e0d187614d6fb0273fc5",
+      "unchanged_from_published_release": true
+    },
+    "LICENSE": {
+      "expected": "6b08bb37982c233aa12bcbdf19106da12f3f4fcf800773ea42e28ebeddd34fb8",
+      "actual": "6b08bb37982c233aa12bcbdf19106da12f3f4fcf800773ea42e28ebeddd34fb8",
+      "unchanged_from_published_release": true
+    },
+    "NOTICE": {
+      "expected": "26b90ad3bccb4b857b7bcf623be1a6ee47f6ebefb83d7774607e55d477bd1386",
+      "actual": "26b90ad3bccb4b857b7bcf623be1a6ee47f6ebefb83d7774607e55d477bd1386",
+      "unchanged_from_published_release": true
+    },
+    "adapter_config.json": {
+      "expected": "eb856804a12ae8949b99dc26d3bb0c3254cc6e59a9d339224c8431ab2c7b88ac",
+      "actual": "eb856804a12ae8949b99dc26d3bb0c3254cc6e59a9d339224c8431ab2c7b88ac",
+      "unchanged_from_published_release": true
+    },
+    "model_config.json": {
+      "expected": "c12ae0f6a1dc6ff60358e37b3594c9e7e97236bb46298f21da266e54efa09aec",
+      "actual": "c12ae0f6a1dc6ff60358e37b3594c9e7e97236bb46298f21da266e54efa09aec",
+      "unchanged_from_published_release": true
+    }
+  },
+  "training_segments": [
+    {
+      "target": 2,
+      "start": 0,
+      "optimizer_updates": 2,
+      "base_sha256_before": "3e21c2093c9f34235845a6b3ccdce170f853112180d611c77b389cf050140ba9",
+      "base_sha256_after": "3e21c2093c9f34235845a6b3ccdce170f853112180d611c77b389cf050140ba9",
+      "adapter_changed": true,
+      "head_changed": true,
+      "elapsed_seconds": 20.042,
+      "report_sha256": "19c76c0a8284885061643f89a4d6b44812d56901383fd917f66c0bbf3eca3c7f"
+    },
+    {
+      "target": 25,
+      "start": 0,
+      "optimizer_updates": 25,
+      "base_sha256_before": "3e21c2093c9f34235845a6b3ccdce170f853112180d611c77b389cf050140ba9",
+      "base_sha256_after": "3e21c2093c9f34235845a6b3ccdce170f853112180d611c77b389cf050140ba9",
+      "adapter_changed": true,
+      "head_changed": true,
+      "elapsed_seconds": 61.419,
+      "report_sha256": "3e25865666656d255453e7ae067db662917a23a76f7482a2bbbdbe60c6c6e683"
+    },
+    {
+      "target": 50,
+      "start": 25,
+      "optimizer_updates": 25,
+      "base_sha256_before": "3e21c2093c9f34235845a6b3ccdce170f853112180d611c77b389cf050140ba9",
+      "base_sha256_after": "3e21c2093c9f34235845a6b3ccdce170f853112180d611c77b389cf050140ba9",
+      "adapter_changed": true,
+      "head_changed": true,
+      "elapsed_seconds": 57.51,
+      "report_sha256": "5a281f419929d7cf36960a06fc8ea000077eb74e3fb8e77c19dfba55f17c3f90"
+    }
+  ],
+  "smoke_discarded_for_main_initialization": true,
+  "selected_step": 25,
+  "selected_manifest": {
+    "model": "kev-review-router-v1",
+    "policy_version": "kev-routing-v1",
+    "public_files": {
+      "adapter_model.safetensors": "e5b260bb7ce8c3ffe962ba888bc2ce3a4592a5dea68d6321993a234b2e3caebe",
+      "head.safetensors": "25c113cf1718b03ebec3dfb6d76cd09f5f2318f6292d3388a8cec9d6ac7fe097",
+      "adapter_config.json": "c754c542697527daba574072dde62b604c84aede8c8648548e64dde760b80bfa",
+      "model_config.json": "46c23c3f28dd752db348efa6ab633d6f7be3d13a75bcb566dc7b6548f729b6ef"
+    }
+  }
+}

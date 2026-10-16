@@ -1,0 +1,10 @@
+{
+  "model": "kev-review-router-v1",
+  "policy_version": "kev-routing-v1",
+  "public_files": {
+    "adapter_model.safetensors": "e5b260bb7ce8c3ffe962ba888bc2ce3a4592a5dea68d6321993a234b2e3caebe",
+    "head.safetensors": "25c113cf1718b03ebec3dfb6d76cd09f5f2318f6292d3388a8cec9d6ac7fe097",
+    "adapter_config.json": "c754c542697527daba574072dde62b604c84aede8c8648548e64dde760b80bfa",
+    "model_config.json": "46c23c3f28dd752db348efa6ab633d6f7be3d13a75bcb566dc7b6548f729b6ef"
+  }
+}

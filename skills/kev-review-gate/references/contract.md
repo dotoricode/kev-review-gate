@@ -41,4 +41,6 @@ to skip review. Maintain ordinary manual review.
 The exact evaluated model uses the pinned base tokenizer revision
 1001bb4d826a52d1f399e183466143f4da7b741b and temperature2.406050072164233.
 Model/head/base/tokenizer hashes and MLX bf16/fp32/eval state are in doctor
-identity. No candidate-saved tokenizer or dynamic model selection is allowed.
+identity. The judge path uses no candidate-saved tokenizer or dynamic model selection.
+The separate route command has its own trained weights and contract; read
+`routing.md` when recommending a review model or reasoning effort.
