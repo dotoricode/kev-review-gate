@@ -119,6 +119,28 @@ class RoutingTrainingTests(unittest.TestCase):
   self.assertEqual(policy_metrics([row],[c])['accuracy'],1)
   self.assertEqual(policy_metrics([row],[c])['original_high_risk_downrouting'],1)
   self.assertEqual(row['predicted'],'sol_high')
+ def test_training_protocol_parses_the_bytes_it_authenticated(self):
+  import routing_train as training
+  source=Path(__file__).resolve().parents[1]/'routing/data';original_read=Path.read_text;modified=json.loads((source/'protocol.json').read_text());modified['seed']=999
+  def changed_second_read(path,*args,**kwargs):return json.dumps(modified) if path==source/'protocol.json' else original_read(path,*args,**kwargs)
+  with mock.patch.object(Path,'read_text',changed_second_read):self.assertEqual(training.verify_protocol(source)['seed'],321)
+ def test_verified_training_cases_survive_later_disk_rewrites(self):
+  import routing_train as training
+  source=Path(__file__).resolve().parents[1]/'routing/data'
+  with tempfile.TemporaryDirectory() as temp:
+   data=Path(temp)
+   for name in ('protocol.json','train.json','dev.json','final_test.json'):shutil.copy2(source/name,data/name)
+   protocol,cases=training.verify_protocol(data,return_datasets=True)
+   expected=json.loads((source/'train.json').read_bytes())['cases'];(data/'train.json').write_bytes((source/'final_test.json').read_bytes())
+   self.assertEqual(cases['train'],expected)
+   self.assertEqual(set(cases),{'train','dev','final_test'})
+   self.assertEqual([c['id'] for c in cases['train'][:50]],[c['id'] for c in expected[:50]])
+ def test_dev_report_validation_parses_its_authenticated_snapshot(self):
+  import routing_eval as evaluation
+  source=Path(__file__).resolve().parents[1];dev_path=source/'routing/data/dev.json';original_read=Path.read_text;final_text=(source/'routing/data/final_test.json').read_text()
+  reports={step:json.loads((source/f'routing/results/kev-dev-step{step}.json').read_text()) for step in (0,25,50)}
+  def changed_second_read(path,*args,**kwargs):return final_text if path==dev_path else original_read(path,*args,**kwargs)
+  with mock.patch.object(Path,'read_text',changed_second_read):evaluation.validate_dev_reports(reports)
  def test_training_input_hashes_reject_changed_base_and_original(self):
   import routing_train as training
   with tempfile.TemporaryDirectory() as temp:

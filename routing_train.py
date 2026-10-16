@@ -30,12 +30,17 @@ def digest_params(named):
  return h.hexdigest()
 
 
-def verify_protocol(data):
- require(file_sha(data/'protocol.json')==FROZEN_PROTOCOL_SHA256,'frozen_protocol_integrity_failure')
- protocol=json.loads((data/'protocol.json').read_text())
+def verify_protocol(data, *, return_datasets=False):
+ protocol_bytes=(data/'protocol.json').read_bytes()
+ require(hashlib.sha256(protocol_bytes).hexdigest()==FROZEN_PROTOCOL_SHA256,'frozen_protocol_integrity_failure')
+ protocol=json.loads(protocol_bytes)
  require(protocol['questions_sha256']==sha(questions()),'question_contract_integrity_failure')
- for name,digest in protocol['dataset_hashes'].items():require(file_sha(data/name)==digest,'dataset_integrity_failure')
- return protocol
+ datasets={}
+ for name,digest in protocol['dataset_hashes'].items():
+  raw=(data/name).read_bytes()
+  require(hashlib.sha256(raw).hexdigest()==digest,'dataset_integrity_failure')
+  datasets[Path(name).stem]=json.loads(raw)['cases']
+ return (protocol,datasets) if return_datasets else protocol
 
 
 def verify_resume(out,step,verified_inputs):
@@ -66,7 +71,7 @@ def export(source,dest,meta,step):
 
 def main():
  p=argparse.ArgumentParser();p.add_argument('--base-dir',required=True);p.add_argument('--original-dir',required=True);p.add_argument('--output',required=True);p.add_argument('--data-dir',default=str(ROOT/'routing/data'));p.add_argument('--target',type=int,choices=[0,2,25,50],required=True);a=p.parse_args()
- data=Path(a.data_dir);protocol=verify_protocol(data);verified_inputs=verify_training_inputs(a.base_dir,a.original_dir);out=Path(a.output);out.mkdir(parents=True,exist_ok=True)
+ data=Path(a.data_dir);protocol,datasets=verify_protocol(data,return_datasets=True);verified_inputs=verify_training_inputs(a.base_dir,a.original_dir);out=Path(a.output);out.mkdir(parents=True,exist_ok=True)
  target=a.target;start=0 if target in (0,2,25) else 25
  if start:verify_resume(out,start,verified_inputs)
  stage=out/f'stage-{target:04d}';stage.mkdir(exist_ok=False)
@@ -81,7 +86,7 @@ def main():
   export(Path(a.original_dir),stage/'weights',meta,0);(stage/'report.json').write_text(json.dumps({'status':'completed','step':0,'initialization':'pinned_original_untrained_on_routing','verified_inputs':verified_inputs}));return
  if not torch.backends.mps.is_available():raise ValueError('MPS_required_no_CPU_fallback')
  torch.set_num_threads(2);torch.mps.set_per_process_memory_fraction(.6);torch.manual_seed(321)
- report={'status':'running','seed':321,'start':start,'target':target,'steps':[],'protocol_sha256':file_sha(data/'protocol.json'),'verified_inputs':verified_inputs};began=time.perf_counter();swap=psutil.swap_memory().used;stop=threading.Event()
+ report={'status':'running','seed':321,'start':start,'target':target,'steps':[],'protocol_sha256':FROZEN_PROTOCOL_SHA256,'verified_inputs':verified_inputs};began=time.perf_counter();swap=psutil.swap_memory().used;stop=threading.Event()
  def memory():return {'rss':psutil.Process().memory_info().rss,'available':psutil.virtual_memory().available,'swap_delta':psutil.swap_memory().used-swap,'mps':torch.mps.driver_allocated_memory()}
  def write():
   report['elapsed_seconds']=round(time.perf_counter()-began,3);report['memory']=memory();(stage/'report.json').write_text(json.dumps(report,indent=2))
@@ -95,7 +100,7 @@ def main():
   tok=load_tokenizer(a.base_dir)
   # Check every split before training; final labels are never used in optimization or selection.
   for name in ('train','dev','final_test'):
-   rows=json.loads((data/f'{name}.json').read_text())['cases'];lengths=[]
+   rows=datasets[name];lengths=[]
    for c in rows:
     q=questions();q['route']['label']=c['expected'];q['route']['src']='public_synthetic_routing';r=materialize({'state':c['state'],'questions':q});enc=encode(tok,r,max_state=384,max_branch=512,strict=True);lengths.append(len(enc['ids']))
    report[name+'_max_packed_tokens']=max(lengths)
@@ -108,7 +113,7 @@ def main():
   optimizer=torch.optim.AdamW(trainable,lr=2e-5,weight_decay=.01)
   if start:
    resume=torch.load(out/f'stage-{start:04d}'/'resume.pt',map_location='cpu',weights_only=True);require(resume.get('step')==start and resume.get('protocol_sha256')==FROZEN_PROTOCOL_SHA256,'resume_state_mismatch');optimizer.load_state_dict(resume['optimizer']);torch.set_rng_state(resume['cpu_rng']);torch.mps.set_rng_state(resume['mps_rng'])
-  cases=json.loads((data/'train.json').read_text())['cases']
+  cases=datasets['train']
   from kev.train import question_loss
   for step in range(start+1,target+1):
    t=time.perf_counter();model.train();optimizer.zero_grad(set_to_none=True)

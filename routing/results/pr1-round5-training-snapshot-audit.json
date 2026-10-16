@@ -1,0 +1,55 @@
+{
+  "created_utc": "2026-10-16T01:37:07.957642+00:00",
+  "reason": "PR1 round5: preserve verified protocol and dataset snapshots through training preflight and optimizer input",
+  "dataset_case_counts": {
+    "train": 80,
+    "dev": 20,
+    "final_test": 20
+  },
+  "verified_case_snapshots_sha256": {
+    "train": "06bd4c818917b86c2035159d27661796b9cd47b8ba4e64df6c20d90c50b05e81",
+    "dev": "acd2d3c662c3245eb940fc8af3816b1e369f1c7ee95eb354d956a83e9ee58fb7",
+    "final_test": "31cfa7dc3adcdc6dab1937e6c92ea1834d9cbdcaa332a91520228c5e74592d3a"
+  },
+  "reviewed_read_paths": [
+    "training protocol: read once, hash and parse same bytes",
+    "training datasets: read once, hash and parse same bytes, retain cases for token preflight and optimizer",
+    "training report: use authenticated frozen protocol hash instead of rereading file",
+    "evaluation protocol and data: hash and parse one snapshot",
+    "dev validation: authenticated dev_bytes parsed directly",
+    "dev reports and selection: parsed once, same objects validated and hashed"
+  ],
+  "original_benchmark_sha256_before": {
+    "routing/data/final_test.json": "6bd1d7c9872f58ddef53ca1e1331df439b6032ae6874edc8146d3c19bcedd3a5",
+    "routing/data/dev.json": "a227bef923409579d8f4c77c19de5e34724ee1ade3733a0853228a7e9a8a8245",
+    "routing/data/train.json": "3e01c89e7250fff8a401c5660bb62ca551d131cf0a740bf42e31e3e517b5105e",
+    "routing/data/protocol.json": "e2e889843ac28f4acfb67d20712681c717dcc06727cbe9be69bf59b81c0f633d",
+    "routing/results/selected_checkpoint.json": "14506e96aaff7e52569b9848a997a4bae2aa5bafda8da1e44fd2cee4d23cb94e",
+    "routing/results/kev-dev-step0.json": "aa2031c1a0323742620c72e7cd9567d719da12843fe4374586d76ae4bf685a42",
+    "routing/results/kev-dev-step25.json": "dd8a6d0c3bd7e786c2859cf157649b266598a5e368340a4ffcba0047351aebb7",
+    "routing/results/kev-dev-step50.json": "c16c6496de907b8533adb1e5a2a42b63635669c13718b90aaad880f51c8a24a7",
+    "routing/results/kev-final.json": "cea69b0271484fb2f947add2f43e2253d1bf6248f5d4f0fe62008b598e3b2004",
+    "routing/results/jev-final.json": "b946923c6f501ae2b5e8ab63dbc8e43c17dc2e3dc1950cb2c159abdab369d993",
+    "routing/results/final-attempt-kev.json": "d193f1cb62c0106a36cedcf50211834f835e3ffcd425f6e332a6e668738bf3d8",
+    "routing/results/final-attempt-jev.json": "dc51652dbcf442452995a7a0d710b6cb9f5af67345abce99df0c06493553185f"
+  },
+  "original_benchmark_sha256_after": {
+    "routing/data/final_test.json": "6bd1d7c9872f58ddef53ca1e1331df439b6032ae6874edc8146d3c19bcedd3a5",
+    "routing/data/dev.json": "a227bef923409579d8f4c77c19de5e34724ee1ade3733a0853228a7e9a8a8245",
+    "routing/data/train.json": "3e01c89e7250fff8a401c5660bb62ca551d131cf0a740bf42e31e3e517b5105e",
+    "routing/data/protocol.json": "e2e889843ac28f4acfb67d20712681c717dcc06727cbe9be69bf59b81c0f633d",
+    "routing/results/selected_checkpoint.json": "14506e96aaff7e52569b9848a997a4bae2aa5bafda8da1e44fd2cee4d23cb94e",
+    "routing/results/kev-dev-step0.json": "aa2031c1a0323742620c72e7cd9567d719da12843fe4374586d76ae4bf685a42",
+    "routing/results/kev-dev-step25.json": "dd8a6d0c3bd7e786c2859cf157649b266598a5e368340a4ffcba0047351aebb7",
+    "routing/results/kev-dev-step50.json": "c16c6496de907b8533adb1e5a2a42b63635669c13718b90aaad880f51c8a24a7",
+    "routing/results/kev-final.json": "cea69b0271484fb2f947add2f43e2253d1bf6248f5d4f0fe62008b598e3b2004",
+    "routing/results/jev-final.json": "b946923c6f501ae2b5e8ab63dbc8e43c17dc2e3dc1950cb2c159abdab369d993",
+    "routing/results/final-attempt-kev.json": "d193f1cb62c0106a36cedcf50211834f835e3ffcd425f6e332a6e668738bf3d8",
+    "routing/results/final-attempt-jev.json": "dc51652dbcf442452995a7a0d710b6cb9f5af67345abce99df0c06493553185f"
+  },
+  "selection_rederived_unchanged": true,
+  "optimizer_updates": 0,
+  "model_loads": 0,
+  "Jev_calls": 0,
+  "final_evaluations": 0
+}
