@@ -39,7 +39,7 @@ Codex project scope (from the intended authorized project root):
 ```sh
 mkdir -p .agents/skills
 test ! -e .agents/skills/kev-review-gate && test ! -L .agents/skills/kev-review-gate && \
-  ln -s "$KEV_REVIEW_GATE_REPO/skills/kev-review-gate" .agents/skills/kev-review-gate
+  cp -R "$KEV_REVIEW_GATE_REPO/skills/kev-review-gate" .agents/skills/kev-review-gate
 ```
 
 Claude Code project scope:
@@ -47,7 +47,7 @@ Claude Code project scope:
 ```sh
 mkdir -p .claude/skills
 test ! -e .claude/skills/kev-review-gate && test ! -L .claude/skills/kev-review-gate && \
-  ln -s "$KEV_REVIEW_GATE_REPO/skills/kev-review-gate" .claude/skills/kev-review-gate
+  cp -R "$KEV_REVIEW_GATE_REPO/skills/kev-review-gate" .claude/skills/kev-review-gate
 ```
 
 Personal alternatives are `~/.agents/skills/kev-review-gate` for Codex and
@@ -59,8 +59,9 @@ checks. Restart/reload the agent if its skill list has not refreshed. Invoke
 For a copied skill, copy the complete skill folder including references and
 retain the independent local runtime clone/env variable. To update, first check
 `git status --short` in the runtime clone and preserve changes; fetch/review the
-new commit, fast-forward only when clean, then rerun doctor/fixture. A symlink
-tracks the reviewed clone; a copied skill needs explicit comparison/update.
+new commit, fast-forward only when clean, then rerun doctor/fixture. Keep real copies and compare/update only the reviewed change delta. When
+updating both personal installations, back up affected files, preserve existing
+local changes and compare complete SHA-256 manifests after applying that delta.
 Do not move the model Release/tag or overwrite another project's integrations.
 
 Official discovery references:
@@ -68,3 +69,8 @@ Official discovery references:
 [Claude Code](https://code.claude.com/docs/en/skills). Enterprise/admin policy may
 restrict discovery or execution. A Team account's data authorization does not
 make its runtime local; verify where commands execute.
+
+Routing setup is separate from the review-need service. Read `routing.md` before
+using `route`; it loads the pinned routing artifacts in an isolated local
+process and needs neither port8019 nor a running judge server. Keep existing
+review-need weights and service configuration unchanged.

@@ -1,0 +1,204 @@
+{
+  "cases": [
+    {
+      "id": "final_test-unknown-10-0",
+      "family": "unknown-10",
+      "state": {
+        "task": "One note calls it a label fix and another calls it an authentication rewrite; neither includes a patch.",
+        "review_kind": "independent_final"
+      },
+      "expected": "unknown",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "final_test-astra_high-11-0",
+      "family": "astra_high-11",
+      "state": {
+        "task": "Audit encrypted backup key rotation where interruption could render all backups unrecoverable.",
+        "review_kind": "risk_review"
+      },
+      "expected": "astra_high",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "final_test-unknown-11-0",
+      "family": "unknown-11",
+      "state": {
+        "task": "A binary artifact changed but its purpose, provenance and behavior are not described.",
+        "review_kind": "risk_review"
+      },
+      "expected": "unknown",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "final_test-sol_medium-10-0",
+      "family": "sol_medium-10",
+      "state": {
+        "task": "Correct the casing of a help heading. No executable code changes.",
+        "review_kind": "independent_final"
+      },
+      "expected": "sol_medium",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "final_test-unknown-9-0",
+      "family": "unknown-9",
+      "state": {
+        "task": "The change summary was truncated before describing behavior; scope cannot be inferred.",
+        "review_kind": "checkpoint"
+      },
+      "expected": "unknown",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "final_test-sol_medium-8-0",
+      "family": "sol_medium-8",
+      "state": {
+        "task": "Change the default chart title literal. Serialized series and calculations are unchanged.",
+        "review_kind": "risk_review"
+      },
+      "expected": "sol_medium",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "final_test-sol_medium-9-0",
+      "family": "sol_medium-9",
+      "state": {
+        "task": "Remove a duplicate CSS declaration with the same value. Computed styles match.",
+        "review_kind": "checkpoint"
+      },
+      "expected": "sol_medium",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "final_test-astra_medium-10-0",
+      "family": "astra_medium-10",
+      "state": {
+        "task": "Review ownership semantics across a new foreign-function interface with multiple language bindings.",
+        "review_kind": "independent_final"
+      },
+      "expected": "astra_medium",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "final_test-astra_high-9-0",
+      "family": "astra_high-9",
+      "state": {
+        "task": "Assess replication failover with possible permanent data loss and ambiguous recovery semantics.",
+        "review_kind": "checkpoint"
+      },
+      "expected": "astra_high",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "final_test-sol_high-10-0",
+      "family": "sol_high-10",
+      "state": {
+        "task": "Review cursor movement across wrapped lines in a text viewer; navigation contracts are clear.",
+        "review_kind": "independent_final"
+      },
+      "expected": "sol_high",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "final_test-sol_high-11-0",
+      "family": "sol_high-11",
+      "state": {
+        "task": "Trace download progress aggregation across child tasks; totals and cancellation are specified.",
+        "review_kind": "risk_review"
+      },
+      "expected": "sol_high",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "final_test-astra_medium-9-0",
+      "family": "astra_medium-9",
+      "state": {
+        "task": "Assess serialization format evolution for long-lived archives with multiple readers and writers.",
+        "review_kind": "checkpoint"
+      },
+      "expected": "astra_medium",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "final_test-sol_medium-11-0",
+      "family": "sol_medium-11",
+      "state": {
+        "task": "Update an example fixture comment. Runtime fixture values are unchanged.",
+        "review_kind": "risk_review"
+      },
+      "expected": "sol_medium",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "final_test-unknown-8-0",
+      "family": "unknown-8",
+      "state": {
+        "task": "The work item is blank except for a tracking number; no technical content is supplied.",
+        "review_kind": "risk_review"
+      },
+      "expected": "unknown",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "final_test-sol_high-9-0",
+      "family": "sol_high-9",
+      "state": {
+        "task": "Check a local file watcher debounce state machine across rename and duplicate events.",
+        "review_kind": "checkpoint"
+      },
+      "expected": "sol_high",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "final_test-astra_high-10-0",
+      "family": "astra_high-10",
+      "state": {
+        "task": "Review a security policy default change allowing untrusted extension code to run.",
+        "review_kind": "independent_final"
+      },
+      "expected": "astra_high",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "final_test-astra_medium-11-0",
+      "family": "astra_medium-11",
+      "state": {
+        "task": "Assess a compiler pass redesign whose transformations interact across several optimizations.",
+        "review_kind": "risk_review"
+      },
+      "expected": "astra_medium",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "final_test-sol_high-8-0",
+      "family": "sol_high-8",
+      "state": {
+        "task": "Review a bounded streaming parser across chunk boundaries, including empty and split tokens.",
+        "review_kind": "risk_review"
+      },
+      "expected": "sol_high",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "final_test-astra_high-8-0",
+      "family": "astra_high-8",
+      "state": {
+        "task": "Audit certificate trust validation changes involving attacker-controlled chains and fallback rules.",
+        "review_kind": "risk_review"
+      },
+      "expected": "astra_high",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "final_test-astra_medium-8-0",
+      "family": "astra_medium-8",
+      "state": {
+        "task": "Review an event-bus redesign affecting ordering guarantees across many downstream consumers.",
+        "review_kind": "risk_review"
+      },
+      "expected": "astra_medium",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    }
+  ]
+}

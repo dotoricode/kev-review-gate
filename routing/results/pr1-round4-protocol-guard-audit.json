@@ -1,0 +1,37 @@
+{
+  "created_utc": "2026-10-16T01:30:16.623099+00:00",
+  "reason": "PR1 round4: authenticate protocol bytes before dataset-role classification and use one dataset snapshot",
+  "protocol_sha256": "e2e889843ac28f4acfb67d20712681c717dcc06727cbe9be69bf59b81c0f633d",
+  "protocol_verified": true,
+  "validated_entry_points": [
+    "evaluation main",
+    "validate_dev_reports",
+    "freeze_selection"
+  ],
+  "dataset_parsing_uses_hash_snapshot": true,
+  "selection_rederived_unchanged": true,
+  "original_evidence_sha256_before": {
+    "selected_checkpoint.json": "14506e96aaff7e52569b9848a997a4bae2aa5bafda8da1e44fd2cee4d23cb94e",
+    "kev-final.json": "cea69b0271484fb2f947add2f43e2253d1bf6248f5d4f0fe62008b598e3b2004",
+    "jev-final.json": "b946923c6f501ae2b5e8ab63dbc8e43c17dc2e3dc1950cb2c159abdab369d993",
+    "final-attempt-kev.json": "d193f1cb62c0106a36cedcf50211834f835e3ffcd425f6e332a6e668738bf3d8",
+    "final-attempt-jev.json": "dc51652dbcf442452995a7a0d710b6cb9f5af67345abce99df0c06493553185f"
+  },
+  "original_evidence_sha256_after": {
+    "selected_checkpoint.json": "14506e96aaff7e52569b9848a997a4bae2aa5bafda8da1e44fd2cee4d23cb94e",
+    "kev-final.json": "cea69b0271484fb2f947add2f43e2253d1bf6248f5d4f0fe62008b598e3b2004",
+    "jev-final.json": "b946923c6f501ae2b5e8ab63dbc8e43c17dc2e3dc1950cb2c159abdab369d993",
+    "final-attempt-kev.json": "d193f1cb62c0106a36cedcf50211834f835e3ffcd425f6e332a6e668738bf3d8",
+    "final-attempt-jev.json": "dc51652dbcf442452995a7a0d710b6cb9f5af67345abce99df0c06493553185f"
+  },
+  "Jev_calls": 0,
+  "model_loads": 0,
+  "optimizer_updates": 0,
+  "final_repeated": false,
+  "regression_coverage": [
+    "tampered role mapping rejected for both providers",
+    "freeze rejects modified protocol even with valid dev reports",
+    "renamed final reaches consumed-attempt guard",
+    "data changed between hash and second read cannot change evaluated snapshot"
+  ]
+}

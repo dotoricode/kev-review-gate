@@ -1,0 +1,39 @@
+{
+  "selected_step": 25,
+  "selection_basis": "dev_only_fixed_schedule",
+  "metrics": {
+    "total": 20,
+    "measured": 20,
+    "unavailable": 0,
+    "accuracy": 0.9,
+    "macro_accuracy": 0.9,
+    "class_recall": {
+      "sol_medium": 1.0,
+      "sol_high": 0.75,
+      "astra_medium": 1.0,
+      "astra_high": 1.0,
+      "unknown": 0.75
+    },
+    "high_risk_cases": 4,
+    "high_risk_downrouting": 0,
+    "latency_median_ms": 111.6195,
+    "latency_mean_ms": 146.70695
+  },
+  "questions_sha256": "dc2f7f59dc47207be5bdee617ded7b9af8f437737955c82478a13288d6e307b2",
+  "dev_report_sha256": {
+    "0": "f7fa21941e6868c550ce94437f734279fe5fe0f01d518399c87999213b0ff2fd",
+    "25": "3f9f306baaa97fbe45068b41b6bf8b291f282f9bcab2b4019657055c2f15f188",
+    "50": "86961313e7be79fabc3d89c2c3225c35ca2d6f552d1df09def0fb397753a5679"
+  },
+  "artifact_manifest": {
+    "model": "kev-review-router-v1",
+    "policy_version": "kev-routing-v1",
+    "public_files": {
+      "adapter_model.safetensors": "e5b260bb7ce8c3ffe962ba888bc2ce3a4592a5dea68d6321993a234b2e3caebe",
+      "head.safetensors": "25c113cf1718b03ebec3dfb6d76cd09f5f2318f6292d3388a8cec9d6ac7fe097",
+      "adapter_config.json": "c754c542697527daba574072dde62b604c84aede8c8648548e64dde760b80bfa",
+      "model_config.json": "46c23c3f28dd752db348efa6ab633d6f7be3d13a75bcb566dc7b6548f729b6ef"
+    }
+  },
+  "selection_sha256": "7b8c5ff4abd44656cff420b1752d6292d9a1a4d827fbfba1846cc5b6325d8deb"
+}

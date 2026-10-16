@@ -121,3 +121,11 @@ See [model card](MODEL_CARD.md), [data card](DATA_CARD.md),
 Weights are Release assets, never Git blobs. Base weights, candidate tokenizer,
 optimizer/resume states, credentials, private integrations and raw system logs
 are excluded.
+
+## Experimental reviewer routing
+
+A separate `kev-review-router-v1` LoRA/head selects a review profile; it does not repurpose the released review-need `step50` weights. `kev_gate.py route --input - --base-dir <pinned-base> --weights-dir <routing-weights>` accepts `task`, `review_kind`, and a caller-verified candidate catalog. The independent-final/risk policy requires Astra, preserving the supported effort. Unknown, unsupported profiles and unavailable artifacts return a manual error, never a default model or a cloud fallback. Inference is offline and starts no reviewer.
+
+The caller must discover available models, freeze the selected model/effort in its review job, show that selection, and pass the same values to the review executor. See [the routing contract](skills/kev-review-gate/references/routing.md). Routing requires separate local artifacts matching `provenance/routing-weights.json`; these weights are not the existing review-gate Release and are not committed into Git or silently downloaded. The selected local training artifact is preserved with the implementation run; reproducing training uses the pinned base and original Kev adapter/head.
+
+The frozen pilot trained 50 updates and selected step25 using dev only. On 20 new synthetic final cases, selected Kev matched 16/20 policy labels and actual Jev matched 14/20; both had 0/4 original high-risk underallocations. Jev is always the comparison group on identical public synthetic state/questions, not a training teacher or ground truth. This small experiment does not establish superior code review, real-world reliability, or savings. Kev's unknown and sol_high recalls were each 2/4, so routing remains experimental. Loading time is excluded from per-request latency measurements. [Protocol](routing/protocol.md), [results and limitations](routing/results/report.md).

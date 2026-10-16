@@ -1,0 +1,204 @@
+{
+  "cases": [
+    {
+      "id": "dev-unknown-6-0",
+      "family": "unknown-6",
+      "state": {
+        "task": "Two summaries disagree about whether data is deleted; no diff is provided.",
+        "review_kind": "checkpoint"
+      },
+      "expected": "unknown",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "dev-astra_high-7-0",
+      "family": "astra_high-7",
+      "state": {
+        "task": "Review secrets redaction across logs and error paths where credentials may escape.",
+        "review_kind": "independent_final"
+      },
+      "expected": "astra_high",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "dev-unknown-7-0",
+      "family": "unknown-7",
+      "state": {
+        "task": "The only supplied evidence is a passing status without any tested assertions or change description.",
+        "review_kind": "independent_final"
+      },
+      "expected": "unknown",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "dev-sol_medium-6-0",
+      "family": "sol_medium-6",
+      "state": {
+        "task": "Replace a broken documentation anchor with the verified section anchor.",
+        "review_kind": "checkpoint"
+      },
+      "expected": "sol_medium",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "dev-unknown-5-0",
+      "family": "unknown-5",
+      "state": {
+        "task": "The request says optimize it, without stating what it is or its constraints.",
+        "review_kind": "risk_review"
+      },
+      "expected": "unknown",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "dev-sol_medium-4-0",
+      "family": "sol_medium-4",
+      "state": {
+        "task": "Correct one locale translation for a cancel label; no interpolation or behavior changes.",
+        "review_kind": "independent_final"
+      },
+      "expected": "sol_medium",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "dev-sol_medium-5-0",
+      "family": "sol_medium-5",
+      "state": {
+        "task": "Sort a static list of supported extensions alphabetically; membership remains identical.",
+        "review_kind": "risk_review"
+      },
+      "expected": "sol_medium",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "dev-astra_medium-6-0",
+      "family": "astra_medium-6",
+      "state": {
+        "task": "Review schema evolution across offline clients, synchronization and server compatibility.",
+        "review_kind": "checkpoint"
+      },
+      "expected": "astra_medium",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "dev-astra_high-5-0",
+      "family": "astra_high-5",
+      "state": {
+        "task": "Assess a payment settlement change with duplicate debits and uncertain idempotency guarantees.",
+        "review_kind": "risk_review"
+      },
+      "expected": "astra_high",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "dev-sol_high-6-0",
+      "family": "sol_high-6",
+      "state": {
+        "task": "Verify sorting stability through table state and URL parameters; behavior is specified.",
+        "review_kind": "checkpoint"
+      },
+      "expected": "sol_high",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "dev-sol_high-7-0",
+      "family": "sol_high-7",
+      "state": {
+        "task": "Trace undo history updates across two editor commands and redo restoration.",
+        "review_kind": "independent_final"
+      },
+      "expected": "sol_high",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "dev-astra_medium-5-0",
+      "family": "astra_medium-5",
+      "state": {
+        "task": "Assess a plugin API redesign with third-party implementations and a multi-release compatibility window.",
+        "review_kind": "risk_review"
+      },
+      "expected": "astra_medium",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "dev-sol_medium-7-0",
+      "family": "sol_medium-7",
+      "state": {
+        "task": "Add one descriptive aria label to an existing icon. DOM assertions pass.",
+        "review_kind": "independent_final"
+      },
+      "expected": "sol_medium",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "dev-unknown-4-0",
+      "family": "unknown-4",
+      "state": {
+        "task": "A patch is mentioned but neither its files nor intended outcome are available.",
+        "review_kind": "independent_final"
+      },
+      "expected": "unknown",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "dev-sol_high-5-0",
+      "family": "sol_high-5",
+      "state": {
+        "task": "Check an async progress indicator cleanup across success, failure and cancellation branches.",
+        "review_kind": "risk_review"
+      },
+      "expected": "sol_high",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "dev-astra_high-6-0",
+      "family": "astra_high-6",
+      "state": {
+        "task": "Audit sandbox escape prevention after changing process privileges and file descriptor inheritance.",
+        "review_kind": "checkpoint"
+      },
+      "expected": "astra_high",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "dev-astra_medium-7-0",
+      "family": "astra_medium-7",
+      "state": {
+        "task": "Assess a scheduler architecture change spanning task fairness, accounting and multiple execution pools.",
+        "review_kind": "independent_final"
+      },
+      "expected": "astra_medium",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "dev-sol_high-4-0",
+      "family": "sol_high-4",
+      "state": {
+        "task": "Review a multi-file date-filter fix across parsing and query construction, with timezone boundary tests.",
+        "review_kind": "independent_final"
+      },
+      "expected": "sol_high",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "dev-astra_high-4-0",
+      "family": "astra_high-4",
+      "state": {
+        "task": "Review cryptographic signature validation changes where malformed inputs may bypass verification.",
+        "review_kind": "independent_final"
+      },
+      "expected": "astra_high",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    },
+    {
+      "id": "dev-astra_medium-4-0",
+      "family": "astra_medium-4",
+      "state": {
+        "task": "Review a database query planner rewrite affecting latency and semantics across many query shapes.",
+        "review_kind": "independent_final"
+      },
+      "expected": "astra_medium",
+      "label_basis": "human_auditable_synthetic_policy_expectation_not_Jev_ground_truth"
+    }
+  ]
+}

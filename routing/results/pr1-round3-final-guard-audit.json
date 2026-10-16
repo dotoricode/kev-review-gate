@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-10-16T01:22:16.314739+00:00",
+  "reason": "PR1 round3: independently pin selected checkpoint and canonical once-only final locks",
+  "model_calls": 0,
+  "Jev_calls": 0,
+  "optimizer_updates": 0,
+  "final_repeated": false,
+  "frozen_selection_sha256": "7b8c5ff4abd44656cff420b1752d6292d9a1a4d827fbfba1846cc5b6325d8deb",
+  "frozen_protocol_sha256": "e2e889843ac28f4acfb67d20712681c717dcc06727cbe9be69bf59b81c0f633d",
+  "selection_rederived_matches_pin": true,
+  "copied_selection_final_claims_blocked_by_legacy_locks": [
+    "Kev",
+    "Jev"
+  ],
+  "original_evidence_sha256_before": {
+    "selected_checkpoint.json": "14506e96aaff7e52569b9848a997a4bae2aa5bafda8da1e44fd2cee4d23cb94e",
+    "kev-final.json": "cea69b0271484fb2f947add2f43e2253d1bf6248f5d4f0fe62008b598e3b2004",
+    "jev-final.json": "b946923c6f501ae2b5e8ab63dbc8e43c17dc2e3dc1950cb2c159abdab369d993",
+    "final-attempt-kev.json": "d193f1cb62c0106a36cedcf50211834f835e3ffcd425f6e332a6e668738bf3d8",
+    "final-attempt-jev.json": "dc51652dbcf442452995a7a0d710b6cb9f5af67345abce99df0c06493553185f"
+  },
+  "original_evidence_sha256_after": {
+    "selected_checkpoint.json": "14506e96aaff7e52569b9848a997a4bae2aa5bafda8da1e44fd2cee4d23cb94e",
+    "kev-final.json": "cea69b0271484fb2f947add2f43e2253d1bf6248f5d4f0fe62008b598e3b2004",
+    "jev-final.json": "b946923c6f501ae2b5e8ab63dbc8e43c17dc2e3dc1950cb2c159abdab369d993",
+    "final-attempt-kev.json": "d193f1cb62c0106a36cedcf50211834f835e3ffcd425f6e332a6e668738bf3d8",
+    "final-attempt-jev.json": "dc51652dbcf442452995a7a0d710b6cb9f5af67345abce99df0c06493553185f"
+  },
+  "canonical_new_lock_path": "routing/results/final-attempts/<protocol-sha256>/<selection-sha256>/<provider>.json",
+  "legacy_locks_preserved_and_consumed": true
+}

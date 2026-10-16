@@ -1,0 +1,33 @@
+{
+  "reason": "Packaging question hash serialization aligned to existing contract.sha; frozen protocol, questions and learned weights unchanged",
+  "changes": [
+    {
+      "step": 0,
+      "old_canonical_questions_sha256": "dc2f7f59dc47207be5bdee617ded7b9af8f437737955c82478a13288d6e307b2",
+      "contract_questions_sha256": "1184f94673b99a47132be74e8eeb4c5d9e4d8e80eaf1ef3eb692ef6f1178a3cc",
+      "only_config_metadata_changed": true,
+      "adapter_head_unchanged": true
+    },
+    {
+      "step": 2,
+      "old_canonical_questions_sha256": "dc2f7f59dc47207be5bdee617ded7b9af8f437737955c82478a13288d6e307b2",
+      "contract_questions_sha256": "1184f94673b99a47132be74e8eeb4c5d9e4d8e80eaf1ef3eb692ef6f1178a3cc",
+      "only_config_metadata_changed": true,
+      "adapter_head_unchanged": true
+    },
+    {
+      "step": 25,
+      "old_canonical_questions_sha256": "dc2f7f59dc47207be5bdee617ded7b9af8f437737955c82478a13288d6e307b2",
+      "contract_questions_sha256": "1184f94673b99a47132be74e8eeb4c5d9e4d8e80eaf1ef3eb692ef6f1178a3cc",
+      "only_config_metadata_changed": true,
+      "adapter_head_unchanged": true
+    },
+    {
+      "step": 50,
+      "old_canonical_questions_sha256": "dc2f7f59dc47207be5bdee617ded7b9af8f437737955c82478a13288d6e307b2",
+      "contract_questions_sha256": "1184f94673b99a47132be74e8eeb4c5d9e4d8e80eaf1ef3eb692ef6f1178a3cc",
+      "only_config_metadata_changed": true,
+      "adapter_head_unchanged": true
+    }
+  ]
+}
