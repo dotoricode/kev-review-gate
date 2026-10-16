@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-import json,sys,tempfile,unittest,copy,shutil,builtins,hashlib
+import json,sys,tempfile,unittest,copy,shutil,builtins,hashlib,subprocess,os,ast
 from unittest import mock
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
@@ -54,6 +54,50 @@ class RoutingTrainingTests(unittest.TestCase):
   self.assertEqual(policy_metrics([row],[c])['accuracy'],1)
   self.assertEqual(policy_metrics([row],[c])['original_high_risk_downrouting'],1)
   self.assertEqual(row['predicted'],'sol_high')
+ def test_training_input_hashes_reject_changed_base_and_original(self):
+  import routing_train as training
+  with tempfile.TemporaryDirectory() as temp:
+   root=Path(temp);(root/'provenance').mkdir();base=root/'base';original=root/'original';base.mkdir();original.mkdir()
+   (base/'model.bin').write_bytes(b'base')
+   names=('adapter_config.json','adapter_model.safetensors','head.pt')
+   for name in names:(original/name).write_bytes(name.encode())
+   lock={'base_revision':'base-pin','model_revision':'original-pin','files':{'base/model.bin':hashlib.sha256(b'base').hexdigest(),**{'kev-4b/'+name:hashlib.sha256(name.encode()).hexdigest() for name in names}}}
+   (root/'provenance/upstream-model-lock.json').write_text(json.dumps(lock))
+   with mock.patch.object(training,'ROOT',root):
+    training.verify_training_inputs(base,original)
+    (base/'model.bin').write_bytes(b'changed')
+    with self.assertRaises(ValueError):training.verify_training_inputs(base,original)
+    (base/'model.bin').write_bytes(b'base');(original/'head.pt').write_bytes(b'changed')
+    with self.assertRaises(ValueError):training.verify_training_inputs(base,original)
+ def test_resume_integrity_rejects_mutated_checkpoint_and_missing_provenance(self):
+  import routing_train as training
+  with tempfile.TemporaryDirectory() as temp:
+   root=Path(temp);stage=root/'stage-0025';(stage/'checkpoint').mkdir(parents=True)
+   names=('checkpoint/adapter_config.json','checkpoint/adapter_model.safetensors','checkpoint/head.pt','resume.pt')
+   for name in names:(stage/name).write_bytes(name.encode())
+   report={'status':'completed','target':25,'protocol_sha256':training.FROZEN_PROTOCOL_SHA256,'verified_inputs':{},'resume_files_sha256':{name:hashlib.sha256(name.encode()).hexdigest() for name in names}}
+   (stage/'report.json').write_text(json.dumps(report));training.verify_resume(root,25,{})
+   (stage/'checkpoint/head.pt').write_bytes(b'changed')
+   with self.assertRaises(ValueError):training.verify_resume(root,25,{})
+   report.pop('resume_files_sha256');(stage/'report.json').write_text(json.dumps(report))
+   with self.assertRaises(ValueError):training.verify_resume(root,25,{})
+ def test_training_target_zero_rejects_unverified_inputs_before_loading(self):
+  import routing_train as training
+  with tempfile.TemporaryDirectory() as temp:
+   root=Path(temp);freeze(root/'data')
+   args=['routing_train.py','--base-dir',str(root/'wrong-base'),'--original-dir',str(root/'wrong-original'),'--data-dir',str(root/'data'),'--output',str(root/'out'),'--target','0']
+   with mock.patch.object(sys,'argv',args),mock.patch('isolation.isolate',side_effect=AssertionError('unverified_input_reached_loading')):
+    with self.assertRaises(ValueError):training.main()
+ def test_training_protocol_guards_survive_python_optimization(self):
+  with tempfile.TemporaryDirectory() as temp:
+   root=Path(temp);freeze(root)
+   with (root/'train.json').open('a') as stream:stream.write(' ')
+   env=dict(os.environ,PYTHONPATH=str(Path(__file__).resolve().parents[1]))
+   script="from pathlib import Path;from routing_train import verify_protocol;verify_protocol(Path("+repr(str(root))+"))"
+   result=subprocess.run([sys.executable,'-O','-c',script],capture_output=True,text=True,env=env)
+   self.assertNotEqual(result.returncode,0,'optimized interpreter bypassed modified dataset')
+  import routing_train as training
+  self.assertFalse(any(isinstance(node,ast.Assert) for node in ast.walk(ast.parse(Path(training.__file__).read_text()))),'mandatory training guards must not use assert')
  def test_artifact_validation_precedes_any_model_loading(self):
   original_import=builtins.__import__
   def guard(name,*args,**kwargs):
