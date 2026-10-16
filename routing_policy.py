@@ -55,7 +55,7 @@ def select(choice, payload):
     catalog = {c['tier']: c for c in payload['candidates']}
     if tier not in catalog or effort not in catalog[tier]['efforts']:
         raise ValueError('recommended_profile_unavailable')
-    selected_tier = 'astra' if payload['review_kind'] in ('independent_final', 'risk_review') else tier
+    selected_tier = 'astra' if payload['review_kind'] in ('independent_final', 'risk_review') and 'astra' in catalog else tier
     if selected_tier not in catalog or effort not in catalog[selected_tier]['efforts']:
         raise ValueError('required_profile_unavailable')
     canonical = sorted([dict(c, efforts=sorted(c['efforts'])) for c in payload['candidates']], key=lambda c: c['tier'])

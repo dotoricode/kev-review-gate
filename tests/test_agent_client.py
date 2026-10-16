@@ -1,5 +1,5 @@
 """Mock transport tests: zero model inference and zero external connections."""
-import copy,json,socket
+import copy,errno,json,socket
 import pytest
 import kev_gate as k
 
@@ -107,3 +107,10 @@ def test_invalid_timeout_never_connects(monkeypatch,timeout):
 def test_fixture_mismatch_is_not_reported_as_pass(monkeypatch):
     monkeypatch.setattr(k,'judge',lambda *a,**kw:{'decision':'wrong','probabilities':{},'confidence':0})
     with pytest.raises(k.GateError,match='fixture_mismatch'):k.fixture()
+
+@pytest.mark.parametrize('number',[errno.EPERM,errno.EACCES])
+def test_permission_denial_is_not_reported_as_server_down(monkeypatch,number):
+    calls=transport(monkeypatch,error=PermissionError(number,'private diagnostic'))
+    with pytest.raises(k.GateError,match='^local_access_denied$'):
+        k.judge(STATE)
+    assert len(calls)==1 and calls[0][0]=='GET'

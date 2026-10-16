@@ -30,7 +30,7 @@ false. Confidence measures concentration among the supplied alternatives;
 it is not a validated probability that the class or workflow is correct.
 
 Failures return exit2 and `ok:false`, `status:manual`, `decision:null`,
-`error.code`, disabled skip. Codes distinguish `service_unavailable`,
+`error.code`, disabled skip. Codes distinguish `local_access_denied` (local permission failure; not proof of a stopped server), `service_unavailable`,
 `service_timeout`, `redirect_refused`, `inference_rejected`,
 `model_identity_mismatch`, `invalid_response`, `input_hash_mismatch`,
 `invalid_input`, `input_too_large`, `nonlocal_or_unsupported_endpoint` and

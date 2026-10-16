@@ -60,6 +60,7 @@ def exchange(method,path,body=None,*,url=URL,timeout=15):
         try:return strict_json(raw)
         except (ValueError,UnicodeError,TypeError):raise GateError('invalid_response') from None
     except (socket.timeout,TimeoutError):raise GateError('service_timeout') from None
+    except PermissionError:raise GateError('local_access_denied') from None
     except (OSError,http.client.HTTPException):raise GateError('service_unavailable') from None
     finally:c.close()
 
