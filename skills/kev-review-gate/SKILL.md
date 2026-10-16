@@ -38,6 +38,13 @@ answer a judgment request.
    python3 "$KEV_REVIEW_GATE_REPO/kev_gate.py" doctor
    ```
 
+   On `local_access_denied` or `Operation not permitted`, check the calling
+   execution environment before treating the server as stopped. In Codex,
+   request `require_escalated` for the same doctor/judge command; stop if denied.
+   Do not restart/reinstall the server or weaken sandbox settings automatically.
+   A generic connection error alone does not establish server downtime. Check
+   local access permissions for a failed model catalog query too.
+
    Proceed only on exit0, `ok: true`, `status: ready`. Doctor checks the fixed
    model/base/tokenizer revisions, temperature, precision, weight hashes and
    disabled skip policy reported by the local service. Old servers without
