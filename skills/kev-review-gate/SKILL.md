@@ -97,3 +97,9 @@ Design background: the official TypeSafe distribution has one integrated
 [`typesafe-ai` skill](https://github.com/typesafe-ai/skills/blob/main/skills/typesafe-ai/SKILL.md).
 These independently written instructions adapt its narrow-judgment/evidence and
 uncertainty principles to the fixed local Kev task; no TypeSafe API is called.
+
+## Optional joint discrimination
+
+For explicitly requested joint need and Sol-only effort advice, read
+[references/discrimination.md](references/discrimination.md). The separate v2
+command and weights are opt-in; keep v1 when no reviewed v2 pin is available.

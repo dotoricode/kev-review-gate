@@ -1,0 +1,228 @@
+{
+  "cases": [
+    {
+      "id": "final_test-0-bounded",
+      "family": "audit timeline",
+      "pair": "bounded",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the audit timeline.\nchanges: Format an empty event count as zero. A single pure display helper changes.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "final_test-1-missing",
+      "family": "restore dialog",
+      "pair": "missing",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: restore dialog 상태를 표시한다.\nchanges: Notes conflict about restore dialog: a literal edit or a sensitive behavior change. No patch supplied.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      }
+    },
+    {
+      "id": "final_test-0-inert",
+      "family": "audit timeline",
+      "pair": "inert",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the audit timeline.\nchanges: Correct the timeline legend text. Executable conditions and values are unchanged.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "final_test-2-bounded",
+      "family": "quota meter",
+      "pair": "bounded",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the quota meter.\nchanges: Round a display-only fraction to two decimal places. A single pure display helper changes.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "final_test-3-inert",
+      "family": "role selector",
+      "pair": "inert",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: role selector 상태를 표시한다.\nchanges: Correct a role option description. Executable conditions and values are unchanged.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "final_test-2-missing",
+      "family": "quota meter",
+      "pair": "missing",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the quota meter.\nchanges: Notes conflict about quota meter: a literal edit or a sensitive behavior change. No patch supplied.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      }
+    },
+    {
+      "id": "final_test-1-bounded",
+      "family": "restore dialog",
+      "pair": "bounded",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: restore dialog 상태를 표시한다.\nchanges: Show zero selected files instead of empty text. A single pure display helper changes.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "final_test-0-missing",
+      "family": "audit timeline",
+      "pair": "missing",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the audit timeline.\nchanges: Notes conflict about audit timeline: a literal edit or a sensitive behavior change. No patch supplied.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      }
+    },
+    {
+      "id": "final_test-2-sensitive",
+      "family": "quota meter",
+      "pair": "sensitive",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the quota meter.\nchanges: Update shared quota counters without atomic reservation across workers.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      }
+    },
+    {
+      "id": "final_test-3-sensitive",
+      "family": "role selector",
+      "pair": "sensitive",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: role selector 상태를 표시한다.\nchanges: Treat an unknown role as privileged in a policy fallback.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      }
+    },
+    {
+      "id": "final_test-3-bounded",
+      "family": "role selector",
+      "pair": "bounded",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: role selector 상태를 표시한다.\nchanges: Omit an empty display-only group heading. A single pure display helper changes.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "final_test-1-sensitive",
+      "family": "restore dialog",
+      "pair": "sensitive",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: restore dialog 상태를 표시한다.\nchanges: Erase the recovery key before interruption-safe restore completion.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      }
+    },
+    {
+      "id": "final_test-2-inert",
+      "family": "quota meter",
+      "pair": "inert",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the quota meter.\nchanges: Correct the quota unit label. Executable conditions and values are unchanged.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "final_test-3-missing",
+      "family": "role selector",
+      "pair": "missing",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: role selector 상태를 표시한다.\nchanges: Notes conflict about role selector: a literal edit or a sensitive behavior change. No patch supplied.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      }
+    },
+    {
+      "id": "final_test-0-sensitive",
+      "family": "audit timeline",
+      "pair": "sensitive",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the audit timeline.\nchanges: Remove integrity verification when importing audit records.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      }
+    },
+    {
+      "id": "final_test-1-inert",
+      "family": "restore dialog",
+      "pair": "inert",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: restore dialog 상태를 표시한다.\nchanges: Fix a restore confirmation typo. Executable conditions and values are unchanged.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      }
+    }
+  ]
+}
