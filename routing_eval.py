@@ -10,6 +10,12 @@ FROZEN_SELECTION_SHA256='7b8c5ff4abd44656cff420b1752d6292d9a1a4d827fbfba1846cc5b
 FROZEN_PROTOCOL_SHA256='e2e889843ac28f4acfb67d20712681c717dcc06727cbe9be69bf59b81c0f633d'
 
 
+def load_frozen_protocol():
+ raw=(ROOT/'routing/data/protocol.json').read_bytes()
+ if hashlib.sha256(raw).hexdigest()!=FROZEN_PROTOCOL_SHA256:raise ValueError('frozen_protocol_integrity_failure')
+ return json.loads(raw)
+
+
 def aggregate(rows):
  measured=[r for r in rows if r.get('status')=='completed']
  per={c:[] for c in CHOICES}
@@ -57,11 +63,11 @@ def policy_metrics(rows,cases):
 
 
 def validate_dev_reports(reports):
- protocol=json.loads((ROOT/'routing/data/protocol.json').read_text())
+ protocol=load_frozen_protocol()
  dev_path=ROOT/'routing/data/dev.json'
- digest=hashlib.sha256(dev_path.read_bytes()).hexdigest()
+ dev_bytes=dev_path.read_bytes();digest=hashlib.sha256(dev_bytes).hexdigest()
  if digest!=protocol['dataset_hashes']['dev.json'] or protocol['questions_sha256']!=sha(questions()):raise ValueError('frozen_dev_contract_mismatch')
- cases={c['id']:c for c in json.loads(dev_path.read_text())['cases']}
+ cases={c['id']:c for c in json.loads(dev_bytes)['cases']}
  pins=json.loads((ROOT/'provenance/routing-evaluation-weights.json').read_text())['candidates']
  for step,r in reports.items():
   if r.get('provider')!='Kev' or r.get('dataset_sha256')!=digest or r.get('questions_sha256')!=sha(questions()) or r.get('artifact_manifest')!=pins[str(step)]:raise ValueError('invalid_dev_report_identity')
@@ -76,6 +82,7 @@ def validate_dev_reports(reports):
 
 
 def freeze_selection(results,output):
+ load_frozen_protocol()
  reports={step:json.loads((Path(results)/f'kev-dev-step{step}.json').read_text()) for step in (0,25,50)}
  validate_dev_reports(reports)
  decision=select_checkpoint(reports);decision['questions_sha256']=sha(questions())
@@ -174,22 +181,22 @@ def evaluate(cases,predict,provider,journal=None):
 def main():
  p=argparse.ArgumentParser();p.add_argument('--provider',choices=['Jev','Kev']);p.add_argument('--data');p.add_argument('--output',required=True);p.add_argument('--select-from');p.add_argument('--selection');p.add_argument('--base-dir');p.add_argument('--weights-dir');a=p.parse_args();out=Path(a.output)
  if out.exists():raise ValueError('output_exists_refusing_overwrite')
+ protocol=load_frozen_protocol()
  if a.select_from:
   print(json.dumps(freeze_selection(a.select_from,out)));return
  if a.provider is None or a.data is None:raise ValueError('provider_and_data_required')
  final_selection=None
- dataset_digest=hashlib.sha256(Path(a.data).read_bytes()).hexdigest()
- protocol=json.loads((ROOT/'routing/data/protocol.json').read_text())
+ dataset_bytes=Path(a.data).read_bytes();dataset_digest=hashlib.sha256(dataset_bytes).hexdigest()
  if dataset_digest not in protocol['dataset_hashes'].values():raise ValueError('dataset_not_in_frozen_protocol')
  if dataset_digest==protocol['dataset_hashes']['final_test.json']:final_selection=claim_final_attempt(a.selection,out,a.provider,a.weights_dir)
  out.parent.mkdir(parents=True,exist_ok=True)
  journal=out.with_suffix('.journal.jsonl').open('x')
- cases=json.loads(Path(a.data).read_text())['cases'];predict=jev_call if a.provider=='Jev' else local_predictor(a.base_dir,a.weights_dir)
+ cases=json.loads(dataset_bytes)['cases'];predict=jev_call if a.provider=='Jev' else local_predictor(a.base_dir,a.weights_dir)
  with journal:result=evaluate(cases,predict,a.provider,journal)
  if a.provider=='Kev':result['artifact_manifest']=predict.artifact_manifest
  else:result['requested_model']='jev-latest'
  result['final_selection_sha256']=final_selection
- result['dataset_sha256']=hashlib.sha256(Path(a.data).read_bytes()).hexdigest()
+ result['dataset_sha256']=dataset_digest
  out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(result,indent=2)+'\n')
  print(json.dumps(result['metrics']))
 if __name__=='__main__':main()

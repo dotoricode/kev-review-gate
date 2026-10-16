@@ -41,6 +41,48 @@ class RoutingTrainingTests(unittest.TestCase):
     with self.assertRaises(FileExistsError):claim_final_attempt(path,root/'other.json','Jev',None)
    decision['selected_step']=50;path.write_text(json.dumps(decision))
    with self.assertRaises(ValueError):claim_final_attempt(path,root/'final.json','Kev',None)
+ def test_tampered_protocol_cannot_disguise_final_as_dev_for_either_provider(self):
+  import routing_eval as evaluation
+  source=Path(__file__).resolve().parents[1]
+  for provider in ('Jev','Kev'):
+   with tempfile.TemporaryDirectory() as temp:
+    root=Path(temp);(root/'routing/data').mkdir(parents=True)
+    protocol=json.loads((source/'routing/data/protocol.json').read_text());hashes=protocol['dataset_hashes'];hashes['dev.json'],hashes['final_test.json']=hashes['final_test.json'],hashes['dev.json'];(root/'routing/data/protocol.json').write_text(json.dumps(protocol))
+    disguised=root/'renamed-dev.json';shutil.copy2(source/'routing/data/final_test.json',disguised)
+    args=['routing_eval.py','--provider',provider,'--data',str(disguised),'--output',str(root/'out.json')]
+    with mock.patch.object(evaluation,'ROOT',root),mock.patch.object(sys,'argv',args),mock.patch.object(evaluation,'jev_call',side_effect=AssertionError('Jev reached')),mock.patch.object(evaluation,'local_predictor',side_effect=AssertionError('GPU reached')):
+     with self.assertRaises(ValueError):evaluation.main()
+ def test_freeze_requires_intact_frozen_protocol_even_with_valid_dev_reports(self):
+  import routing_eval as evaluation
+  source=Path(__file__).resolve().parents[1]
+  with tempfile.TemporaryDirectory() as temp:
+   root=Path(temp);(root/'routing/data').mkdir(parents=True);(root/'provenance').mkdir()
+   for name in ('dev.json','protocol.json'):shutil.copy2(source/'routing/data'/name,root/'routing/data'/name)
+   shutil.copy2(source/'provenance/routing-evaluation-weights.json',root/'provenance/routing-evaluation-weights.json')
+   p=root/'routing/data/protocol.json';protocol=json.loads(p.read_text());protocol['seed']=999;p.write_text(json.dumps(protocol))
+   with mock.patch.object(evaluation,'ROOT',root):
+    with self.assertRaises(ValueError):freeze_selection(source/'routing/results',root/'selection.json')
+ def test_dataset_digest_and_case_parsing_use_one_byte_snapshot(self):
+  import routing_eval as evaluation
+  source=Path(__file__).resolve().parents[1]
+  dev_bytes=(source/'routing/data/dev.json').read_bytes();final_text=(source/'routing/data/final_test.json').read_text();original_read=Path.read_text
+  with tempfile.TemporaryDirectory() as temp:
+   root=Path(temp);data=root/'input.json';data.write_bytes(dev_bytes)
+   def changed_second_read(path,*args,**kwargs):return final_text if path==data else original_read(path,*args,**kwargs)
+   args=['routing_eval.py','--provider','Jev','--data',str(data),'--output',str(root/'out.json')]
+   with mock.patch.object(sys,'argv',args),mock.patch.object(Path,'read_text',changed_second_read),mock.patch.object(evaluation,'evaluate',return_value={'metrics':{},'rows':[]}) as evaluate_mock:
+    evaluation.main()
+   expected=[c['id'] for c in json.loads(dev_bytes)['cases']]
+   self.assertEqual([c['id'] for c in evaluate_mock.call_args.args[0]],expected)
+ def test_renamed_final_still_reaches_once_only_guard_before_provider(self):
+  import routing_eval as evaluation
+  source=Path(__file__).resolve().parents[1]
+  with tempfile.TemporaryDirectory() as temp:
+   root=Path(temp);(root/'routing/data').mkdir(parents=True);shutil.copy2(source/'routing/data/protocol.json',root/'routing/data/protocol.json');disguised=root/'dev-alias.json';shutil.copy2(source/'routing/data/final_test.json',disguised)
+   args=['routing_eval.py','--provider','Jev','--data',str(disguised),'--output',str(root/'out.json'),'--selection',str(source/'routing/results/selected_checkpoint.json')]
+   with mock.patch.object(evaluation,'ROOT',root),mock.patch.object(sys,'argv',args),mock.patch.object(evaluation,'claim_final_attempt',side_effect=FileExistsError('consumed')) as claim,mock.patch.object(evaluation,'jev_call',side_effect=AssertionError('Jev reached')):
+    with self.assertRaises(FileExistsError):evaluation.main()
+    claim.assert_called_once()
  def test_self_signed_alternate_selection_is_rejected(self):
   import routing_eval as evaluation
   source=Path(__file__).resolve().parents[1]/'routing/results'
