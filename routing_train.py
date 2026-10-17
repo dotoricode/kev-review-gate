@@ -95,10 +95,12 @@ def main():
  from kev.data import materialize
  ck=Checkpoint(a.original_dir if not start else str(out/f'stage-{start:04d}'/'checkpoint'));meta=ck.meta
  if target==0:
-  export(Path(a.original_dir),stage/'weights',meta,0);(stage/'report.json').write_text(json.dumps({'status':'completed','step':0,'initialization':'pinned_original_untrained_on_routing','verified_inputs':verified_inputs}));return
+  manifest=export(Path(a.original_dir),stage/'weights',meta,0);(stage/'report.json').write_text(json.dumps({'status':'completed','step':0,'protocol_sha256':FROZEN_PROTOCOL_SHA256,'export':manifest,'initialization':'pinned_original_untrained_on_routing','verified_inputs':verified_inputs}));return
  if not torch.backends.mps.is_available():raise ValueError('MPS_required_no_CPU_fallback')
  torch.set_num_threads(2);torch.mps.set_per_process_memory_fraction(.6);torch.manual_seed(protocol['seed'])
- report={'status':'running','seed':protocol['seed'],'start':start,'target':target,'steps':[],'protocol_sha256':FROZEN_PROTOCOL_SHA256,'verified_inputs':verified_inputs};began=time.perf_counter();swap=psutil.swap_memory().used;stop=threading.Event()
+ report={'status':'running','seed':protocol['seed'],'start':start,'target':target,'steps':[],'protocol_sha256':FROZEN_PROTOCOL_SHA256,'verified_inputs':verified_inputs};
+ if start:report['resume_source_report_sha256']=file_sha(out/f'stage-{start:04d}'/'report.json')
+ began=time.perf_counter();swap=psutil.swap_memory().used;stop=threading.Event()
  def memory():return {'rss':psutil.Process().memory_info().rss,'available':psutil.virtual_memory().available,'swap_delta':psutil.swap_memory().used-swap,'mps':torch.mps.driver_allocated_memory()}
  def write():
   report['elapsed_seconds']=round(time.perf_counter()-began,3);report['memory']=memory();(stage/'report.json').write_text(json.dumps(report,indent=2))
