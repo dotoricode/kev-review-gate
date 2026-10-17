@@ -21,3 +21,7 @@
 평가 시 `discrimination_eval.py`에는 `--training-dir <0/25/50 stage 디렉터리의 상위 경로>`를 함께 전달합니다. 각 후보는 `model_config.selected_step`, manifest의 실제 파일 해시, 고정 protocol과 원본 입력 해시, 학습 완료 상태와 전체 update 목록, base 불변·adapter/head 변경 증거, checkpoint 해시를 검증합니다. 50단계 보고서는 이어받은 25단계 보고서의 해시도 기록합니다. 평가 보고서에 실제 후보 step과 검증한 학습 증거의 해시를 저장하므로 파일명 변경이나 보고서 복사로 후보를 대체할 수 없습니다. 이전 형식의 증거 없는 보고서는 선택에 사용할 수 없습니다.
 
 `--select`는 세 dev 보고서와 학습 증거를 모두 재검증하고 기존 선택 기준으로 `selection.json`을 생성합니다. final은 저장된 선택 파일의 자체 해시만 신뢰하지 않고 같은 dev 보고서·실제 모델 설정·학습 증거로 선택을 다시 계산한 뒤 final 데이터를 읽습니다. 증거가 바뀌면 final 호출을 진행하지 않습니다. 기존 정상 CLI의 `config.selected_step` 검증과 provider별 final 1회 장치는 유지합니다.
+
+메모리 적재 전 검사도 추가했습니다. base safetensors 크기와 기존 4 GiB 여유, 재개 파일 크기, 512 MiB 작업 여유의 합보다 가용 메모리가 적으면 모델을 적재하지 않습니다. 기존 실행 중 4 GiB·swap 증가 512 MiB·900초 한도는 그대로 유지합니다. optimizer는 mmap으로 읽고 상태 이동 후 CPU 참조를 해제하며 update 기록 뒤 출력 그래프와 gradient를 정리합니다. 단계별 메모리와 중단 이유를 기록합니다. 이 검사는 실행 허용의 보수적 하한이며, 실행 중 안전 검사를 대체하지 않습니다.
+
+2026-10-17 재개 시도는 가용 9.62 GiB가 적재 전 요구 13.43 GiB보다 적어 모델 적재 전에 중단됐습니다. 새 update는 0개입니다. step0은 고정 원본에서 재내보냈으며 기존 manifest와 같고, 기존 완료된 step25 사본도 증거를 재검증했습니다. 작은 CPU optimizer의 재개 동등성과 전체 오프라인 130개 검사는 통과했으나 실제 MPS 학습 개선은 미검증입니다. 50단계 완료 전에는 선택·final·운영 pin을 만들지 않습니다. 새 Kev 추론·Jev 호출도 실행하지 않았습니다. 수치는 `docs/2026-10-17-memory-admission.json`에 저장했습니다.
