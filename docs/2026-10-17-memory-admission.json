@@ -1,0 +1,44 @@
+{
+  "status": "blocked_before_model_load",
+  "protocol_sha256": "76da5416a8ab3a66de1807473fe729820b3320da9a7f1d9062c64cbe5a62cb84",
+  "step0": "Re-exported from verified pinned original; manifest identical to prior step0. No training or inference.",
+  "step25": "Existing completed checkpoint copied byte-for-byte; report and all checkpoint/manifest hashes verified. No new training.",
+  "step50": {
+    "status": "safety_stop",
+    "stop_reason": "insufficient_memory_before_model_load",
+    "start": 25,
+    "target": 50,
+    "admission_required_bytes": 14422279725,
+    "memory": {
+      "rss": 451788800,
+      "available": 10325393408,
+      "swap_delta": 0,
+      "mps": 458752
+    },
+    "memory_phases": [
+      {
+        "phase": "before_model_load",
+        "rss": 451788800,
+        "available": 10325393408,
+        "swap_delta": 0,
+        "mps": 458752
+      }
+    ]
+  },
+  "new_training_updates": 0,
+  "new_kev_inference_calls": 0,
+  "new_jev_calls": 0,
+  "selection_created": false,
+  "final_started": false,
+  "limits": {
+    "available_min_bytes": 4294967296,
+    "swap_growth_max_bytes": 536870912,
+    "seconds_max": 900,
+    "mps_fraction": 0.6
+  },
+  "limitations": [
+    "CPU toy resume equivalence is tested; actual MPS resume improvement is unverified.",
+    "Historical global swap growth cannot be attributed solely to the 258 MiB retained optimizer checkpoint.",
+    "Admission is conservative and does not replace the runtime safety monitor."
+  ]
+}
