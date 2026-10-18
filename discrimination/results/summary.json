@@ -1,0 +1,132 @@
+{
+  "status": "incomplete_no_final_no_deployment",
+  "successful_saved_updates": 25,
+  "attempted_resume": "step26..49 optimizer updates completed; interrupted during step50 gradient calculation; no step50 export",
+  "selection_status": "blocked_missing_required_step50_candidate",
+  "final_status": "not_consumed_for_either_provider",
+  "deployment_pin_created": false,
+  "runtime_configuration_changed": false,
+  "old_weights_preserved": true,
+  "safety": "Fixed swap growth limit triggered: first25 segment once and resumed50 segment three times. Interrupted artifacts retained separately. No thresholds or protocol rules changed.",
+  "cpu_resume_release": "Redundant CPU optimizer checkpoint reference released after migration; resource fix not retrained and does not prove the swap issue resolved.",
+  "comparison": "Actual jev-latest dev16 calls only; no retries, no teacher labels; v1 baseline different fixed questions/label spaces, no Astra-to-Sol remapping",
+  "limits": "Public synthetic dev outcomes only; no final estimate or production improvement claim; mixed Korean/English, repetitive paired structure.",
+  "dev_metrics": {
+    "kev-dev-step0.json": {
+      "total": 16,
+      "measured": 16,
+      "unavailable": 0,
+      "recall": {
+        "need": {
+          "review": 0.625,
+          "skip": 1.0,
+          "unknown": 1.0
+        },
+        "route": {
+          "sol_medium": 1.0,
+          "sol_high": 0.25,
+          "unknown": 1.0
+        }
+      },
+      "need_macro_recall": 0.875,
+      "route_macro_recall": 0.75,
+      "sensitive_downroutes": 3,
+      "missing_false_precision": 0,
+      "inert_false_review": 0,
+      "paired_correct_fraction": 0.0,
+      "predictions": {
+        "need": {
+          "review": 5,
+          "skip": 7,
+          "unknown": 4
+        },
+        "route": {
+          "sol_medium": 8,
+          "sol_high": 1,
+          "unknown": 7
+        }
+      },
+      "joint_macro_recall": 0.8125
+    },
+    "kev-dev-step25.json": {
+      "total": 16,
+      "measured": 16,
+      "unavailable": 0,
+      "recall": {
+        "need": {
+          "review": 1.0,
+          "skip": 1.0,
+          "unknown": 1.0
+        },
+        "route": {
+          "sol_medium": 1.0,
+          "sol_high": 1.0,
+          "unknown": 1.0
+        }
+      },
+      "need_macro_recall": 1.0,
+      "route_macro_recall": 1.0,
+      "sensitive_downroutes": 0,
+      "missing_false_precision": 0,
+      "inert_false_review": 0,
+      "paired_correct_fraction": 1.0,
+      "predictions": {
+        "need": {
+          "review": 8,
+          "skip": 4,
+          "unknown": 4
+        },
+        "route": {
+          "sol_medium": 8,
+          "sol_high": 4,
+          "unknown": 4
+        }
+      },
+      "joint_macro_recall": 1.0
+    },
+    "jev-dev.json": {
+      "total": 16,
+      "measured": 16,
+      "unavailable": 0,
+      "recall": {
+        "need": {
+          "review": 1.0,
+          "skip": 1.0,
+          "unknown": 1.0
+        },
+        "route": {
+          "sol_medium": 1.0,
+          "sol_high": 1.0,
+          "unknown": 1.0
+        }
+      },
+      "need_macro_recall": 1.0,
+      "route_macro_recall": 1.0,
+      "sensitive_downroutes": 0,
+      "missing_false_precision": 0,
+      "inert_false_review": 0,
+      "paired_correct_fraction": 1.0,
+      "predictions": {
+        "need": {
+          "review": 8,
+          "skip": 4,
+          "unknown": 4
+        },
+        "route": {
+          "sol_medium": 8,
+          "sol_high": 4,
+          "unknown": 4
+        }
+      },
+      "joint_macro_recall": 1.0
+    }
+  },
+  "v1_preservation": {
+    "tracked_v1_paths_changed": [],
+    "v1_runtime_weight_manifests_verified": [
+      "routing-weights.json",
+      "release-weights.json"
+    ],
+    "status": "preserved"
+  }
+}

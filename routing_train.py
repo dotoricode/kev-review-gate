@@ -7,7 +7,15 @@ from routing_data import sha
 from routing_policy import questions,MODEL_ID,POLICY_VERSION
 from contract import sha as contract_sha
 from runtime import file_sha, verify_directory
+from training_memory import admission_bytes, restore_optimizer, violation
 FROZEN_PROTOCOL_SHA256 = "e2e889843ac28f4acfb67d20712681c717dcc06727cbe9be69bf59b81c0f633d"
+
+def labeled_questions(case):
+ q=questions()
+ for key in q:
+  q[key]['label']=case['expected'][key] if isinstance(case['expected'],dict) else case['expected']
+  q[key]['src']='public_synthetic' if MODEL_ID=='kev-review-discriminator-v2' else 'public_synthetic_routing'
+ return q
 
 def require(condition,code):
  if not condition:raise ValueError(code)
@@ -34,7 +42,7 @@ def verify_protocol(data, *, return_datasets=False):
  protocol_bytes=(data/'protocol.json').read_bytes()
  require(hashlib.sha256(protocol_bytes).hexdigest()==FROZEN_PROTOCOL_SHA256,'frozen_protocol_integrity_failure')
  protocol=json.loads(protocol_bytes)
- require(protocol['questions_sha256']==sha(questions()),'question_contract_integrity_failure')
+ require(protocol['questions_sha256']==(contract_sha(questions()) if MODEL_ID=='kev-review-discriminator-v2' else sha(questions())),'question_contract_integrity_failure')
  datasets={}
  for name,digest in protocol['dataset_hashes'].items():
   raw=(data/name).read_bytes()
@@ -70,8 +78,13 @@ def export(source,dest,meta,step):
 
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--base-dir',required=True);p.add_argument('--original-dir',required=True);p.add_argument('--output',required=True);p.add_argument('--data-dir',default=str(ROOT/'routing/data'));p.add_argument('--target',type=int,choices=[0,2,25,50],required=True);a=p.parse_args()
- data=Path(a.data_dir);protocol,datasets=verify_protocol(data,return_datasets=True);verified_inputs=verify_training_inputs(a.base_dir,a.original_dir);out=Path(a.output);out.mkdir(parents=True,exist_ok=True)
+ global FROZEN_PROTOCOL_SHA256, questions, MODEL_ID, POLICY_VERSION
+ p=argparse.ArgumentParser();p.add_argument('--experiment',choices=['routing-v1','discrimination-v2'],default='routing-v1');p.add_argument('--base-dir',required=True);p.add_argument('--original-dir',required=True);p.add_argument('--output',required=True);p.add_argument('--data-dir');p.add_argument('--target',type=int,choices=[0,2,25,50],required=True);a=p.parse_args()
+ if a.experiment=='discrimination-v2':
+  from discrimination import questions,MODEL_ID,POLICY_VERSION
+  FROZEN_PROTOCOL_SHA256='76da5416a8ab3a66de1807473fe729820b3320da9a7f1d9062c64cbe5a62cb84'
+ data=Path(a.data_dir) if a.data_dir is not None else ROOT/('discrimination/data' if a.experiment=='discrimination-v2' else 'routing/data')
+ protocol,datasets=verify_protocol(data,return_datasets=True);verified_inputs=verify_training_inputs(a.base_dir,a.original_dir);out=Path(a.output);out.mkdir(parents=True,exist_ok=True)
  target=a.target;start=0 if target in (0,2,25) else 25
  if start:verify_resume(out,start,verified_inputs)
  stage=out/f'stage-{target:04d}';stage.mkdir(exist_ok=False)
@@ -83,28 +96,36 @@ def main():
  from kev.data import materialize
  ck=Checkpoint(a.original_dir if not start else str(out/f'stage-{start:04d}'/'checkpoint'));meta=ck.meta
  if target==0:
-  export(Path(a.original_dir),stage/'weights',meta,0);(stage/'report.json').write_text(json.dumps({'status':'completed','step':0,'initialization':'pinned_original_untrained_on_routing','verified_inputs':verified_inputs}));return
+  manifest=export(Path(a.original_dir),stage/'weights',meta,0);(stage/'report.json').write_text(json.dumps({'status':'completed','step':0,'protocol_sha256':FROZEN_PROTOCOL_SHA256,'export':manifest,'initialization':'pinned_original_untrained_on_routing','verified_inputs':verified_inputs}));return
  if not torch.backends.mps.is_available():raise ValueError('MPS_required_no_CPU_fallback')
- torch.set_num_threads(2);torch.mps.set_per_process_memory_fraction(.6);torch.manual_seed(321)
- report={'status':'running','seed':321,'start':start,'target':target,'steps':[],'protocol_sha256':FROZEN_PROTOCOL_SHA256,'verified_inputs':verified_inputs};began=time.perf_counter();swap=psutil.swap_memory().used;stop=threading.Event()
+ torch.set_num_threads(2);torch.mps.set_per_process_memory_fraction(.6);torch.manual_seed(protocol['seed'])
+ report={'status':'running','seed':protocol['seed'],'start':start,'target':target,'steps':[],'protocol_sha256':FROZEN_PROTOCOL_SHA256,'verified_inputs':verified_inputs};
+ if start:report['resume_source_report_sha256']=file_sha(out/f'stage-{start:04d}'/'report.json')
+ began=time.perf_counter();swap=psutil.swap_memory().used;stop=threading.Event()
  def memory():return {'rss':psutil.Process().memory_info().rss,'available':psutil.virtual_memory().available,'swap_delta':psutil.swap_memory().used-swap,'mps':torch.mps.driver_allocated_memory()}
  def write():
   report['elapsed_seconds']=round(time.perf_counter()-began,3);report['memory']=memory();(stage/'report.json').write_text(json.dumps(report,indent=2))
  def monitor():
   while not stop.wait(2):
    m=memory();report['memory']=m
-   if m['available']<4*1024**3 or m['swap_delta']>512*1024**2 or time.perf_counter()-began>900:
-    report['status']='safety_stop';write();os.kill(os.getpid(),signal.SIGINT);return
+   reason=violation(m,time.perf_counter()-began)
+   if reason:
+    report['status']='safety_stop';report['stop_reason']=reason;write();os.kill(os.getpid(),signal.SIGINT);return
  write();threading.Thread(target=monitor,daemon=True).start()
  try:
+  report['admission_required_bytes']=admission_bytes(a.base_dir,out/f'stage-{start:04d}'/'resume.pt' if start else None)
+  report['memory_phases']=[{'phase':'before_model_load',**memory()}]
+  if report['memory_phases'][-1]['available']<report['admission_required_bytes']:
+   report['status']='safety_stop';report['stop_reason']='insufficient_memory_before_model_load';write();raise MemoryError(report['stop_reason'])
   tok=load_tokenizer(a.base_dir)
   # Check every split before training; final labels are never used in optimization or selection.
   for name in ('train','dev','final_test'):
    rows=datasets[name];lengths=[]
    for c in rows:
-    q=questions();q['route']['label']=c['expected'];q['route']['src']='public_synthetic_routing';r=materialize({'state':c['state'],'questions':q});enc=encode(tok,r,max_state=384,max_branch=512,strict=True);lengths.append(len(enc['ids']))
+    q=labeled_questions(c);r=materialize({'state':c['state'],'questions':q});enc=encode(tok,r,max_state=384,max_branch=512,strict=True);lengths.append(len(enc['ids']))
    report[name+'_max_packed_tokens']=max(lengths)
   model=DecisionModel(a.base_dir,tok,'mps',lora=meta.lora,head_dim=meta.head_dim,option_isolation=meta.option_isolation,special_embeddings=meta.special_embeddings,dtype=torch.bfloat16,direct_load=True)
+  report['memory_phases'].append({'phase':'after_model_load',**memory()});write()
   model.lm.gradient_checkpointing_enable(gradient_checkpointing_kwargs={'use_reentrant':False});model.lm.config.use_cache=False
   ours=dataclasses.replace(meta,head=None,weights_dtype='bf16',extra={});report['warm_start']=ck.warm_start(model,ours);model.head.temperature=meta.temperature
   named=list(model.named_parameters());base=[(n,p) for n,p in named if not p.requires_grad];adapter=[(n,p) for n,p in named if p.requires_grad and 'lora_' in n];head=list(model.head.named_parameters());trainable=list(model.trainable_parameters())
@@ -112,18 +133,21 @@ def main():
   before=digest_params(base);abefore=digest_params(adapter);hbefore=digest_params(head)
   optimizer=torch.optim.AdamW(trainable,lr=2e-5,weight_decay=.01)
   if start:
-   resume=torch.load(out/f'stage-{start:04d}'/'resume.pt',map_location='cpu',weights_only=True);require(resume.get('step')==start and resume.get('protocol_sha256')==FROZEN_PROTOCOL_SHA256,'resume_state_mismatch');optimizer.load_state_dict(resume['optimizer']);torch.set_rng_state(resume['cpu_rng']);torch.mps.set_rng_state(resume['mps_rng'])
+   restore_optimizer(torch,optimizer,out/f'stage-{start:04d}'/'resume.pt',start,FROZEN_PROTOCOL_SHA256)
+   report['memory_phases'].append({'phase':'after_optimizer_resume',**memory()});write()
   cases=datasets['train']
   from kev.train import question_loss
   for step in range(start+1,target+1):
    t=time.perf_counter();model.train();optimizer.zero_grad(set_to_none=True)
    for g in optimizer.param_groups:g['lr']=2e-5*min(1,step/10)
-   c=cases[protocol['training_order'][step-1]];q=questions();q['route']['label']=c['expected'];q['route']['src']='public_synthetic_routing';rec=materialize({'state':c['state'],'questions':q});enc=model.encode(tok,rec,max_state=384,max_branch=512,strict=True)
-   loss=question_loss(model(enc)[0],rec['questions'][0],'mps',ord_w=0);loss.backward();torch.mps.synchronize()
+   c=cases[protocol['training_order'][step-1]];q=labeled_questions(c);rec=materialize({'state':c['state'],'questions':q});enc=model.encode(tok,rec,max_state=384,max_branch=512,strict=True)
+   logits=model(enc);loss=sum(question_loss(logit,question,'mps',ord_w=0) for logit,question in zip(logits,rec['questions'],strict=True))/len(rec['questions']);loss.backward();torch.mps.synchronize()
    def norm(params):return float(torch.stack([v.grad.detach().float().square().sum() for _,v in params if v.grad is not None]).sum().sqrt().cpu())
    ga,gh=norm(adapter),norm(head);require(math.isfinite(ga) and math.isfinite(gh) and ga>=0 and gh>=0 and all(v.grad is None for _,v in base),'gradient_or_frozen_base_violation')
    torch.nn.utils.clip_grad_norm_(trainable,1,error_if_nonfinite=True);optimizer.step();torch.mps.synchronize()
-   row={'step':step,'loss':float(loss.detach().cpu()),'adapter_grad_norm':ga,'head_grad_norm':gh,'seconds':round(time.perf_counter()-t,3),'packed_tokens':len(enc['ids'])};report['steps'].append(row);write();print(json.dumps(row),flush=True);torch.mps.empty_cache()
+   row={'step':step,'loss':float(loss.detach().cpu()),'adapter_grad_norm':ga,'head_grad_norm':gh,'seconds':round(time.perf_counter()-t,3),'packed_tokens':len(enc['ids']),'memory':memory()};report['steps'].append(row);write();print(json.dumps(row),flush=True)
+   del logits,loss
+   optimizer.zero_grad(set_to_none=True);torch.mps.empty_cache()
   require(any(x['adapter_grad_norm']>0 for x in report['steps']) and any(x['head_grad_norm']>0 for x in report['steps']),'missing_adapter_or_head_gradient')
   after=digest_params(base);require(before==after,'frozen_base_changed')
   report.update(base_frozen=True,base_sha256_before=before,base_sha256_after=after,adapter_changed=abefore!=digest_params(adapter),head_changed=hbefore!=digest_params(head));require(report['adapter_changed'] and report['head_changed'],'adapter_or_head_unchanged')

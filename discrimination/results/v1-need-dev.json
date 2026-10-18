@@ -1,0 +1,395 @@
+{
+  "task": "need",
+  "split": "dev",
+  "model_identity": {
+    "model": "kev-review-gate-step50",
+    "version": "v0.1.0-experimental",
+    "backend": "mlx",
+    "base_revision": "1001bb4d826a52d1f399e183466143f4da7b741b",
+    "temperature": 2.406050072164233,
+    "backbone_dtype": "bfloat16",
+    "head_dtype": "float32",
+    "automatic_skip_enabled": false,
+    "health_schema": 1,
+    "base_model_id": "Qwen/Qwen3.5-4B-Base",
+    "tokenizer_id": "Qwen/Qwen3.5-4B-Base",
+    "tokenizer_revision": "1001bb4d826a52d1f399e183466143f4da7b741b",
+    "tokenizer_files_sha256": {
+      "tokenizer.json": "fe000e3ed39ed12b8d2481d527d44f93c65d37e87645d2dcc80d1bf9d50d2927",
+      "tokenizer_config.json": "3891e840d7dc5fca0af33d3a25083a735e36fe06214e3f707024820cb6b9f89c"
+    },
+    "weights_files_sha256": {
+      "adapter_model.safetensors": "d2634d72e193f896ef44b46c747be1220a9ede3d457537c6569891ec6f68f63f",
+      "head.safetensors": "e7a4950e89f731331eafb39321df438b9a9be0076669e0d187614d6fb0273fc5",
+      "LICENSE": "6b08bb37982c233aa12bcbdf19106da12f3f4fcf800773ea42e28ebeddd34fb8",
+      "NOTICE": "26b90ad3bccb4b857b7bcf623be1a6ee47f6ebefb83d7774607e55d477bd1386",
+      "adapter_config.json": "eb856804a12ae8949b99dc26d3bb0c3254cc6e59a9d339224c8431ab2c7b88ac",
+      "model_config.json": "c12ae0f6a1dc6ff60358e37b3594c9e7e97236bb46298f21da266e54efa09aec"
+    },
+    "eval_mode": true,
+    "max_state_tokens": 384,
+    "max_packed_tokens": 512
+  },
+  "rows": [
+    {
+      "id": "dev-0-bounded",
+      "family": "archive inspector",
+      "pair": "bounded",
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      },
+      "status": "completed",
+      "choice": "review",
+      "answer": {
+        "type": "choice",
+        "choice": "review",
+        "confidence": 0.9797,
+        "probabilities": {
+          "review": 0.9864,
+          "skip": 0.0064,
+          "unknown": 0.0071
+        }
+      },
+      "latency_ms": 902.505
+    },
+    {
+      "id": "dev-1-missing",
+      "family": "tenant menu",
+      "pair": "missing",
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "status": "completed",
+      "choice": "unknown",
+      "answer": {
+        "type": "choice",
+        "choice": "unknown",
+        "confidence": 0.9502,
+        "probabilities": {
+          "review": 0.033,
+          "skip": 0.0001,
+          "unknown": 0.9668
+        }
+      },
+      "latency_ms": 105.767
+    },
+    {
+      "id": "dev-0-inert",
+      "family": "archive inspector",
+      "pair": "inert",
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "status": "completed",
+      "choice": "skip",
+      "answer": {
+        "type": "choice",
+        "choice": "skip",
+        "confidence": 0.989,
+        "probabilities": {
+          "review": 0.0052,
+          "skip": 0.9927,
+          "unknown": 0.0022
+        }
+      },
+      "latency_ms": 105.211
+    },
+    {
+      "id": "dev-2-bounded",
+      "family": "retry widget",
+      "pair": "bounded",
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      },
+      "status": "completed",
+      "choice": "review",
+      "answer": {
+        "type": "choice",
+        "choice": "review",
+        "confidence": 0.9852,
+        "probabilities": {
+          "review": 0.9901,
+          "skip": 0.0082,
+          "unknown": 0.0017
+        }
+      },
+      "latency_ms": 103.443
+    },
+    {
+      "id": "dev-3-inert",
+      "family": "key status",
+      "pair": "inert",
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "status": "completed",
+      "choice": "skip",
+      "answer": {
+        "type": "choice",
+        "choice": "skip",
+        "confidence": 0.9998,
+        "probabilities": {
+          "review": 0.0001,
+          "skip": 0.9999,
+          "unknown": 0.0
+        }
+      },
+      "latency_ms": 105.78
+    },
+    {
+      "id": "dev-2-missing",
+      "family": "retry widget",
+      "pair": "missing",
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "status": "completed",
+      "choice": "unknown",
+      "answer": {
+        "type": "choice",
+        "choice": "unknown",
+        "confidence": 0.9943,
+        "probabilities": {
+          "review": 0.0035,
+          "skip": 0.0003,
+          "unknown": 0.9962
+        }
+      },
+      "latency_ms": 105.443
+    },
+    {
+      "id": "dev-1-bounded",
+      "family": "tenant menu",
+      "pair": "bounded",
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      },
+      "status": "completed",
+      "choice": "skip",
+      "answer": {
+        "type": "choice",
+        "choice": "skip",
+        "confidence": 0.5407,
+        "probabilities": {
+          "review": 0.2852,
+          "skip": 0.6938,
+          "unknown": 0.021
+        }
+      },
+      "latency_ms": 107.146
+    },
+    {
+      "id": "dev-0-missing",
+      "family": "archive inspector",
+      "pair": "missing",
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "status": "completed",
+      "choice": "unknown",
+      "answer": {
+        "type": "choice",
+        "choice": "unknown",
+        "confidence": 0.9937,
+        "probabilities": {
+          "review": 0.0041,
+          "skip": 0.0001,
+          "unknown": 0.9958
+        }
+      },
+      "latency_ms": 106.209
+    },
+    {
+      "id": "dev-2-sensitive",
+      "family": "retry widget",
+      "pair": "sensitive",
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      },
+      "status": "completed",
+      "choice": "review",
+      "answer": {
+        "type": "choice",
+        "choice": "review",
+        "confidence": 0.9967,
+        "probabilities": {
+          "review": 0.9978,
+          "skip": 0.0002,
+          "unknown": 0.002
+        }
+      },
+      "latency_ms": 83.594
+    },
+    {
+      "id": "dev-3-sensitive",
+      "family": "key status",
+      "pair": "sensitive",
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      },
+      "status": "completed",
+      "choice": "review",
+      "answer": {
+        "type": "choice",
+        "choice": "review",
+        "confidence": 0.9999,
+        "probabilities": {
+          "review": 0.9999,
+          "skip": 0.0,
+          "unknown": 0.0001
+        }
+      },
+      "latency_ms": 178.376
+    },
+    {
+      "id": "dev-3-bounded",
+      "family": "key status",
+      "pair": "bounded",
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      },
+      "status": "completed",
+      "choice": "review",
+      "answer": {
+        "type": "choice",
+        "choice": "review",
+        "confidence": 0.9746,
+        "probabilities": {
+          "review": 0.9831,
+          "skip": 0.0124,
+          "unknown": 0.0046
+        }
+      },
+      "latency_ms": 105.146
+    },
+    {
+      "id": "dev-1-sensitive",
+      "family": "tenant menu",
+      "pair": "sensitive",
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      },
+      "status": "completed",
+      "choice": "review",
+      "answer": {
+        "type": "choice",
+        "choice": "review",
+        "confidence": 0.9884,
+        "probabilities": {
+          "review": 0.9923,
+          "skip": 0.0007,
+          "unknown": 0.007
+        }
+      },
+      "latency_ms": 104.651
+    },
+    {
+      "id": "dev-2-inert",
+      "family": "retry widget",
+      "pair": "inert",
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "status": "completed",
+      "choice": "skip",
+      "answer": {
+        "type": "choice",
+        "choice": "skip",
+        "confidence": 0.8536,
+        "probabilities": {
+          "review": 0.0907,
+          "skip": 0.9024,
+          "unknown": 0.0069
+        }
+      },
+      "latency_ms": 105.353
+    },
+    {
+      "id": "dev-3-missing",
+      "family": "key status",
+      "pair": "missing",
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "status": "completed",
+      "choice": "unknown",
+      "answer": {
+        "type": "choice",
+        "choice": "unknown",
+        "confidence": 0.3625,
+        "probabilities": {
+          "review": 0.4236,
+          "skip": 0.0015,
+          "unknown": 0.575
+        }
+      },
+      "latency_ms": 106.076
+    },
+    {
+      "id": "dev-0-sensitive",
+      "family": "archive inspector",
+      "pair": "sensitive",
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      },
+      "status": "completed",
+      "choice": "review",
+      "answer": {
+        "type": "choice",
+        "choice": "review",
+        "confidence": 0.9996,
+        "probabilities": {
+          "review": 0.9997,
+          "skip": 0.0,
+          "unknown": 0.0003
+        }
+      },
+      "latency_ms": 80.254
+    },
+    {
+      "id": "dev-1-inert",
+      "family": "tenant menu",
+      "pair": "inert",
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "status": "completed",
+      "choice": "skip",
+      "answer": {
+        "type": "choice",
+        "choice": "skip",
+        "confidence": 0.9996,
+        "probabilities": {
+          "review": 0.0002,
+          "skip": 0.9997,
+          "unknown": 0.0
+        }
+      },
+      "latency_ms": 105.73
+    }
+  ],
+  "choices": {
+    "review": 7,
+    "unknown": 4,
+    "skip": 5
+  },
+  "measured": 16,
+  "expected_label_agreement": 0.9375,
+  "scope": "Same new dev evidence, old fixed question contracts and label spaces. Descriptive baseline, not strict same-question accuracy comparison; no Astra-to-Sol remapping."
+}

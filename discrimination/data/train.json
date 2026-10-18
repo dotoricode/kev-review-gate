@@ -1,0 +1,676 @@
+{
+  "cases": [
+    {
+      "id": "train-7-inert",
+      "family": "account banner",
+      "pair": "inert",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: account banner 상태를 표시한다.\nchanges: Fix whitespace in account banner text. Executable conditions and values are unchanged.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-8-missing",
+      "family": "file preview",
+      "pair": "missing",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the file preview.\nchanges: Notes conflict about file preview: a literal edit or a sensitive behavior change. No patch supplied.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      }
+    },
+    {
+      "id": "train-5-bounded",
+      "family": "memory chart",
+      "pair": "bounded",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: memory chart 상태를 표시한다.\nchanges: Clamp a displayed negative sample to zero. A single pure display helper changes.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-11-missing",
+      "family": "cache table",
+      "pair": "missing",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: cache table 상태를 표시한다.\nchanges: Notes conflict about cache table: a literal edit or a sensitive behavior change. No patch supplied.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      }
+    },
+    {
+      "id": "train-9-sensitive",
+      "family": "queue panel",
+      "pair": "sensitive",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: queue panel 상태를 표시한다.\nchanges: Remove a lock around shared dequeue and ownership transfer.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      }
+    },
+    {
+      "id": "train-1-inert",
+      "family": "backup viewer",
+      "pair": "inert",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: backup viewer 상태를 표시한다.\nchanges: Correct backup heading capitalization. Executable conditions and values are unchanged.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-1-sensitive",
+      "family": "backup viewer",
+      "pair": "sensitive",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: backup viewer 상태를 표시한다.\nchanges: Delete source backups before durable copy acknowledgement.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      }
+    },
+    {
+      "id": "train-5-missing",
+      "family": "memory chart",
+      "pair": "missing",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: memory chart 상태를 표시한다.\nchanges: Notes conflict about memory chart: a literal edit or a sensitive behavior change. No patch supplied.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      }
+    },
+    {
+      "id": "train-10-bounded",
+      "family": "certificate page",
+      "pair": "bounded",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the certificate page.\nchanges: Format an absent issuer as unknown text. A single pure display helper changes.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-10-missing",
+      "family": "certificate page",
+      "pair": "missing",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the certificate page.\nchanges: Notes conflict about certificate page: a literal edit or a sensitive behavior change. No patch supplied.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      }
+    },
+    {
+      "id": "train-2-inert",
+      "family": "payment label",
+      "pair": "inert",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the payment label.\nchanges: Rename the static payment heading. Executable conditions and values are unchanged.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-6-bounded",
+      "family": "upload counter",
+      "pair": "bounded",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the upload counter.\nchanges: Format single-byte count with singular text. A single pure display helper changes.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-9-bounded",
+      "family": "queue panel",
+      "pair": "bounded",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: queue panel 상태를 표시한다.\nchanges: Render a zero queue length as zero. A single pure display helper changes.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-3-missing",
+      "family": "token hint",
+      "pair": "missing",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: token hint 상태를 표시한다.\nchanges: Notes conflict about token hint: a literal edit or a sensitive behavior change. No patch supplied.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      }
+    },
+    {
+      "id": "train-5-sensitive",
+      "family": "memory chart",
+      "pair": "sensitive",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: memory chart 상태를 표시한다.\nchanges: Free a native buffer while a reader thread still holds its pointer.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      }
+    },
+    {
+      "id": "train-7-bounded",
+      "family": "account banner",
+      "pair": "bounded",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: account banner 상태를 표시한다.\nchanges: Omit a display-only suffix for empty usernames. A single pure display helper changes.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-0-bounded",
+      "family": "session badge",
+      "pair": "bounded",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the session badge.\nchanges: Return a dash for an absent display name. A single pure display helper changes.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-7-missing",
+      "family": "account banner",
+      "pair": "missing",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: account banner 상태를 표시한다.\nchanges: Notes conflict about account banner: a literal edit or a sensitive behavior change. No patch supplied.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      }
+    },
+    {
+      "id": "train-1-missing",
+      "family": "backup viewer",
+      "pair": "missing",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: backup viewer 상태를 표시한다.\nchanges: Notes conflict about backup viewer: a literal edit or a sensitive behavior change. No patch supplied.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      }
+    },
+    {
+      "id": "train-3-bounded",
+      "family": "token hint",
+      "pair": "bounded",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: token hint 상태를 표시한다.\nchanges: Render a missing expiry date as blank. A single pure display helper changes.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-8-inert",
+      "family": "file preview",
+      "pair": "inert",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the file preview.\nchanges: Correct a preview empty-state sentence. Executable conditions and values are unchanged.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-3-inert",
+      "family": "token hint",
+      "pair": "inert",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: token hint 상태를 표시한다.\nchanges: Correct punctuation in token help. Executable conditions and values are unchanged.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-8-bounded",
+      "family": "file preview",
+      "pair": "bounded",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the file preview.\nchanges: Return an empty preview for a zero-length string. A single pure display helper changes.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-9-inert",
+      "family": "queue panel",
+      "pair": "inert",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: queue panel 상태를 표시한다.\nchanges: Fix the static queue title. Executable conditions and values are unchanged.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-1-bounded",
+      "family": "backup viewer",
+      "pair": "bounded",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: backup viewer 상태를 표시한다.\nchanges: Count empty preview entries as zero. A single pure display helper changes.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-0-inert",
+      "family": "session badge",
+      "pair": "inert",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the session badge.\nchanges: Fix a session caption typo. Executable conditions and values are unchanged.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-6-inert",
+      "family": "upload counter",
+      "pair": "inert",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the upload counter.\nchanges: Correct the upload label grammar. Executable conditions and values are unchanged.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-6-sensitive",
+      "family": "upload counter",
+      "pair": "sensitive",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the upload counter.\nchanges: Reuse a file handle after cancellation closes it concurrently.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      }
+    },
+    {
+      "id": "train-0-sensitive",
+      "family": "session badge",
+      "pair": "sensitive",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the session badge.\nchanges: Change expired-session rejection to acceptance in concurrent refresh.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      }
+    },
+    {
+      "id": "train-0-missing",
+      "family": "session badge",
+      "pair": "missing",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the session badge.\nchanges: Notes conflict about session badge: a literal edit or a sensitive behavior change. No patch supplied.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      }
+    },
+    {
+      "id": "train-5-inert",
+      "family": "memory chart",
+      "pair": "inert",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: memory chart 상태를 표시한다.\nchanges: Correct the memory chart axis title. Executable conditions and values are unchanged.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-7-sensitive",
+      "family": "account banner",
+      "pair": "sensitive",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: account banner 상태를 표시한다.\nchanges: Allow disabled accounts through a secondary login path.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      }
+    },
+    {
+      "id": "train-4-sensitive",
+      "family": "permission tooltip",
+      "pair": "sensitive",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the permission tooltip.\nchanges: Share cached authorization results across tenant identifiers.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      }
+    },
+    {
+      "id": "train-2-sensitive",
+      "family": "payment label",
+      "pair": "sensitive",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the payment label.\nchanges: Retry settlement after timeout without checking transaction idempotency.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      }
+    },
+    {
+      "id": "train-11-sensitive",
+      "family": "cache table",
+      "pair": "sensitive",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: cache table 상태를 표시한다.\nchanges: Cache decrypted secrets in a globally shared map without isolation.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      }
+    },
+    {
+      "id": "train-4-inert",
+      "family": "permission tooltip",
+      "pair": "inert",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the permission tooltip.\nchanges: Fix spelling in an admin tooltip. Executable conditions and values are unchanged.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-10-sensitive",
+      "family": "certificate page",
+      "pair": "sensitive",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the certificate page.\nchanges: Trust an attacker supplied root certificate by default.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      }
+    },
+    {
+      "id": "train-3-sensitive",
+      "family": "token hint",
+      "pair": "sensitive",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: token hint 상태를 표시한다.\nchanges: Accept unsigned tokens in a validation fallback.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      }
+    },
+    {
+      "id": "train-10-inert",
+      "family": "certificate page",
+      "pair": "inert",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the certificate page.\nchanges: Correct certificate help wording. Executable conditions and values are unchanged.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-11-bounded",
+      "family": "cache table",
+      "pair": "bounded",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: cache table 상태를 표시한다.\nchanges: Sort an already isolated view of display names. A single pure display helper changes.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-4-bounded",
+      "family": "permission tooltip",
+      "pair": "bounded",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the permission tooltip.\nchanges: Hide an empty permission list placeholder. A single pure display helper changes.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-6-missing",
+      "family": "upload counter",
+      "pair": "missing",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the upload counter.\nchanges: Notes conflict about upload counter: a literal edit or a sensitive behavior change. No patch supplied.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      }
+    },
+    {
+      "id": "train-8-sensitive",
+      "family": "file preview",
+      "pair": "sensitive",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the file preview.\nchanges: Resolve uploaded paths without enforcing the storage root boundary.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      }
+    },
+    {
+      "id": "train-4-missing",
+      "family": "permission tooltip",
+      "pair": "missing",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the permission tooltip.\nchanges: Notes conflict about permission tooltip: a literal edit or a sensitive behavior change. No patch supplied.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "independent_final"
+      },
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      }
+    },
+    {
+      "id": "train-2-missing",
+      "family": "payment label",
+      "pair": "missing",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the payment label.\nchanges: Notes conflict about payment label: a literal edit or a sensitive behavior change. No patch supplied.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      }
+    },
+    {
+      "id": "train-2-bounded",
+      "family": "payment label",
+      "pair": "bounded",
+      "language": "en",
+      "state": {
+        "task": "requirement: Display status in the payment label.\nchanges: Format zero cents using two digits. A single pure display helper changes.\ncallers: existing component entry points\nverification: all stated tests pass; exact coverage unspecified\nchange_scope: one component\nbehavior_impact: See actual changes above",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-11-inert",
+      "family": "cache table",
+      "pair": "inert",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: cache table 상태를 표시한다.\nchanges: Correct the cache table caption. Executable conditions and values are unchanged.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "risk_review"
+      },
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      }
+    },
+    {
+      "id": "train-9-missing",
+      "family": "queue panel",
+      "pair": "missing",
+      "language": "mixed-ko-en",
+      "state": {
+        "task": "requirement: queue panel 상태를 표시한다.\nchanges: Notes conflict about queue panel: a literal edit or a sensitive behavior change. No patch supplied.\ncallers: 컴포넌트의 기존 호출 경로\nverification: no regression test run; static patch inspection only\nchange_scope: one component\nbehavior_impact: 위 changes 항목 참조",
+        "review_kind": "checkpoint"
+      },
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      }
+    }
+  ]
+}

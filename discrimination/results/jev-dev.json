@@ -1,0 +1,795 @@
+{
+  "provider": "Jev",
+  "split": "dev",
+  "protocol_sha256": "76da5416a8ab3a66de1807473fe729820b3320da9a7f1d9062c64cbe5a62cb84",
+  "dataset_sha256": "d5f2735699da1aea0aafca54e16a8b7ea22e39fb3f8df8683dc7576b43caf417",
+  "questions_sha256": "8a95ac5fe5822690af5629258b1a212fc5c8fcefde9f4f7b4a4b8fca29162b48",
+  "artifact_manifest": null,
+  "selection_sha256": null,
+  "rows": [
+    {
+      "id": "dev-0-bounded",
+      "family": "archive inspector",
+      "pair": "bounded",
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      },
+      "input_sha256": "a2bcf701853b7839ef623ed2ae84c23feea7df8113c938f0eaf7ea10b80b5441",
+      "status": "completed",
+      "predicted": {
+        "need": "review",
+        "route": "sol_medium"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "review",
+          "confidence": 0.7,
+          "probabilities": {
+            "review": 0.8,
+            "skip": 0.15,
+            "unknown": 0.05
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "sol_medium",
+          "confidence": 0.83,
+          "probabilities": {
+            "sol_medium": 0.89,
+            "sol_high": 0.0,
+            "unknown": 0.11
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 601,
+        "output_tokens": 76
+      },
+      "latency_ms": 328.278
+    },
+    {
+      "id": "dev-1-missing",
+      "family": "tenant menu",
+      "pair": "missing",
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "input_sha256": "d91c0749c57a467b5631e48c8ee2640b673d573472507d14c739c1d2ec147004",
+      "status": "completed",
+      "predicted": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "unknown",
+          "confidence": 0.86,
+          "probabilities": {
+            "review": 0.07,
+            "skip": 0.02,
+            "unknown": 0.91
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "unknown",
+          "confidence": 0.98,
+          "probabilities": {
+            "sol_medium": 0.0,
+            "sol_high": 0.01,
+            "unknown": 0.99
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 621,
+        "output_tokens": 75
+      },
+      "latency_ms": 187.847
+    },
+    {
+      "id": "dev-0-inert",
+      "family": "archive inspector",
+      "pair": "inert",
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "input_sha256": "6fa1a709aa9dae48306dcb01ad62f74780e22c6fdd332677ad50e1625bd93c49",
+      "status": "completed",
+      "predicted": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "skip",
+          "confidence": 0.85,
+          "probabilities": {
+            "review": 0.02,
+            "skip": 0.9,
+            "unknown": 0.08
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "sol_medium",
+          "confidence": 0.35,
+          "probabilities": {
+            "sol_medium": 0.57,
+            "sol_high": 0.0,
+            "unknown": 0.43
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 601,
+        "output_tokens": 76
+      },
+      "latency_ms": 242.88
+    },
+    {
+      "id": "dev-2-bounded",
+      "family": "retry widget",
+      "pair": "bounded",
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      },
+      "input_sha256": "a411016429b8824de4576ddbd8338781a552321345c38b463406e170f5e4446a",
+      "status": "completed",
+      "predicted": {
+        "need": "review",
+        "route": "sol_medium"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "review",
+          "confidence": 0.72,
+          "probabilities": {
+            "review": 0.81,
+            "skip": 0.17,
+            "unknown": 0.02
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "sol_medium",
+          "confidence": 0.86,
+          "probabilities": {
+            "sol_medium": 0.91,
+            "sol_high": 0.0,
+            "unknown": 0.09
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 601,
+        "output_tokens": 76
+      },
+      "latency_ms": 205.037
+    },
+    {
+      "id": "dev-3-inert",
+      "family": "key status",
+      "pair": "inert",
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "input_sha256": "686516e43f2ca9a5543b1da0645a136e295de03fb3f4cf2f8a18080bc0084cf1",
+      "status": "completed",
+      "predicted": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "skip",
+          "confidence": 0.97,
+          "probabilities": {
+            "review": 0.01,
+            "skip": 0.98,
+            "unknown": 0.01
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "sol_medium",
+          "confidence": 0.79,
+          "probabilities": {
+            "sol_medium": 0.86,
+            "sol_high": 0.0,
+            "unknown": 0.14
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 614,
+        "output_tokens": 76
+      },
+      "latency_ms": 211.603
+    },
+    {
+      "id": "dev-2-missing",
+      "family": "retry widget",
+      "pair": "missing",
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "input_sha256": "7b4858694237817ecdeb878099167628920c94b4c61cc142512b32fc8e5aad64",
+      "status": "completed",
+      "predicted": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "unknown",
+          "confidence": 0.95,
+          "probabilities": {
+            "review": 0.02,
+            "skip": 0.01,
+            "unknown": 0.97
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "unknown",
+          "confidence": 1.0,
+          "probabilities": {
+            "sol_medium": 0.0,
+            "sol_high": 0.0,
+            "unknown": 1.0
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 606,
+        "output_tokens": 75
+      },
+      "latency_ms": 258.516
+    },
+    {
+      "id": "dev-1-bounded",
+      "family": "tenant menu",
+      "pair": "bounded",
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      },
+      "input_sha256": "aa3133effc8235f6392499541ec73ef0bad9fa1d60df5e9721643f8d7f054b95",
+      "status": "completed",
+      "predicted": {
+        "need": "review",
+        "route": "sol_medium"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "review",
+          "confidence": 0.52,
+          "probabilities": {
+            "review": 0.68,
+            "skip": 0.3,
+            "unknown": 0.02
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "sol_medium",
+          "confidence": 0.55,
+          "probabilities": {
+            "sol_medium": 0.7,
+            "sol_high": 0.0,
+            "unknown": 0.3
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 619,
+        "output_tokens": 76
+      },
+      "latency_ms": 203.532
+    },
+    {
+      "id": "dev-0-missing",
+      "family": "archive inspector",
+      "pair": "missing",
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "input_sha256": "623398e226487078cadb1b7cee9ff36571f5ebcc6b78c9e76a2aaf31ac5dc643",
+      "status": "completed",
+      "predicted": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "unknown",
+          "confidence": 0.94,
+          "probabilities": {
+            "review": 0.03,
+            "skip": 0.01,
+            "unknown": 0.96
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "unknown",
+          "confidence": 1.0,
+          "probabilities": {
+            "sol_medium": 0.0,
+            "sol_high": 0.0,
+            "unknown": 1.0
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 605,
+        "output_tokens": 75
+      },
+      "latency_ms": 200.369
+    },
+    {
+      "id": "dev-2-sensitive",
+      "family": "retry widget",
+      "pair": "sensitive",
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      },
+      "input_sha256": "dd72c6ea8d81e79622c217db802bb536f2dafc839cda1a2edc9453c9432a04ad",
+      "status": "completed",
+      "predicted": {
+        "need": "review",
+        "route": "sol_high"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "review",
+          "confidence": 0.83,
+          "probabilities": {
+            "review": 0.89,
+            "skip": 0.0,
+            "unknown": 0.11
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "sol_high",
+          "confidence": 0.73,
+          "probabilities": {
+            "sol_medium": 0.0,
+            "sol_high": 0.82,
+            "unknown": 0.18
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 597,
+        "output_tokens": 76
+      },
+      "latency_ms": 216.852
+    },
+    {
+      "id": "dev-3-sensitive",
+      "family": "key status",
+      "pair": "sensitive",
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      },
+      "input_sha256": "6389fa19fd5da880a23ec53644c32b0642b5e168d16920af64951df47dd00fab",
+      "status": "completed",
+      "predicted": {
+        "need": "review",
+        "route": "sol_high"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "review",
+          "confidence": 0.95,
+          "probabilities": {
+            "review": 0.97,
+            "skip": 0.0,
+            "unknown": 0.03
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "sol_high",
+          "confidence": 0.72,
+          "probabilities": {
+            "sol_medium": 0.0,
+            "sol_high": 0.81,
+            "unknown": 0.19
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 608,
+        "output_tokens": 76
+      },
+      "latency_ms": 221.837
+    },
+    {
+      "id": "dev-3-bounded",
+      "family": "key status",
+      "pair": "bounded",
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      },
+      "input_sha256": "e4f470690893b23d87704e2130547ac968e999608c74c0f4597ffc1073554c69",
+      "status": "completed",
+      "predicted": {
+        "need": "review",
+        "route": "sol_medium"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "review",
+          "confidence": 0.34,
+          "probabilities": {
+            "review": 0.56,
+            "skip": 0.41,
+            "unknown": 0.03
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "sol_medium",
+          "confidence": 0.64,
+          "probabilities": {
+            "sol_medium": 0.76,
+            "sol_high": 0.0,
+            "unknown": 0.24
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 615,
+        "output_tokens": 76
+      },
+      "latency_ms": 201.44
+    },
+    {
+      "id": "dev-1-sensitive",
+      "family": "tenant menu",
+      "pair": "sensitive",
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      },
+      "input_sha256": "e9aa26b15209981214b63400ad321433a867f13c4d87a6d7c289df003d8babb9",
+      "status": "completed",
+      "predicted": {
+        "need": "review",
+        "route": "sol_high"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "review",
+          "confidence": 0.95,
+          "probabilities": {
+            "review": 0.97,
+            "skip": 0.0,
+            "unknown": 0.03
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "sol_high",
+          "confidence": 0.34,
+          "probabilities": {
+            "sol_medium": 0.05,
+            "sol_high": 0.56,
+            "unknown": 0.39
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 612,
+        "output_tokens": 76
+      },
+      "latency_ms": 249.092
+    },
+    {
+      "id": "dev-2-inert",
+      "family": "retry widget",
+      "pair": "inert",
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "input_sha256": "0e491475a99db7e8d0c32357a3df175730b412ef293d609710e92f35b4deb3b3",
+      "status": "completed",
+      "predicted": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "skip",
+          "confidence": 0.56,
+          "probabilities": {
+            "review": 0.18,
+            "skip": 0.71,
+            "unknown": 0.11
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "sol_medium",
+          "confidence": 0.4,
+          "probabilities": {
+            "sol_medium": 0.6,
+            "sol_high": 0.0,
+            "unknown": 0.4
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 602,
+        "output_tokens": 76
+      },
+      "latency_ms": 216.459
+    },
+    {
+      "id": "dev-3-missing",
+      "family": "key status",
+      "pair": "missing",
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "input_sha256": "13a9e0813134dde7cf517e938b6454d73ac4f3708cd593f8465fb462cf167068",
+      "status": "completed",
+      "predicted": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "unknown",
+          "confidence": 0.83,
+          "probabilities": {
+            "review": 0.09,
+            "skip": 0.02,
+            "unknown": 0.89
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "unknown",
+          "confidence": 0.97,
+          "probabilities": {
+            "sol_medium": 0.0,
+            "sol_high": 0.02,
+            "unknown": 0.98
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 618,
+        "output_tokens": 75
+      },
+      "latency_ms": 249.304
+    },
+    {
+      "id": "dev-0-sensitive",
+      "family": "archive inspector",
+      "pair": "sensitive",
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      },
+      "input_sha256": "3b9661089b1a8a22eff82db6afdabbc1d4d548e9b567a7721aedcb6ab7908f0f",
+      "status": "completed",
+      "predicted": {
+        "need": "review",
+        "route": "sol_high"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "review",
+          "confidence": 0.94,
+          "probabilities": {
+            "review": 0.96,
+            "skip": 0.0,
+            "unknown": 0.04
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "sol_high",
+          "confidence": 0.43,
+          "probabilities": {
+            "sol_medium": 0.02,
+            "sol_high": 0.62,
+            "unknown": 0.36
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 598,
+        "output_tokens": 76
+      },
+      "latency_ms": 194.41
+    },
+    {
+      "id": "dev-1-inert",
+      "family": "tenant menu",
+      "pair": "inert",
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "input_sha256": "be8460afd66de26de393198869c2fb7954e3c6a85f3aaca3812b0125a7e5cc46",
+      "status": "completed",
+      "predicted": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "skip",
+          "confidence": 0.95,
+          "probabilities": {
+            "review": 0.02,
+            "skip": 0.97,
+            "unknown": 0.01
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "sol_medium",
+          "confidence": 0.56,
+          "probabilities": {
+            "sol_medium": 0.71,
+            "sol_high": 0.0,
+            "unknown": 0.29
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 616,
+        "output_tokens": 76
+      },
+      "latency_ms": 233.376
+    }
+  ],
+  "metrics": {
+    "total": 16,
+    "measured": 16,
+    "unavailable": 0,
+    "recall": {
+      "need": {
+        "review": 1.0,
+        "skip": 1.0,
+        "unknown": 1.0
+      },
+      "route": {
+        "sol_medium": 1.0,
+        "sol_high": 1.0,
+        "unknown": 1.0
+      }
+    },
+    "need_macro_recall": 1.0,
+    "route_macro_recall": 1.0,
+    "sensitive_downroutes": 0,
+    "missing_false_precision": 0,
+    "inert_false_review": 0,
+    "paired_correct_fraction": 1.0,
+    "predictions": {
+      "need": {
+        "review": 8,
+        "skip": 4,
+        "unknown": 4
+      },
+      "route": {
+        "sol_medium": 8,
+        "sol_high": 4,
+        "unknown": 4
+      }
+    },
+    "joint_macro_recall": 1.0
+  },
+  "constant_baselines": {
+    "review_sol_high": {
+      "total": 16,
+      "measured": 16,
+      "unavailable": 0,
+      "recall": {
+        "need": {
+          "review": 1.0,
+          "skip": 0.0,
+          "unknown": 0.0
+        },
+        "route": {
+          "sol_medium": 0.0,
+          "sol_high": 1.0,
+          "unknown": 0.0
+        }
+      },
+      "need_macro_recall": 0.3333333333333333,
+      "route_macro_recall": 0.3333333333333333,
+      "sensitive_downroutes": 0,
+      "missing_false_precision": 4,
+      "inert_false_review": 4,
+      "paired_correct_fraction": 0.0,
+      "predictions": {
+        "need": {
+          "review": 16,
+          "skip": 0,
+          "unknown": 0
+        },
+        "route": {
+          "sol_medium": 0,
+          "sol_high": 16,
+          "unknown": 0
+        }
+      },
+      "joint_macro_recall": 0.3333333333333333
+    },
+    "review_sol_medium": {
+      "total": 16,
+      "measured": 16,
+      "unavailable": 0,
+      "recall": {
+        "need": {
+          "review": 1.0,
+          "skip": 0.0,
+          "unknown": 0.0
+        },
+        "route": {
+          "sol_medium": 1.0,
+          "sol_high": 0.0,
+          "unknown": 0.0
+        }
+      },
+      "need_macro_recall": 0.3333333333333333,
+      "route_macro_recall": 0.3333333333333333,
+      "sensitive_downroutes": 4,
+      "missing_false_precision": 4,
+      "inert_false_review": 4,
+      "paired_correct_fraction": 0.0,
+      "predictions": {
+        "need": {
+          "review": 16,
+          "skip": 0,
+          "unknown": 0
+        },
+        "route": {
+          "sol_medium": 16,
+          "sol_high": 0,
+          "unknown": 0
+        }
+      },
+      "joint_macro_recall": 0.3333333333333333
+    }
+  },
+  "promotion_passed": true,
+  "status": "completed"
+}

@@ -1,0 +1,805 @@
+{
+  "provider": "Kev",
+  "requested_model": "kev-review-discriminator-v2",
+  "split": "dev",
+  "protocol_sha256": "76da5416a8ab3a66de1807473fe729820b3320da9a7f1d9062c64cbe5a62cb84",
+  "dataset_sha256": "d5f2735699da1aea0aafca54e16a8b7ea22e39fb3f8df8683dc7576b43caf417",
+  "questions_sha256": "8a95ac5fe5822690af5629258b1a212fc5c8fcefde9f4f7b4a4b8fca29162b48",
+  "artifact_manifest": {
+    "model": "kev-review-discriminator-v2",
+    "policy_version": "kev-discrimination-v2",
+    "public_files": {
+      "adapter_model.safetensors": "90e817356246e7f18bfa7ca3d31794cd4fbeb3332a66a84cb51d9ceae925f2b2",
+      "head.safetensors": "65698f2568fc1b6ebb60a1c2a24c7bb6622dcc23e1c6d9efe8d3274ad918a9a7",
+      "adapter_config.json": "8a05dfd6c5e7f61a62e6db5d8de8093a8dbbd105aa7ee7b5e7b73f6249f45617",
+      "model_config.json": "fc1f6d7a9f29cac7edec38a6b2a275bf37c1e814e6cb69556cd6a9abe3d2c89c"
+    }
+  },
+  "selection_sha256": null,
+  "rows": [
+    {
+      "id": "dev-0-bounded",
+      "family": "archive inspector",
+      "pair": "bounded",
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      },
+      "input_sha256": "a2bcf701853b7839ef623ed2ae84c23feea7df8113c938f0eaf7ea10b80b5441",
+      "status": "completed",
+      "predicted": {
+        "need": "review",
+        "route": "sol_medium"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "review",
+          "confidence": 0.0617,
+          "probabilities": {
+            "review": 0.3745,
+            "skip": 0.2799,
+            "unknown": 0.3456
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "sol_medium",
+          "confidence": 0.5735,
+          "probabilities": {
+            "sol_medium": 0.7156,
+            "sol_high": 0.0393,
+            "unknown": 0.2451
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 262
+      },
+      "reported_model": null,
+      "latency_ms": 946.572
+    },
+    {
+      "id": "dev-1-missing",
+      "family": "tenant menu",
+      "pair": "missing",
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "input_sha256": "d91c0749c57a467b5631e48c8ee2640b673d573472507d14c739c1d2ec147004",
+      "status": "completed",
+      "predicted": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "unknown",
+          "confidence": 0.2526,
+          "probabilities": {
+            "review": 0.2754,
+            "skip": 0.2229,
+            "unknown": 0.5017
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "unknown",
+          "confidence": 0.5068,
+          "probabilities": {
+            "sol_medium": 0.2358,
+            "sol_high": 0.093,
+            "unknown": 0.6712
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 271
+      },
+      "reported_model": null,
+      "latency_ms": 166.968
+    },
+    {
+      "id": "dev-0-inert",
+      "family": "archive inspector",
+      "pair": "inert",
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "input_sha256": "6fa1a709aa9dae48306dcb01ad62f74780e22c6fdd332677ad50e1625bd93c49",
+      "status": "completed",
+      "predicted": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "skip",
+          "confidence": 0.4814,
+          "probabilities": {
+            "review": 0.1412,
+            "skip": 0.6543,
+            "unknown": 0.2045
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "sol_medium",
+          "confidence": 0.5372,
+          "probabilities": {
+            "sol_medium": 0.6915,
+            "sol_high": 0.0265,
+            "unknown": 0.282
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 261
+      },
+      "reported_model": null,
+      "latency_ms": 167.017
+    },
+    {
+      "id": "dev-2-bounded",
+      "family": "retry widget",
+      "pair": "bounded",
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      },
+      "input_sha256": "a411016429b8824de4576ddbd8338781a552321345c38b463406e170f5e4446a",
+      "status": "completed",
+      "predicted": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "skip",
+          "confidence": 0.0955,
+          "probabilities": {
+            "review": 0.2948,
+            "skip": 0.397,
+            "unknown": 0.3082
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "sol_medium",
+          "confidence": 0.6222,
+          "probabilities": {
+            "sol_medium": 0.7482,
+            "sol_high": 0.0222,
+            "unknown": 0.2296
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 262
+      },
+      "reported_model": null,
+      "latency_ms": 166.905
+    },
+    {
+      "id": "dev-3-inert",
+      "family": "key status",
+      "pair": "inert",
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "input_sha256": "686516e43f2ca9a5543b1da0645a136e295de03fb3f4cf2f8a18080bc0084cf1",
+      "status": "completed",
+      "predicted": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "skip",
+          "confidence": 0.5408,
+          "probabilities": {
+            "review": 0.102,
+            "skip": 0.6939,
+            "unknown": 0.2041
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "sol_medium",
+          "confidence": 0.6269,
+          "probabilities": {
+            "sol_medium": 0.7513,
+            "sol_high": 0.0142,
+            "unknown": 0.2345
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 265
+      },
+      "reported_model": null,
+      "latency_ms": 165.568
+    },
+    {
+      "id": "dev-2-missing",
+      "family": "retry widget",
+      "pair": "missing",
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "input_sha256": "7b4858694237817ecdeb878099167628920c94b4c61cc142512b32fc8e5aad64",
+      "status": "completed",
+      "predicted": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "unknown",
+          "confidence": 0.2377,
+          "probabilities": {
+            "review": 0.2742,
+            "skip": 0.234,
+            "unknown": 0.4918
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "unknown",
+          "confidence": 0.5571,
+          "probabilities": {
+            "sol_medium": 0.2354,
+            "sol_high": 0.0598,
+            "unknown": 0.7048
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 267
+      },
+      "reported_model": null,
+      "latency_ms": 166.092
+    },
+    {
+      "id": "dev-1-bounded",
+      "family": "tenant menu",
+      "pair": "bounded",
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      },
+      "input_sha256": "aa3133effc8235f6392499541ec73ef0bad9fa1d60df5e9721643f8d7f054b95",
+      "status": "completed",
+      "predicted": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "skip",
+          "confidence": 0.1942,
+          "probabilities": {
+            "review": 0.2466,
+            "skip": 0.4628,
+            "unknown": 0.2906
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "sol_medium",
+          "confidence": 0.4311,
+          "probabilities": {
+            "sol_medium": 0.6207,
+            "sol_high": 0.0262,
+            "unknown": 0.3531
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 269
+      },
+      "reported_model": null,
+      "latency_ms": 168.049
+    },
+    {
+      "id": "dev-0-missing",
+      "family": "archive inspector",
+      "pair": "missing",
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "input_sha256": "623398e226487078cadb1b7cee9ff36571f5ebcc6b78c9e76a2aaf31ac5dc643",
+      "status": "completed",
+      "predicted": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "unknown",
+          "confidence": 0.3353,
+          "probabilities": {
+            "review": 0.2579,
+            "skip": 0.1852,
+            "unknown": 0.5569
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "unknown",
+          "confidence": 0.621,
+          "probabilities": {
+            "sol_medium": 0.182,
+            "sol_high": 0.0707,
+            "unknown": 0.7473
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 266
+      },
+      "reported_model": null,
+      "latency_ms": 165.407
+    },
+    {
+      "id": "dev-2-sensitive",
+      "family": "retry widget",
+      "pair": "sensitive",
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      },
+      "input_sha256": "dd72c6ea8d81e79622c217db802bb536f2dafc839cda1a2edc9453c9432a04ad",
+      "status": "completed",
+      "predicted": {
+        "need": "review",
+        "route": "sol_high"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "review",
+          "confidence": 0.3544,
+          "probabilities": {
+            "review": 0.5696,
+            "skip": 0.1223,
+            "unknown": 0.3081
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "sol_high",
+          "confidence": 0.138,
+          "probabilities": {
+            "sol_medium": 0.1773,
+            "sol_high": 0.4254,
+            "unknown": 0.3974
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 258
+      },
+      "reported_model": null,
+      "latency_ms": 166.428
+    },
+    {
+      "id": "dev-3-sensitive",
+      "family": "key status",
+      "pair": "sensitive",
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      },
+      "input_sha256": "6389fa19fd5da880a23ec53644c32b0642b5e168d16920af64951df47dd00fab",
+      "status": "completed",
+      "predicted": {
+        "need": "review",
+        "route": "unknown"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "review",
+          "confidence": 0.4759,
+          "probabilities": {
+            "review": 0.6506,
+            "skip": 0.0844,
+            "unknown": 0.265
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "unknown",
+          "confidence": 0.1892,
+          "probabilities": {
+            "sol_medium": 0.1564,
+            "sol_high": 0.3841,
+            "unknown": 0.4595
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 260
+      },
+      "reported_model": null,
+      "latency_ms": 167.574
+    },
+    {
+      "id": "dev-3-bounded",
+      "family": "key status",
+      "pair": "bounded",
+      "expected": {
+        "need": "review",
+        "route": "sol_medium"
+      },
+      "input_sha256": "e4f470690893b23d87704e2130547ac968e999608c74c0f4597ffc1073554c69",
+      "status": "completed",
+      "predicted": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "skip",
+          "confidence": 0.0807,
+          "probabilities": {
+            "review": 0.2634,
+            "skip": 0.3871,
+            "unknown": 0.3495
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "sol_medium",
+          "confidence": 0.3715,
+          "probabilities": {
+            "sol_medium": 0.581,
+            "sol_high": 0.0398,
+            "unknown": 0.3791
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 267
+      },
+      "reported_model": null,
+      "latency_ms": 171.07
+    },
+    {
+      "id": "dev-1-sensitive",
+      "family": "tenant menu",
+      "pair": "sensitive",
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      },
+      "input_sha256": "e9aa26b15209981214b63400ad321433a867f13c4d87a6d7c289df003d8babb9",
+      "status": "completed",
+      "predicted": {
+        "need": "review",
+        "route": "unknown"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "review",
+          "confidence": 0.1937,
+          "probabilities": {
+            "review": 0.4625,
+            "skip": 0.1856,
+            "unknown": 0.3519
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "unknown",
+          "confidence": 0.1344,
+          "probabilities": {
+            "sol_medium": 0.3325,
+            "sol_high": 0.2445,
+            "unknown": 0.4229
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 262
+      },
+      "reported_model": null,
+      "latency_ms": 166.079
+    },
+    {
+      "id": "dev-2-inert",
+      "family": "retry widget",
+      "pair": "inert",
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "input_sha256": "0e491475a99db7e8d0c32357a3df175730b412ef293d609710e92f35b4deb3b3",
+      "status": "completed",
+      "predicted": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "skip",
+          "confidence": 0.1417,
+          "probabilities": {
+            "review": 0.2683,
+            "skip": 0.4278,
+            "unknown": 0.3039
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "sol_medium",
+          "confidence": 0.4986,
+          "probabilities": {
+            "sol_medium": 0.6657,
+            "sol_high": 0.0358,
+            "unknown": 0.2984
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 262
+      },
+      "reported_model": null,
+      "latency_ms": 164.027
+    },
+    {
+      "id": "dev-3-missing",
+      "family": "key status",
+      "pair": "missing",
+      "expected": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "input_sha256": "13a9e0813134dde7cf517e938b6454d73ac4f3708cd593f8465fb462cf167068",
+      "status": "completed",
+      "predicted": {
+        "need": "unknown",
+        "route": "unknown"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "unknown",
+          "confidence": 0.2522,
+          "probabilities": {
+            "review": 0.2712,
+            "skip": 0.2274,
+            "unknown": 0.5015
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "unknown",
+          "confidence": 0.5145,
+          "probabilities": {
+            "sol_medium": 0.2226,
+            "sol_high": 0.101,
+            "unknown": 0.6764
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 270
+      },
+      "reported_model": null,
+      "latency_ms": 167.988
+    },
+    {
+      "id": "dev-0-sensitive",
+      "family": "archive inspector",
+      "pair": "sensitive",
+      "expected": {
+        "need": "review",
+        "route": "sol_high"
+      },
+      "input_sha256": "3b9661089b1a8a22eff82db6afdabbc1d4d548e9b567a7721aedcb6ab7908f0f",
+      "status": "completed",
+      "predicted": {
+        "need": "review",
+        "route": "unknown"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "review",
+          "confidence": 0.4074,
+          "probabilities": {
+            "review": 0.6049,
+            "skip": 0.1265,
+            "unknown": 0.2685
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "unknown",
+          "confidence": 0.176,
+          "probabilities": {
+            "sol_medium": 0.2305,
+            "sol_high": 0.3188,
+            "unknown": 0.4507
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 258
+      },
+      "reported_model": null,
+      "latency_ms": 166.271
+    },
+    {
+      "id": "dev-1-inert",
+      "family": "tenant menu",
+      "pair": "inert",
+      "expected": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "input_sha256": "be8460afd66de26de393198869c2fb7954e3c6a85f3aaca3812b0125a7e5cc46",
+      "status": "completed",
+      "predicted": {
+        "need": "skip",
+        "route": "sol_medium"
+      },
+      "answers": {
+        "need": {
+          "type": "choice",
+          "choice": "skip",
+          "confidence": 0.3921,
+          "probabilities": {
+            "review": 0.1415,
+            "skip": 0.5947,
+            "unknown": 0.2637
+          }
+        },
+        "route": {
+          "type": "choice",
+          "choice": "sol_medium",
+          "confidence": 0.4395,
+          "probabilities": {
+            "sol_medium": 0.6263,
+            "sol_high": 0.0204,
+            "unknown": 0.3532
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 265
+      },
+      "reported_model": null,
+      "latency_ms": 165.957
+    }
+  ],
+  "metrics": {
+    "total": 16,
+    "measured": 16,
+    "unavailable": 0,
+    "recall": {
+      "need": {
+        "review": 0.625,
+        "skip": 1.0,
+        "unknown": 1.0
+      },
+      "route": {
+        "sol_medium": 1.0,
+        "sol_high": 0.25,
+        "unknown": 1.0
+      }
+    },
+    "need_macro_recall": 0.875,
+    "route_macro_recall": 0.75,
+    "sensitive_downroutes": 3,
+    "missing_false_precision": 0,
+    "inert_false_review": 0,
+    "paired_correct_fraction": 0.0,
+    "predictions": {
+      "need": {
+        "review": 5,
+        "skip": 7,
+        "unknown": 4
+      },
+      "route": {
+        "sol_medium": 8,
+        "sol_high": 1,
+        "unknown": 7
+      }
+    },
+    "joint_macro_recall": 0.8125
+  },
+  "constant_baselines": {
+    "review_sol_high": {
+      "total": 16,
+      "measured": 16,
+      "unavailable": 0,
+      "recall": {
+        "need": {
+          "review": 1.0,
+          "skip": 0.0,
+          "unknown": 0.0
+        },
+        "route": {
+          "sol_medium": 0.0,
+          "sol_high": 1.0,
+          "unknown": 0.0
+        }
+      },
+      "need_macro_recall": 0.3333333333333333,
+      "route_macro_recall": 0.3333333333333333,
+      "sensitive_downroutes": 0,
+      "missing_false_precision": 4,
+      "inert_false_review": 4,
+      "paired_correct_fraction": 0.0,
+      "predictions": {
+        "need": {
+          "review": 16,
+          "skip": 0,
+          "unknown": 0
+        },
+        "route": {
+          "sol_medium": 0,
+          "sol_high": 16,
+          "unknown": 0
+        }
+      },
+      "joint_macro_recall": 0.3333333333333333
+    },
+    "review_sol_medium": {
+      "total": 16,
+      "measured": 16,
+      "unavailable": 0,
+      "recall": {
+        "need": {
+          "review": 1.0,
+          "skip": 0.0,
+          "unknown": 0.0
+        },
+        "route": {
+          "sol_medium": 1.0,
+          "sol_high": 0.0,
+          "unknown": 0.0
+        }
+      },
+      "need_macro_recall": 0.3333333333333333,
+      "route_macro_recall": 0.3333333333333333,
+      "sensitive_downroutes": 4,
+      "missing_false_precision": 4,
+      "inert_false_review": 4,
+      "paired_correct_fraction": 0.0,
+      "predictions": {
+        "need": {
+          "review": 16,
+          "skip": 0,
+          "unknown": 0
+        },
+        "route": {
+          "sol_medium": 16,
+          "sol_high": 0,
+          "unknown": 0
+        }
+      },
+      "joint_macro_recall": 0.3333333333333333
+    }
+  },
+  "promotion_passed": false,
+  "status": "completed"
+}

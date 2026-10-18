@@ -5,6 +5,8 @@ independent review: `review`, `skip`, or `unknown`. It does **not generate revie
 comments**. The provided API always requires review; automatic skipping is disabled,
 even when the model predicts `skip`.
 
+**v2 source integration, operationally inactive:** joint-classifier source and evidence checks are included for development. Retraining, final evaluation and weight activation are deferred. This merge publishes no v2 deployment pin and changes no existing runtime configuration. See [the adoption decision](docs/V2-ADOPTION-STATUS.md) before updating an existing setup.
+
 This adapts [Jared Palmer's Kev](https://github.com/jaredpalmer/kev) released Kev-4B
 LoRA and pointer head on Qwen3.5-4B-Base. No upstream affiliation or endorsement is implied.
 
